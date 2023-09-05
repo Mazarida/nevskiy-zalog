@@ -1,0 +1,809 @@
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Regular.eot');
+  src: local('Gilroy Regular'), local('Gilroy-Regular'),
+  url('../fonts/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-Regular.woff2') format('woff2'),
+  url('../fonts/Gilroy-Regular.woff') format('woff'),
+  url('../fonts/Gilroy-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-ExtraboldItalic.eot');
+  src: local('Gilroy Extrabold Italic'), local('Gilroy-ExtraboldItalic'),
+  url('../fonts/Gilroy-ExtraboldItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-ExtraboldItalic.woff2') format('woff2'),
+  url('../fonts/Gilroy-ExtraboldItalic.woff') format('woff'),
+  url('../fonts/Gilroy-ExtraboldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Bold.eot');
+  src: local('Gilroy Bold'), local('Gilroy-Bold'),
+  url('../fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-Bold.woff2') format('woff2'),
+  url('../fonts/Gilroy-Bold.woff') format('woff'),
+  url('../fonts/Gilroy-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Black.eot');
+  src: local('Gilroy Black'), local('Gilroy-Black'),
+  url('../fonts/Gilroy-Black.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-Black.woff2') format('woff2'),
+  url('../fonts/Gilroy-Black.woff') format('woff'),
+  url('../fonts/Gilroy-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Light.eot');
+  src: local('Gilroy Light'), local('Gilroy-Light'),
+  url('../fonts/Gilroy-Light.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-Light.woff2') format('woff2'),
+  url('../fonts/Gilroy-Light.woff') format('woff'),
+  url('../fonts/Gilroy-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Semibold.eot');
+  src: local('Gilroy Semibold'), local('Gilroy-Semibold'),
+  url('../fonts/Gilroy-Semibold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-Semibold.woff2') format('woff2'),
+  url('../fonts/Gilroy-Semibold.woff') format('woff'),
+  url('../fonts/Gilroy-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Medium.eot');
+  src: local('Gilroy Medium'), local('Gilroy-Medium'),
+  url('../fonts/Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-Medium.woff2') format('woff2'),
+  url('../fonts/Gilroy-Medium.woff') format('woff'),
+  url('../fonts/Gilroy-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-MediumItalic.eot');
+  src: local('Gilroy Medium Italic'), local('Gilroy-MediumItalic'),
+  url('../fonts/Gilroy-MediumItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-MediumItalic.woff2') format('woff2'),
+  url('../fonts/Gilroy-MediumItalic.woff') format('woff'),
+  url('../fonts/Gilroy-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-BlackItalic.eot');
+  src: local('Gilroy Black Italic'), local('Gilroy-BlackItalic'),
+  url('../fonts/Gilroy-BlackItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-BlackItalic.woff2') format('woff2'),
+  url('../fonts/Gilroy-BlackItalic.woff') format('woff'),
+  url('../fonts/Gilroy-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-UltraLight.eot');
+  src: local('Gilroy UltraLight'), local('Gilroy-UltraLight'),
+  url('../fonts/Gilroy-UltraLight.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-UltraLight.woff2') format('woff2'),
+  url('../fonts/Gilroy-UltraLight.woff') format('woff'),
+  url('../fonts/Gilroy-UltraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-RegularItalic.eot');
+  src: local('Gilroy Regular Italic'), local('Gilroy-RegularItalic'),
+  url('../fonts/Gilroy-RegularItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-RegularItalic.woff2') format('woff2'),
+  url('../fonts/Gilroy-RegularItalic.woff') format('woff'),
+  url('../fonts/Gilroy-RegularItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-SemiboldItalic.eot');
+  src: local('Gilroy Semibold Italic'), local('Gilroy-SemiboldItalic'),
+  url('../fonts/Gilroy-SemiboldItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-SemiboldItalic.woff2') format('woff2'),
+  url('../fonts/Gilroy-SemiboldItalic.woff') format('woff'),
+  url('../fonts/Gilroy-SemiboldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-HeavyItalic.eot');
+  src: local('Gilroy Heavy Italic'), local('Gilroy-HeavyItalic'),
+  url('../fonts/Gilroy-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-HeavyItalic.woff2') format('woff2'),
+  url('../fonts/Gilroy-HeavyItalic.woff') format('woff'),
+  url('../fonts/Gilroy-HeavyItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Extrabold.eot');
+  src: local('Gilroy Extrabold'), local('Gilroy-Extrabold'),
+  url('../fonts/Gilroy-Extrabold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-Extrabold.woff2') format('woff2'),
+  url('../fonts/Gilroy-Extrabold.woff') format('woff'),
+  url('../fonts/Gilroy-Extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-BoldItalic.eot');
+  src: local('Gilroy Bold Italic'), local('Gilroy-BoldItalic'),
+  url('../fonts/Gilroy-BoldItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-BoldItalic.woff2') format('woff2'),
+  url('../fonts/Gilroy-BoldItalic.woff') format('woff'),
+  url('../fonts/Gilroy-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-UltraLightItalic.eot');
+  src: local('Gilroy UltraLight Italic'), local('Gilroy-UltraLightItalic'),
+  url('../fonts/Gilroy-UltraLightItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-UltraLightItalic.woff2') format('woff2'),
+  url('../fonts/Gilroy-UltraLightItalic.woff') format('woff'),
+  url('../fonts/Gilroy-UltraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-LightItalic.eot');
+  src: local('Gilroy Light Italic'), local('Gilroy-LightItalic'),
+  url('../fonts/Gilroy-LightItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-LightItalic.woff2') format('woff2'),
+  url('../fonts/Gilroy-LightItalic.woff') format('woff'),
+  url('../fonts/Gilroy-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Heavy.eot');
+  src: local('Gilroy Heavy'), local('Gilroy-Heavy'),
+  url('../fonts/Gilroy-Heavy.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-Heavy.woff2') format('woff2'),
+  url('../fonts/Gilroy-Heavy.woff') format('woff'),
+  url('../fonts/Gilroy-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Thin.eot');
+  src: local('Gilroy Thin'), local('Gilroy-Thin'),
+  url('../fonts/Gilroy-Thin.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-Thin.woff2') format('woff2'),
+  url('../fonts/Gilroy-Thin.woff') format('woff'),
+  url('../fonts/Gilroy-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-ThinItalic.eot');
+  src: local('Gilroy Thin Italic'), local('Gilroy-ThinItalic'),
+  url('../fonts/Gilroy-ThinItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gilroy-ThinItalic.woff2') format('woff2'),
+  url('../fonts/Gilroy-ThinItalic.woff') format('woff'),
+  url('../fonts/Gilroy-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+html {
+  height: 100%;
+}
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}.clear{clear:both}
+.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}.screen-reader-text{clip:rect(1px, 1px, 1px, 1px);position:absolute !important}
+img {max-width: 100%;height: auto;}
+* {outline: none;box-sizing: border-box;}
+a, a:hover, a:visited {color: inherit;text-decoration: none;}
+
+body {
+  font-family: 'Gilroy', sans-serif;
+  font-size: 17px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.main-banner {
+  background-image: url("../img/main-banner.jpg");
+  background-size: cover;
+  background-position: center top;
+}
+
+.page-header {
+
+}
+
+.page-header__header-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 24px;
+}
+
+.logo-slogan__main-logo {
+  margin-right: 48px;
+}
+
+.header-main__logo-slogan {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo-slogan__main-slogan {
+  font-size: 14px;
+}
+
+.header-main__header-contacts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-contacts__phone {
+  font-size: 24px;
+  font-weight: 500;
+  margin-right: 55px;
+}
+
+.phone__header-icon {
+  margin-right: 15px;
+}
+
+.header-contacts__callback {
+  color: #FFF;
+  font-size: 17px;
+  font-weight: 500;
+  background-color: #000;
+  padding: 13px 40px;
+  border-radius: 2px;
+}
+
+.page-header__header-nav {
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+}
+
+.header-nav__navigation {
+  display: block;
+}
+
+.navigation__navigation-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-item__link {
+  display: block;
+  padding: 11px 33px 12px 27px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.header-nav__header-socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-socials__socials-write {
+  margin-left: 29px;
+}
+
+.socials-write__icon {
+  margin-right: 8px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.main-index {
+  padding-bottom: 74px;
+
+}
+
+.main-index__title::before {
+  content: '';
+  display: block;
+  width: 68px;
+  height: 5px;
+  background-color: #B23633;
+  position: absolute;
+  top:120px;
+  left: 0;
+}
+
+.main-index__title {
+  color: #000;
+  font-size: 60px;
+  padding-top: 95px;
+  padding-bottom: 60px;
+  padding-left: 84px;
+  position: relative;
+
+}
+
+.title__bold {
+  font-weight: 700;
+}
+
+.title__accent{
+  color: #B23633;
+  font-weight: 700;
+}
+
+.main-index__benefits {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 858px;
+  margin-bottom: 80px;
+}
+
+.benefits__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item__text-benefit {
+  color: #000;
+  font-size: 21px;
+}
+
+.item__icon-benefit {
+  margin-right: 19px;
+}
+
+.main-index__cta {
+  color: #FFF;
+  font-size: 24px;
+  border-radius: 3px;
+  background: #D82F2B;
+  box-shadow: 0px 7px 35px 0px rgba(216, 47, 43, 0.50);
+  padding: 20px 65px;
+  display: inline-block;
+}
+
+.calculate {
+
+}
+
+.subtitle {
+  color: #000;
+  font-size: 50px;
+  text-align: center;
+  padding-top: 75px;
+  padding-bottom: 60px;
+}
+
+.calculate__calculator {
+  border-radius: 2px;
+  background: linear-gradient(180deg, #FFF 0%, #F4F4F4 52.82%, #EEE 97.52%);
+  padding: 39px 52px 64px 45px;
+}
+
+.calculator__top-calc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.top-calc__sliders {
+  width: 559px;
+}
+
+.sliders__ui-slider {
+  height: 88px;
+}
+
+.ui-slider__title-value {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-value__title {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.title-value__value {
+
+}
+
+.ui-slider__actions {
+
+}
+
+.top-calc__calc-result {
+  border-radius: 5px;
+  border: 1px solid rgba(242, 236, 225, 0.69);
+  background-color: #FAF6ED;
+  box-shadow: 0px 7px 20px 0px rgba(0, 0, 0, 0.10);
+  padding: 36px 36px 27px 37px;
+  width: 546px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calc-result__results {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.results__result-item {
+
+}
+
+.result-item__title {
+  color: #787878;
+  font-size: 21px;
+  font-weight: 500;
+  padding-bottom: 13px;
+}
+
+.result-item__value {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.calc-result__disclaimer {
+  padding-top: 21px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  padding-bottom: 27px;
+}
+
+.calc-result__btn {
+  color: #FFF;
+  display: inline-block;
+  font-size: 17px;
+  border-radius: 3px;
+  background: #D82F2B;
+  box-shadow: 0px 7px 35px 0px rgba(216, 47, 43, 0.50);
+  padding: 18px 96px;
+}
+
+.calculator__bottom-calc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.bottom-calc__calc-select::before {
+  content: '';
+  display: block;
+  width: 11px;
+  height: 11px;
+  position: absolute;
+  bottom: 17px;
+  right: 18px;
+  background-image: url("../img/bottom-calc__calc-select.svg");
+  pointer-events: none;
+
+}
+
+.bottom-calc__calc-select {
+  width: 173px;
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.calc-select__label-text {
+  display: block;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 15px 0;
+}
+
+.calc-select__selector {
+  display: block;
+  width: 100%;
+  border: 0;
+  color: #505050;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 16px 18px;
+  appearance: none;
+}
+
+.experts {
+}
+
+.experts__experts-cards {
+  display: flex;
+  flex-direction: row;
+}
+
+.experts-cards__expert-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f7f7f7;
+  padding: 34px 43px 32px 28px;
+  width: 604px;
+  margin-right: 29px;
+
+}
+
+.expert-card__card-photo {
+}
+
+.expert-card__card-describe {
+  width: 298px;
+
+}
+
+.card-describe__name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.card-describe__position {
+  color: #E5D2A5;
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 26px;
+}
+
+.card-describe__describe-text {
+  margin-bottom: 31px;
+  color: #8C8C8C;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.card-describe__cta {
+  border-radius: 3px;
+  background: #D82F2B;
+  box-shadow: 0px 7px 35px 0px rgba(216, 47, 43, 0.50);
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 12px 24px;
+  display: inline-block;
+}
+
+.reviews {
+  margin-bottom: 135px;
+}
+
+.reviews__review-card {
+  border-radius: 2px;
+  background: #F7F7F7;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+  width: 660px;
+  padding: 33px 32px 28px 32px;
+  margin-bottom: 36px;
+}
+
+.review-card__review-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.review-top__photo {
+  margin-right: 36px;
+}
+
+.review-top__name-score {
+
+}
+
+.name-score__name {
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 20px;
+}
+
+.review-card__review {
+  color: #8C8C8C;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 23px;
+}
+
+.reviews__btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.reviews__btn {
+  border-radius: 3px;
+  background: #D82F2B;
+  box-shadow: 0px 7px 35px 0px rgba(216, 47, 43, 0.50);
+  color: #FFF;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 15px 52px;
+}
+
+.benefits {
+  background-image: url("../img/benefits.png");
+  background-position-y: -150px;
+  padding-top: 82px;
+  padding-bottom: 60px;
+}
+
+.benefits__top {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 60px;
+}
+
+.top__benefit-describe {
+  width: 522px;
+  background-color: rgba(255, 255, 255, 0.50);
+  padding: 39px 32px 40px 42px;
+  margin-right: 40px;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.top__benefit-describe h2 {
+  display: inline;
+}
+
+.top__benefit-list {
+  width: 720px;
+}
+
+.benefit-list__benefit-item {
+  background-image: url("../img/benefit-list__benefit-item.svg");
+  background-repeat: no-repeat;
+  padding-left: 50px;
+  min-height: 40px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 23px;
+  margin-bottom: 23px;
+}
+
+.benefits__bottom {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 30px;
+  background-image: url("../img/benefits__bottom.svg");
+  background-repeat: no-repeat;
+  padding-left: 64px;
+}
+
+.advantages {
+
+}
+
+.advantages__advantage-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.advantage-list__advantage-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 569px;
+  align-items: center;
+}
+
+.advantage-item__number {
+  font-size: 70px;
+  font-weight: 700;
+  margin-right: 31px;
+
+}
+
+.advantage-item__picture {
+  margin-right: 20px;
+}
+
+.advantage-item__advantage-name {
+  font-size: 24px;
+  font-weight: 700;
+  padding-right: 25px;
+}
+
+.advantage-item__advantage-text::before {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 52px;
+  background-color: #E5D2A5;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+.advantage-item__advantage-text {
+  font-size: 24px;
+  position: relative;
+  padding-left: 36px;
+  min-width: 260px;
+}
