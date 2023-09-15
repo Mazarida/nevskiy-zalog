@@ -28,11 +28,45 @@ jQuery(function($){
         $('.js-percent').html(percent);
         const monthly = Math.round(window.sum * percent / 100 / 12 / (1 - Math.pow(1 + percent / 100 / 12, -window.duration)))
         $('.js-monthly').html(monthly.toLocaleString('en-US').replace(/,/g, '&nbsp;'))
-//             `X=SxP/1-(1+p)x(1-m)
-// • X - ежемесячный платеж по кредиту, который и нужно рассчитать
-// • S - общий размер ипотеки
-// . Р - месячная процентная ставка (т.е. годовая ставка, которая разделена на 12 мес.)
-// • М - срок ипотечного кредитования (считается в месяцах)`
+        const inputData = {
+            sum: `${window.sum}-rub`,
+        }
+        if (window.duration === 6) {
+            inputData['duration'] = 'na-polgoda'
+        }
+        if (window.duration === 12) {
+            inputData['duration'] = `na-1-god`
+        }
+        if (window.duration >= 12*2) {
+            inputData['duration'] = `na-${window.duration / 12}-goda`
+        }
+        if (window.duration >= 12*5) {
+            inputData['duration'] = `na-${window.duration / 12}-let`
+        }
+        $('.calculator__bottom-calc select').each(function() {
+            if ($(this).val()) {
+                inputData[$(this).attr("name")] = $(this).val()
+            }
+        })
+        if (!window.calcBusy) {
+            window.calcBusy = true
+            $.ajax({
+                url: '/?get_calc_data=1',
+                type: 'post',
+                data: inputData,
+                success: function (data) {
+                    const responseObj = JSON.parse(data)
+                    $('[data-action="title-replace"]').html(responseObj.title)
+                    $('title').html(responseObj.title)
+                    window.history.replaceState({}, responseObj.title, responseObj.url)
+                },
+                complete: function () {
+                    window.calcBusy = false
+                }
+            });
+        } else {
+            setTimeout(recount, 500)
+        }
     }
 //     `
 //     Нулевой клиент
@@ -139,6 +173,10 @@ jQuery(function($){
         max: priceVals.length - 1,
         slide: function(event, ui) {
             const value = ui.value
+            $('.js-price-val').html(`${priceVals[value].toLocaleString('en-US').replace(/,/g, '&nbsp;')}&nbsp;руб`)
+        },
+        change: function(event, ui) {
+            const value = ui.value
             window.sum = priceVals[value]
             $('.js-price-val').html(`${priceVals[value].toLocaleString('en-US').replace(/,/g, '&nbsp;')}&nbsp;руб`)
             recount()
@@ -152,6 +190,10 @@ jQuery(function($){
         min: 0,
         max: durationVals.length - 1,
         slide: function(event, ui) {
+            const value = ui.value
+            $('.js-duration-val').html(durationVals[value].name)
+        },
+        change: function(event, ui) {
             const value = ui.value
             $('.js-duration-val').html(durationVals[value].name)
             window.duration = durationVals[value].value

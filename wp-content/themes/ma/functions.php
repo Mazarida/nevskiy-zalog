@@ -50,6 +50,39 @@ function anew_rewrite_rule(){
     add_rewrite_rule('^kredit\\/(.*)','index.php?is_generated_page=1','top');
 }
 
+add_action('init', 'get_calc_data_response');
+function get_calc_data_response() {
+    if (isset($_GET['get_calc_data'])) {
+        die(json_encode(get_calc_data()));
+    }
+}
+
+function get_calc_data() {
+    global $calc_data;
+    $max_depth = (int)get_field('max_depth', 'option');
+    if (!$calc_data) {
+        $filters = get_calc_filters();
+        $url_fragments = [];
+        $bullets = [];
+        foreach ($filters['vals'] as $filter_val) {
+            if (in_array($filter_val['filter_option_slug'], $_POST)) {
+                if (count($url_fragments) < $max_depth) {
+                    $url_fragments[] = $filter_val['filter_option_slug'];
+                } else {
+                    $bullets[] = $filter_val['filter_option_template'];
+                }
+            }
+        }
+        $url = '/kredit/'.implode('/', $url_fragments).'/';
+        $calc_data = [
+            'title' => get_calc_template($url),
+            'bullets' => $bullets,
+            'url' => $url,
+        ];
+    }
+    return $calc_data;
+}
+
 add_action('query_vars','controller_set_query_var');
 function controller_set_query_var($vars) {
     array_push($vars, 'is_generated_page'); // ref url redirected to in add rewrite rule
@@ -60,31 +93,72 @@ function controller_set_query_var($vars) {
 add_filter('template_include', 'include_controller');
 function include_controller($template){
     if(get_query_var('is_generated_page')){
-        $new_template = get_stylesheet_directory().'/page-calc.php';
+        $new_template = get_stylesheet_directory().'/page-home.php';
         if(file_exists($new_template)){
             $template = $new_template;
-
+            add_filter('document_title', 'get_calc_title');
         }
     }
     return $template;
+}
+
+function get_calc_title($title) {
+    global $replace_title;
+    $replace_title = get_calc_template();
+    return get_calc_template().' | '.get_bloginfo('name');
 }
 
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page();
 }
 
-function get_calc_template() {
-    $template = [];
-    while ( have_rows( 'filter', 'option' ) ) : the_row();
-        $filter_label = get_sub_field( 'filter_label' );
-        while ( have_rows( 'filter_options', 'option' ) ) : the_row();
-            $filter_option_label = get_sub_field( 'filter_option_label' );
-            $filter_option_slug = get_sub_field( 'filter_option_slug' );
-            $filter_option_template = get_sub_field( 'filter_option_template' );
-            if (strpos($_SERVER['REQUEST_URI'], $filter_option_slug)) {
-                $template[] = $filter_option_template;
-            }
+function get_calc_filters() {
+    global $filters_array;
+    if (!$filters_array) {
+        $filters_array = [
+            'vals' => [],
+            'avail_filters' => [],
+        ];
+        while ( have_rows( 'filter', 'option' ) ) : the_row();
+            $filter_slug = get_sub_field( 'filter_slug' );
+            $filter_label = get_sub_field( 'filter_label' );
+            $filter_visible_calc = get_sub_field( 'filter_visible_calc' );
+            $filters_array['avail_filters'][$filter_slug] = [
+                'options' => [],
+                'filter_slug' => $filter_slug,
+                'filter_label' => $filter_label,
+                'filter_visible_calc' => $filter_visible_calc,
+            ];
+            while ( have_rows( 'filter_options', 'option' ) ) : the_row();
+                $filters_array['vals'][] = [
+                    'filter_option_label' => get_sub_field( 'filter_option_label' ),
+                    'filter_option_slug' => get_sub_field( 'filter_option_slug' ),
+                    'filter_option_template' => lcfirst(get_sub_field( 'filter_option_template' )),
+                ];
+                $filters_array['avail_filters'][$filter_slug]['options'][] = [
+                    'filter_option_label' => get_sub_field( 'filter_option_label' ),
+                    'filter_option_slug' => get_sub_field( 'filter_option_slug' ),
+                    'filter_option_template' => get_sub_field( 'filter_option_template' ),
+                ];
+            endwhile;
         endwhile;
-    endwhile;
+    }
+    return $filters_array;
+}
+
+function get_calc_template($url = '') {
+    $template = ['Кредит'];
+    if (!$url) {
+        $url = $_SERVER['REQUEST_URI'];
+    }
+    $url = explode('/', $url);
+    $filters = get_calc_filters();
+    foreach ($filters['vals'] as $filter) {
+        if (in_array($filter['filter_option_slug'], $url)) {
+            $template[] = mb_strtolower($filter['filter_option_template']);
+        }
+    }
     return implode(' ', $template);
 }
+
+
