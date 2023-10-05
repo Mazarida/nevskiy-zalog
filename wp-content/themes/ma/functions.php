@@ -59,24 +59,24 @@ function get_calc_data_response() {
 
 function get_calc_data() {
     global $calc_data;
-    $max_depth = (int)get_field('max_depth', 'option');
+//    $max_depth = (int)get_field('max_depth', 'option');
     if (!$calc_data) {
         $filters = get_calc_filters();
         $url_fragments = [];
-        $bullets = [];
+//        $bullets = [];
         foreach ($filters['vals'] as $filter_val) {
             if (in_array($filter_val['filter_option_slug'], $_POST)) {
-                if (count($url_fragments) < $max_depth) {
+//                if (count($url_fragments) < $max_depth) {
                     $url_fragments[] = $filter_val['filter_option_slug'];
-                } else {
-                    $bullets[] = $filter_val['filter_option_template'];
-                }
+//                } else {
+//                    $bullets[] = $filter_val['filter_option_template'];
+//                }
             }
         }
         $url = '/kredit/'.implode('/', $url_fragments).'/';
         $calc_data = [
             'title' => get_calc_template($url),
-            'bullets' => $bullets,
+//            'bullets' => $bullets,
             'url' => $url,
         ];
     }
@@ -121,11 +121,13 @@ function get_calc_filters() {
         ];
         while ( have_rows( 'filter', 'option' ) ) : the_row();
             $filter_slug = get_sub_field( 'filter_slug' );
+            $quiz_step = get_sub_field( 'quiz_step' );
             $filter_label = get_sub_field( 'filter_label' );
             $filter_visible_calc = get_sub_field( 'filter_visible_calc' );
             $filters_array['avail_filters'][$filter_slug] = [
                 'options' => [],
                 'filter_slug' => $filter_slug,
+                'quiz_step' => $quiz_step,
                 'filter_label' => $filter_label,
                 'filter_visible_calc' => $filter_visible_calc,
             ];
@@ -146,7 +148,7 @@ function get_calc_filters() {
     return $filters_array;
 }
 
-function get_calc_template($url = '') {
+function get_calc_template($url = '', $n = 4) {
     $template = ['Кредит'];
     if (!$url) {
         $url = $_SERVER['REQUEST_URI'];
@@ -155,7 +157,10 @@ function get_calc_template($url = '') {
     $filters = get_calc_filters();
     foreach ($filters['vals'] as $filter) {
         if (in_array($filter['filter_option_slug'], $url)) {
-            $template[] = mb_strtolower($filter['filter_option_template']);
+            if ($n > 0) {
+                $template[] = mb_strtolower($filter['filter_option_template']);
+            }
+            $n--;
         }
     }
     return implode(' ', $template);

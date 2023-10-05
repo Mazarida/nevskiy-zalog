@@ -26,24 +26,16 @@ jQuery(function($){
     window.recount = () => {
         const percent = getPercent();
         $('.js-percent').html(percent);
-        const monthly = Math.round(window.sum * percent / 100 / 12 / (1 - Math.pow(1 + percent / 100 / 12, -window.duration)))
-        $('.js-monthly').html(monthly.toLocaleString('en-US').replace(/,/g, '&nbsp;'))
-        const inputData = {
-            sum: `${window.sum}-rub`,
+        window.sum = Number($('[name="sum"]').val().replace(/[^0-9]/g, ''))
+        window.duration = durationVals.find(el => el.id === $('[name="duration"]').val()) ? durationVals.find(el => el.id === $('[name="duration"]').val())['value'] : ''
+        if (window.sum && window.duration) {
+            const monthly = Math.round(window.sum * percent / 100 / 12 / (1 - Math.pow(1 + percent / 100 / 12, -window.duration)))
+            $('.js-monthly').html(monthly.toLocaleString('en-US').replace(/,/g, '&nbsp;'))
+        } else {
+            $('.js-monthly').html("от 17 652")
         }
-        if (window.duration === 6) {
-            inputData['duration'] = 'na-polgoda'
-        }
-        if (window.duration === 12) {
-            inputData['duration'] = `na-1-god`
-        }
-        if (window.duration >= 12*2) {
-            inputData['duration'] = `na-${window.duration / 12}-goda`
-        }
-        if (window.duration >= 12*5) {
-            inputData['duration'] = `na-${window.duration / 12}-let`
-        }
-        $('.calculator__bottom-calc select').each(function() {
+        const inputData = {}
+        $('.calculate__calculator select').each(function() {
             if ($(this).val()) {
                 inputData[$(this).attr("name")] = $(this).val()
             }
@@ -111,59 +103,76 @@ jQuery(function($){
         {
             name: 'На полгода',
             value: 6,
+            id: 'na-polgoda',
         },
-
+        {
+            name: 'На 1 год',
+            value: 12,
+            id: 'na-god',
+        },
         {
             name: 'На год',
             value: 12,
+            id: 'na-1-god',
         },
         {
             name: 'На 2 года',
             value: 2 * 12,
+            id: 'na-2-goda',
         },
         {
             name: 'На 3 года',
             value: 3 * 12,
+            id: 'na-3-goda',
         },
         {
             name: 'На 4 года',
             value: 4 * 12,
+            id: 'na-4-goda',
         },
         {
             name: 'На 5 лет',
             value: 5 * 12,
+            id: 'na-5-let',
         },
         {
             name: 'На 6 лет',
             value: 6 * 12,
+            id: 'na-6-let',
         },
         {
             name: 'На 7 лет',
             value: 7 * 12,
+            id: 'na-7-let',
         },
         {
             name: 'На 8 лет',
             value: 8 * 12,
+            id: 'na-8-let',
         },
         {
             name: 'На 9 лет',
             value: 9 * 12,
+            id: 'na-9-let',
         },
         {
             name: 'На 10 лет',
             value: 10 * 12,
+            id: 'na-10-let',
         },
         {
             name: 'На 11 лет',
             value: 11 * 12,
+            id: 'na-11-let',
         },
         {
             name: 'На 12 лет',
             value: 12 * 12,
+            id: 'na-12-let',
         }
     ]
-    window.duration = durationVals[0].value
-    window.sum = priceVals[0]
+    window.duration = undefined
+    window.sum = undefined
     $('.slider-price').closest('.sliders__ui-slider').append($(`
         <div class="js-slider-min-max"><div class="js-slider-min">${priceVals[0].toLocaleString('en-US').replace(/,/g, '&nbsp;')}</div><div class="js-slider-max">${priceVals[priceVals.length-1].toLocaleString('en-US').replace(/,/g, '&nbsp;')}</div></div>    
     `))
