@@ -49,7 +49,7 @@ gulp.task('dsk_vw', function () {
         .pipe(postcss([ autoprefixer() ]))
         .pipe(postcss([
             pxtoviewport({
-                viewportWidth: 1280,
+                viewportWidth: 1350,
                 viewportUnit: 'vw',
                 minPixelValue: 2,
                 selectorBlackList: [
@@ -60,7 +60,7 @@ gulp.task('dsk_vw', function () {
                 ],
             })
         ]))
-        .pipe(inject.wrap('@media (min-width: 1025px) and (max-width: 1280px) {\n', '\n}'))
+        .pipe(inject.wrap('@media (min-width: 1025px) and (max-width: 1350px) {\n', '\n}'))
         .pipe(rename('style_dsk_vw.css'))
         .pipe(gulp.dest('assets/dist'));
 });
@@ -69,7 +69,7 @@ gulp.task('dsk_px', function () {
     return gulp.src('assets/dist/style_dsk.css')
         .pipe(sourcemaps.init())
         .pipe(postcss([ autoprefixer() ]))
-        .pipe(inject.wrap('@media (min-width: 1281px) {\n', '\n}'))
+        .pipe(inject.wrap('@media (min-width: 1351px) {\n', '\n}'))
         .pipe(rename('style_dsk_px.css'))
         .pipe(gulp.dest('assets/dist'));
 });

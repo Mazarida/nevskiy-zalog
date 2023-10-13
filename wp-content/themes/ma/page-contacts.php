@@ -159,7 +159,7 @@ get_header(); ?>
         </form>
     </div>
     <div class="contacts-map">
-        <img class="contacts-map__map-container" src="assets/img/dev_contacts-map.jpg" alt="">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7affce878c32b0f7df2e0146576ae885b983e559c42f765f7b7cba1ec6159428&amp;width=100%25&amp;height=530&amp;lang=ru_RU&amp;scroll=false"></script>
     </div>
 </section>
 <?php get_footer(); ?>

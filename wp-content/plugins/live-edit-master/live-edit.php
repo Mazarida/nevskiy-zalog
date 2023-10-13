@@ -29,7 +29,7 @@ function live_edit_plugins_loaded() {
 
 
 	// include compatible plugin version
-	include_once("live-edit-v{$version}.php");
+	include_once("live-edit-v{$version}-flex.php");
 
 }
 

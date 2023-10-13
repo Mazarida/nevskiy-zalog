@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php wp_head(); ?>
+    <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/lib/swiper-bundle.min.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/dist/style_mob_vw.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/dist/style_dsk_vw.css">
@@ -53,7 +54,7 @@
                 <strong>Экспертная помощь</strong> <br>
                 в получении кредита
             </div>
-            <a href="#" class="flex-row head-top__top-phone">
+            <a href="tel:+79196088865" class="flex-row head-top__top-phone">
                 <span class="top-phone__top-phone-icon"></span>
                 <span class="top-phone__top-phone-text">
                     +7 (919) 608-88-65
@@ -63,14 +64,14 @@
                 <div class="head-mess__mess-text">
                     Написать в:
                 </div>
-                <a href="#" class="head-mess__head-wa-icon"></a>
-                <div class="desktop-only head-mess__wa-text">
+                <a href="https://wa.me/+79196088865" target="_blank" class="head-mess__head-wa-icon"></a>
+                <a href="https://wa.me/+79196088865" target="_blank" class="desktop-only head-mess__wa-text">
                     Whatsapp
-                </div>
-                <a href="#" class="head-mess__head-tg-icon"></a>
-                <div class="desktop-only head-mess__tg-text">
+                </a>
+                <a href="https://t.me/ValerieAndriyako" target="_blank" class="head-mess__head-tg-icon"></a>
+                <a href="https://t.me/ValerieAndriyako" target="_blank" class="desktop-only head-mess__tg-text">
                     Telegram
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -98,10 +99,10 @@
                 &times;
             </a>
         </nav>
-        <a href="#" class="flex-row head-bot__head-email">
+        <a href="mailto:nevskizalog@gmail.com" class="flex-row head-bot__head-email">
             <span class="head-email__email-icon"></span>
             <span class="head-email__email-text">
-                nevski@zalog.ru
+                nevskizalog@gmail.com
             </span>
         </a>
         <input type="text" placeholder="Поиск..." class="desktop-only head-bot__search-input">

@@ -120,7 +120,7 @@ get_header(); ?>
             </div>
         </div>
     </div>
-    <div class="calculate__calculator desktop-only">
+    <div <?php live_edit('filter', 'option') ?> class="calculate__calculator desktop-only">
         <div class="calculator__top-calc">
             <div class="top-calc__sliders">
                 <?php foreach ($filters['avail_filters'] as $filter): if (!in_array($filter['filter_slug'], ['sum', 'duration'])) { continue; } ?>
@@ -242,6 +242,22 @@ get_header(); ?>
     <h2 class="nzlg-title service-video__video-title">
         Видео <strong>на тему услуги</strong>
     </h2>
+    <p class="desktop-only service-video__text">
+        <strong data-action="title-replace">
+            <?php global $replace_title;
+            if ($replace_title) {
+                echo $replace_title;
+            } else {
+                ?>
+                Кредит под залог квартиры
+                <?php
+            }
+            ?>
+        </strong>
+        <br>
+        <br>
+        это удобный и надежный способ получить необходимую сумму денег при наличии недвижимости, которая будет выступать в роли залога. Наша компания предлагает выгодные условия кредитования и индивидуальный подход к каждому клиенту. Оформление кредита под залог квартиры позволяет получить средства налюбые нужды, будь то покупка новой недвижимости, образование или реализация бизнес-проекта
+    </p>
     <div style="background-image: url('<?php bloginfo('template_url'); ?>/assets/img/service-video__video-player.jpg')" class="service-video__video-player">
         <div class="video-player__icon-play"></div>
     </div>
@@ -689,12 +705,19 @@ get_header(); ?>
                 01
             </div>
             <div class="road-item__step-img">
-                <svg width="67" height="127" viewBox="0 0 67 127" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="mobile-only" width="67" height="127" viewBox="0 0 67 127" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M66.3232 41.1729L66.3232 85.7718" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M56.8484 63.4795L65.8765 63.4795" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M0.676756 85.7718L0.676758 41.1729" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M10.1514 63.4795L1.12329 63.4795" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M18.0427 114.753L18.0427 4.91441C18.0427 1.14663 22.3469 -0.969328 25.2976 1.36505L29.3447 4.57312C30.9283 5.82905 33.1346 5.87 34.7588 4.66868L39.8752 0.887257C42.8394 -1.29696 47.0083 0.832652 47.0083 4.53217L47.0083 114.821C47.0083 116.214 46.3721 117.524 45.2758 118.384L35.598 125.988C34.0144 127.231 31.7946 127.258 30.1839 126.057L19.8835 118.384C18.7465 117.538 18.0697 116.187 18.0697 114.753L18.0427 114.753Z" fill="#E5D2A5"/>
+                </svg>
+                <svg class="desktop-only" width="303" height="96" viewBox="0 0 303 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M273.929 70.1478L11.9902 70.1478C3.00496 70.1478 -2.04112 63.9805 3.52582 59.7527L11.1763 53.9539C14.1714 51.6848 14.2691 48.5236 11.4042 46.1963L2.38647 38.8654C-2.82236 34.6181 2.25619 28.6448 11.0786 28.6448L274.092 28.6448C277.413 28.6448 280.538 29.5563 282.589 31.1272L300.722 44.9939C303.685 47.263 303.75 50.4436 300.885 52.7514L282.589 67.5102C280.57 69.1393 277.348 70.109 273.929 70.109V70.1478Z" fill="#E5D2A5"/>
+                    <path d="M98.4558 0.969727L204.814 0.969727" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M151.652 14.5456V1.60986" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M204.814 95.0303L98.4558 95.0303" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M151.652 81.4546V94.3903" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
             <div class="road-item__step-text">
@@ -707,12 +730,19 @@ get_header(); ?>
                 02
             </div>
             <div class="road-item__step-img">
-                <svg width="67" height="128" viewBox="0 0 67 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M66.3232 41.9385L66.3232 86.5375" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M56.8484 64.2314L65.8765 64.2314" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M0.676756 86.5375L0.676758 41.9385" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M10.1514 64.2314L1.12329 64.2314" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M18.0427 115.506L18.0427 5.66733C18.0427 1.89956 22.3469 -0.2164 25.2976 2.11798L29.3447 5.32605C30.9283 6.58197 33.1346 6.62293 34.7588 5.42161L39.8752 1.64019C42.8394 -0.54403 47.0083 1.58558 47.0083 5.2851L47.0083 115.574C47.0083 116.967 46.3721 118.277 45.2758 119.137L35.598 126.741C34.0144 127.983 31.7946 128.011 30.1839 126.809L19.8835 119.137C18.7465 118.291 18.0697 116.94 18.0697 115.506L18.0427 115.506Z" fill="#AB090D"/>
+                <svg class="mobile-only" width="67" height="127" viewBox="0 0 67 127" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M66.3232 41.1729L66.3232 85.7718" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M56.8484 63.4795L65.8765 63.4795" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M0.676756 85.7718L0.676758 41.1729" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10.1514 63.4795L1.12329 63.4795" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18.0427 114.753L18.0427 4.91441C18.0427 1.14663 22.3469 -0.969328 25.2976 1.36505L29.3447 4.57312C30.9283 5.82905 33.1346 5.87 34.7588 4.66868L39.8752 0.887257C42.8394 -1.29696 47.0083 0.832652 47.0083 4.53217L47.0083 114.821C47.0083 116.214 46.3721 117.524 45.2758 118.384L35.598 125.988C34.0144 127.231 31.7946 127.258 30.1839 126.057L19.8835 118.384C18.7465 117.538 18.0697 116.187 18.0697 114.753L18.0427 114.753Z" fill="#AB090D"/>
+                </svg>
+                <svg class="desktop-only" width="303" height="96" viewBox="0 0 303 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M273.929 70.1478L11.9902 70.1478C3.00496 70.1478 -2.04112 63.9805 3.52582 59.7527L11.1763 53.9539C14.1714 51.6848 14.2691 48.5236 11.4042 46.1963L2.38647 38.8654C-2.82236 34.6181 2.25619 28.6448 11.0786 28.6448L274.092 28.6448C277.413 28.6448 280.538 29.5563 282.589 31.1272L300.722 44.9939C303.685 47.263 303.75 50.4436 300.885 52.7514L282.589 67.5102C280.57 69.1393 277.348 70.109 273.929 70.109V70.1478Z" fill="#AB090D"/>
+                    <path d="M98.4558 0.969727L204.814 0.969727" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M151.652 14.5456V1.60986" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M204.814 95.0303L98.4558 95.0303" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M151.652 81.4546V94.3903" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
             <div class="road-item__step-text">
@@ -725,12 +755,19 @@ get_header(); ?>
                 03
             </div>
             <div class="road-item__step-img">
-                <svg width="67" height="127" viewBox="0 0 67 127" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="mobile-only" width="67" height="127" viewBox="0 0 67 127" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M66.3232 41.1729L66.3232 85.7718" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M56.8484 63.4795L65.8765 63.4795" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M0.676756 85.7718L0.676758 41.1729" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M10.1514 63.4795L1.12329 63.4795" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M18.0427 114.753L18.0427 4.91441C18.0427 1.14663 22.3469 -0.969328 25.2976 1.36505L29.3447 4.57312C30.9283 5.82905 33.1346 5.87 34.7588 4.66868L39.8752 0.887257C42.8394 -1.29696 47.0083 0.832652 47.0083 4.53217L47.0083 114.821C47.0083 116.214 46.3721 117.524 45.2758 118.384L35.598 125.988C34.0144 127.231 31.7946 127.258 30.1839 126.057L19.8835 118.384C18.7465 117.538 18.0697 116.187 18.0697 114.753L18.0427 114.753Z" fill="#E5D2A5"/>
+                </svg>
+                <svg class="desktop-only" width="303" height="96" viewBox="0 0 303 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M273.929 70.1478L11.9902 70.1478C3.00496 70.1478 -2.04112 63.9805 3.52582 59.7527L11.1763 53.9539C14.1714 51.6848 14.2691 48.5236 11.4042 46.1963L2.38647 38.8654C-2.82236 34.6181 2.25619 28.6448 11.0786 28.6448L274.092 28.6448C277.413 28.6448 280.538 29.5563 282.589 31.1272L300.722 44.9939C303.685 47.263 303.75 50.4436 300.885 52.7514L282.589 67.5102C280.57 69.1393 277.348 70.109 273.929 70.109V70.1478Z" fill="#E5D2A5"/>
+                    <path d="M98.4558 0.969727L204.814 0.969727" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M151.652 14.5456V1.60986" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M204.814 95.0303L98.4558 95.0303" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M151.652 81.4546V94.3903" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
             <div class="road-item__step-text">
@@ -743,12 +780,19 @@ get_header(); ?>
                 04
             </div>
             <div class="road-item__step-img">
-                <svg width="67" height="128" viewBox="0 0 67 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M66.3232 41.9385L66.3232 86.5375" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M56.8484 64.2314L65.8765 64.2314" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M0.676756 86.5375L0.676758 41.9385" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M10.1514 64.2314L1.12329 64.2314" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M18.0427 115.506L18.0427 5.66733C18.0427 1.89956 22.3469 -0.2164 25.2976 2.11798L29.3447 5.32605C30.9283 6.58197 33.1346 6.62293 34.7588 5.42161L39.8752 1.64019C42.8394 -0.54403 47.0083 1.58558 47.0083 5.2851L47.0083 115.574C47.0083 116.967 46.3721 118.277 45.2758 119.137L35.598 126.741C34.0144 127.983 31.7946 128.011 30.1839 126.809L19.8835 119.137C18.7465 118.291 18.0697 116.94 18.0697 115.506L18.0427 115.506Z" fill="#AB090D"/>
+                <svg class="mobile-only" width="67" height="127" viewBox="0 0 67 127" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M66.3232 41.1729L66.3232 85.7718" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M56.8484 63.4795L65.8765 63.4795" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M0.676756 85.7718L0.676758 41.1729" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10.1514 63.4795L1.12329 63.4795" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18.0427 114.753L18.0427 4.91441C18.0427 1.14663 22.3469 -0.969328 25.2976 1.36505L29.3447 4.57312C30.9283 5.82905 33.1346 5.87 34.7588 4.66868L39.8752 0.887257C42.8394 -1.29696 47.0083 0.832652 47.0083 4.53217L47.0083 114.821C47.0083 116.214 46.3721 117.524 45.2758 118.384L35.598 125.988C34.0144 127.231 31.7946 127.258 30.1839 126.057L19.8835 118.384C18.7465 117.538 18.0697 116.187 18.0697 114.753L18.0427 114.753Z" fill="#AB090D"/>
+                </svg>
+                <svg class="desktop-only" width="303" height="96" viewBox="0 0 303 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M273.929 70.1478L11.9902 70.1478C3.00496 70.1478 -2.04112 63.9805 3.52582 59.7527L11.1763 53.9539C14.1714 51.6848 14.2691 48.5236 11.4042 46.1963L2.38647 38.8654C-2.82236 34.6181 2.25619 28.6448 11.0786 28.6448L274.092 28.6448C277.413 28.6448 280.538 29.5563 282.589 31.1272L300.722 44.9939C303.685 47.263 303.75 50.4436 300.885 52.7514L282.589 67.5102C280.57 69.1393 277.348 70.109 273.929 70.109V70.1478Z" fill="#AB090D"/>
+                    <path d="M98.4558 0.969727L204.814 0.969727" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M151.652 14.5456V1.60986" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M204.814 95.0303L98.4558 95.0303" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M151.652 81.4546V94.3903" stroke="#59595B" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
             <div class="road-item__step-text step-text-check">
@@ -758,78 +802,56 @@ get_header(); ?>
         </div>
     </div>
 </section>
-<section class="our-work">
-    <h2 class="nzlg-title our-work__ow-title">
-        Наша <strong>работа в цифрах</strong>
-    </h2>
-    <div style="background-image: url('<?php bloginfo('template_url'); ?>/assets/img/our-work__head-img.jpg')" class="our-work__head-img"></div>
-    <div class="our-work__counters">
-        <div class="flex-row counters__items-row">
-            <div class="items-row__item-counter">
-                <div class="item-counter__count">
-                    5000+
+<?php while ( have_rows( 'page_content', get_option('page_on_front') ) ) : the_row(); ?>
+    <?php if ( get_row_layout() == 'our_work_digits' ) : ?>
+        <section class="our-work">
+            <h2 <?php live_edit('page_content, flex-our_work_digits--header', get_option('page_on_front')) ?> class="nzlg-title our-work__ow-title">
+                <?php echo strip_tags( get_sub_field( 'header', get_option('page_on_front') ), ['strong'] ); ?>
+            </h2>
+            <div <?php live_edit('page_content, flex-our_work_digits--bg_img', get_option('page_on_front')) ?> style="background-image: url('<?php the_sub_field( 'bg_img' ); ?>')" class="our-work__head-img"></div>
+            <div <?php live_edit('page_content, flex-our_work_digits--counters', get_option('page_on_front')) ?> class="our-work__counters">
+                <?php while ( have_rows( 'counters', get_option('page_on_front') ) ) : the_row(); ?>
+                    <div class="flex-row counters__items-row">
+                        <?php while ( have_rows( 'counters_row' ) ) : the_row(); ?>
+                            <div class="items-row__item-counter">
+                                <div class="item-counter__count">
+                                    <?php the_sub_field( 'value' ); ?>
+                                </div>
+                                <div class="item-counter__legend">
+                                    <?php the_sub_field( 'label' ); ?>
+                                </div>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                <?php endwhile; ?>
+            </div>
+            <div class="flex-row our-work__partners">
+                <div class="partners__header">
+                    Наши <strong>банки
+                        -партнеры</strong>
                 </div>
-                <div class="item-counter__legend">
-                    Количество выданных
-                    кредитов
+                <div class="partners__prt-logos">
+                    <div class="flex-row prt-logos__logos-row">
+                        <div class="logos-row__logo-item">
+                            <img class="img-crop" src="<?php bloginfo('template_url'); ?>/assets/img/logo1.png" alt="">
+                        </div>
+                        <div class="logos-row__logo-item">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/img/logo2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="flex-row prt-logos__logos-row">
+                        <div class="logos-row__logo-item">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/img/logo3.png" alt="">
+                        </div>
+                        <div class="logos-row__logo-item">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/img/logo4.png" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="items-row__item-counter">
-                <div class="item-counter__count">
-                    500 <span class="count__text-sm">млн р.</span>
-                </div>
-                <div class="item-counter__legend">
-                    Общая сумма выданных
-                    кредитов
-                </div>
-            </div>
-        </div>
-        <div class="flex-row counters__items-row">
-            <div class="items-row__item-counter">
-                <div class="item-counter__count">
-                    12%
-                </div>
-                <div class="item-counter__legend">
-                    Средняя ставка
-                    по кредитам
-                </div>
-            </div>
-            <div class="items-row__item-counter">
-                <div class="item-counter__count">
-                    98%
-                </div>
-                <div class="item-counter__legend">
-                    Процент возврата
-                    кредитов
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="flex-row our-work__partners">
-        <div class="partners__header">
-            Наши <strong>банки
-                -партнеры</strong>
-        </div>
-        <div class="partners__prt-logos">
-            <div class="flex-row prt-logos__logos-row">
-                <div class="logos-row__logo-item">
-                    <img class="img-crop" src="<?php bloginfo('template_url'); ?>/assets/img/logo1.png" alt="">
-                </div>
-                <div class="logos-row__logo-item">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/logo2.png" alt="">
-                </div>
-            </div>
-            <div class="flex-row prt-logos__logos-row">
-                <div class="logos-row__logo-item">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/logo3.png" alt="">
-                </div>
-                <div class="logos-row__logo-item">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/logo4.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
+    <?php endif; ?>
+<?php endwhile; ?>
 <section class="action">
     <h3 class="action__title">
         Подберем для вас индивидуальные условия
@@ -844,19 +866,19 @@ get_header(); ?>
     </h2>
     <div class="videos__video-wrapper">
         <div class="video-wrapper__vds-item">
-            <iframe class="vds-item__video" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class="vds-item__video" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <div class="vds-item__title">
                 Плохая кредитная история?
             </div>
         </div>
         <div class="video-wrapper__vds-item">
-            <iframe class="vds-item__video" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class="vds-item__video" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <div class="vds-item__title">
                 У вас нет времени ездить по банкам
             </div>
         </div>
         <div class="video-wrapper__vds-item">
-            <iframe class="vds-item__video" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class="vds-item__video" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <div class="vds-item__title">
                 Вам одобрили кредит с высокой процентной ставкой
             </div>
@@ -1038,7 +1060,7 @@ get_header(); ?>
             Нажмите на ссылку, чтобы перейти
             на страницу скачивания файла
         </div>
-        <form action="" class="modal-front__callback-form">
+        <form action="/" class="modal-front__callback-form">
             <a href="#" class="callback-form__text-input text-input-link">
                 http:/yandex.disk/urldownloadfilechecklistfinance
             </a>
@@ -1057,7 +1079,7 @@ get_header(); ?>
             После отправки формы вы получите
             ссылку на файл с чек-листом
         </div>
-        <form action="" class="modal-front__callback-form">
+        <form action="/" class="modal-front__callback-form">
             <input placeholder="Ваше имя" type="text" class="callback-form__text-input">
             <input placeholder="Номер телефона" type="text" class="callback-form__text-input">
             <button type="submit" class="callback-form__btn-primary">
@@ -1082,7 +1104,7 @@ get_header(); ?>
             Наш сотрудник свяжется
             с Вами в ближайшее время
         </div>
-        <form action="" class="modal-front__callback-form">
+        <form action="/" class="modal-front__callback-form">
             <input placeholder="Ваше имя" type="text" class="callback-form__text-input">
             <input placeholder="Номер телефона" type="text" class="callback-form__text-input">
             <button type="submit" class="callback-form__btn-primary">

@@ -166,4 +166,3 @@ function get_calc_template($url = '', $n = 4) {
     return implode(' ', $template);
 }
 
-

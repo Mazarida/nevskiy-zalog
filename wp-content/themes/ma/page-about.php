@@ -63,7 +63,7 @@ get_header(); ?>
   </h2>
   <div class="our-mission__cite">
     <div class="flex-row cite__author">
-      <div style="background-image: url('assets/img/author__ava.jpg')" class="author__ava"></div>
+      <div style="background-image: url('<?php bloginfo('template_url'); ?>/assets/img/author__ava.jpg')" class="author__ava"></div>
       <div class="author__auth-meta">
         <div class="auth-meta__auth-name">
           Олеся Перепеч
@@ -95,14 +95,14 @@ get_header(); ?>
   <h2 class="nzlg-title about-video__ov-title">
     <strong>Ваши интересы</strong> перед банками будут представлять наши сотрудники
   </h2>
-  <iframe class="about-video__player" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe class="about-video__player" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 <section class="partner">
   <h2 class="nzlg-title partner__prt-title">
     <strong>Официальный</strong> партнер множества банков РФ
   </h2>
   <div class="partner__our-work">
-    <div style="background-image: url('assets/img/our-work__head-img.jpg')" class="our-work__head-img head-img-partner"></div>
+    <div <?php live_edit('our-work__head-img', get_option('page_on_front')) ?> style="background-image: url('<?php echo get_field('our-work__head-img', get_option('page_on_front')); ?>')" class="our-work__head-img head-img-partner"></div>
     <div class="our-work__counters our-work__counters-partner">
       <div class="flex-row counters__items-row">
         <div class="items-row__item-counter">
@@ -170,18 +170,18 @@ get_header(); ?>
       <div class="partners__prt-logos">
         <div class="flex-row prt-logos__logos-row">
           <div class="logos-row__logo-item">
-            <img class="img-crop" src="assets/img/logo1.png" alt="">
+            <img class="img-crop" src="<?php bloginfo('template_url'); ?>/assets/img/logo1.png" alt="">
           </div>
           <div class="logos-row__logo-item">
-            <img src="assets/img/logo2.png" alt="">
+            <img src="<?php bloginfo('template_url'); ?>/assets/img/logo2.png" alt="">
           </div>
         </div>
         <div class="flex-row prt-logos__logos-row">
           <div class="logos-row__logo-item">
-            <img src="assets/img/logo3.png" alt="">
+            <img src="<?php bloginfo('template_url'); ?>/assets/img/logo3.png" alt="">
           </div>
           <div class="logos-row__logo-item">
-            <img src="assets/img/logo4.png" alt="">
+            <img src="<?php bloginfo('template_url'); ?>/assets/img/logo4.png" alt="">
           </div>
         </div>
       </div>
@@ -196,22 +196,22 @@ get_header(); ?>
         <div class="swiper slider-crt__slide-wrapper js-slider-certificates">
             <div class="swiper-wrapper">
                 <div class="slide-wrapper__crt-slide swiper-slide">
-                    <img class="cert__slide-img" src="assets/img/certificate1.jpg" alt="">
+                    <img class="cert__slide-img" src="<?php bloginfo('template_url'); ?>/assets/img/certificate1.jpg" alt="">
                 </div>
                 <div class="slide-wrapper__crt-slide swiper-slide">
-                    <img class="cert__slide-img" src="assets/img/certificate2.jpg" alt="">
+                    <img class="cert__slide-img" src="<?php bloginfo('template_url'); ?>/assets/img/certificate2.jpg" alt="">
                 </div>
                 <div class="slide-wrapper__crt-slide swiper-slide">
-                    <img class="cert__slide-img" src="assets/img/certificate3.jpg" alt="">
+                    <img class="cert__slide-img" src="<?php bloginfo('template_url'); ?>/assets/img/certificate3.jpg" alt="">
                 </div>
                 <div class="slide-wrapper__crt-slide swiper-slide">
-                    <img class="cert__slide-img" src="assets/img/certificate4.jpg" alt="">
+                    <img class="cert__slide-img" src="<?php bloginfo('template_url'); ?>/assets/img/certificate4.jpg" alt="">
                 </div>
                 <div class="slide-wrapper__crt-slide swiper-slide">
-                    <img class="cert__slide-img" src="assets/img/certificate5.jpg" alt="">
+                    <img class="cert__slide-img" src="<?php bloginfo('template_url'); ?>/assets/img/certificate5.jpg" alt="">
                 </div>
                 <div class="slide-wrapper__crt-slide swiper-slide">
-                    <img class="cert__slide-img" src="assets/img/certificate6.jpg" alt="">
+                    <img class="cert__slide-img" src="<?php bloginfo('template_url'); ?>/assets/img/certificate6.jpg" alt="">
                 </div>
             </div>
             <div class="swiper-pagination"></div>

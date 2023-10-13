@@ -102,7 +102,13 @@ jQuery(function($){
         },
         slidesPerView: 'auto',
         ...($(window).outerWidth() >= 1020 ? {} : {
-            // effect: 'coverflow'
+            effect: 'cards',
+            cardsEffect: {
+                slideShadows: false,
+                rotate: false,
+                perSlideRotate: 0,
+                perSlideOffset: 21
+            },
         }),
     });
 
