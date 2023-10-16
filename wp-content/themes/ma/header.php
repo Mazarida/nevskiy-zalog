@@ -54,7 +54,7 @@
                 <strong>Экспертная помощь</strong> <br>
                 в получении кредита
             </div>
-            <a href="tel:+79196088865" class="flex-row head-top__top-phone">
+            <a href="tel:+79196088865" class="flex-row head-top__top-phone click-btn btn-style2">
                 <span class="top-phone__top-phone-icon"></span>
                 <span class="top-phone__top-phone-text">
                     +7 (919) 608-88-65
@@ -64,14 +64,21 @@
                 <div class="head-mess__mess-text">
                     Написать в:
                 </div>
-                <a href="https://wa.me/+79196088865" target="_blank" class="head-mess__head-wa-icon"></a>
-                <a href="https://wa.me/+79196088865" target="_blank" class="desktop-only head-mess__wa-text">
-                    Whatsapp
-                </a>
-                <a href="https://t.me/ValerieAndriyako" target="_blank" class="head-mess__head-tg-icon"></a>
-                <a href="https://t.me/ValerieAndriyako" target="_blank" class="desktop-only head-mess__tg-text">
-                    Telegram
-                </a>
+               
+					<span style="display:flex; align-items: center;" class="click-btn btn-style2">
+							 <a href="https://wa.me/+79196088865" target="_blank" class="head-mess__head-wa-icon"></a>
+					<a href="https://wa.me/+79196088865" target="_blank" class="desktop-only head-mess__wa-text ">
+						Whatsapp
+					</a>
+					</span>
+				
+					<span style="display:flex; align-items: center;" class="click-btn btn-style2">
+					<a href="https://t.me/ValerieAndriyako" target="_blank" class="head-mess__head-tg-icon"> </a>
+					<a href="https://t.me/ValerieAndriyako" target="_blank" class="desktop-only head-mess__tg-text ">
+						Telegram
+					</a>
+					</span>
+				</div>
             </div>
         </div>
     </div>
@@ -80,17 +87,17 @@
         <nav class="head-bot__popup-menus">
             <ul class="popup-menus__menu-item-pop">
                 <li class="menu-item-pop__pop-link-wrap">
-                    <a href="/" class="pop-link-wrap__link">
+                    <a href="/" class="pop-link-wrap__link click-btn btn-style2">
                         Главная
                     </a>
                 </li>
                 <li class="menu-item-pop__pop-link-wrap">
-                    <a href="/about/" class="pop-link-wrap__link">
+                    <a href="/about/" class="pop-link-wrap__link click-btn btn-style2">
                         О нас
                     </a>
                 </li>
                 <li class="menu-item-pop__pop-link-wrap">
-                    <a href="/contacts/" class="pop-link-wrap__link">
+                    <a href="/contacts/" class="pop-link-wrap__link click-btn btn-style2">
                         Контакты
                     </a>
                 </li>
@@ -99,7 +106,7 @@
                 &times;
             </a>
         </nav>
-        <a href="mailto:nevskizalog@gmail.com" class="flex-row head-bot__head-email">
+        <a href="mailto:nevskizalog@gmail.com" class="flex-row head-bot__head-email click-btn btn-style2">
             <span class="head-email__email-icon"></span>
             <span class="head-email__email-text">
                 nevskizalog@gmail.com

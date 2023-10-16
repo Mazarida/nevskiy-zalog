@@ -166,3 +166,12 @@ function get_calc_template($url = '', $n = 4) {
     return implode(' ', $template);
 }
 
+if( function_exists('acf_add_options_page') ) {
+$args = array(
+'page_title' => 'Параметры',
+'menu_title' => '',
+'menu_slug' => 'Options',
+'post_id' => 'options',
+);
+acf_add_options_page( $args );
+}

@@ -32,7 +32,7 @@ get_header(); ?>
                 Максимальная <strong>сумма кредита</strong>
             </li>
         </ul>
-        <a href="#" class="head-offer__offer-link">
+        <a href="#" class="head-offer__offer-link button-animate btn-5">
             Получить финансирование
         </a>
         <div class="flex-row head-offer__bonus-banner">
@@ -150,7 +150,7 @@ get_header(); ?>
                         <div class="result-item__value">
                             <span class="js-monthly">от 17 652</span> Р
                         </div>
-                        <a href="#" class="calc-result__btn">
+                        <a href="#" class="calc-result__btn button-animate-light btn-5">
                             Оформить сейчас
                         </a>
                     </div>
@@ -161,7 +161,7 @@ get_header(); ?>
                         <div class="result-item__value value-gap">
                             <span class="js-percent">от 9,49</span>%
                         </div>
-                        <a href="#" class="calc-result__btn-alt">
+                        <a href="#" class="calc-result__btn-alt btn-5">
                             Рассчитать заново
                         </a>
                     </div>
@@ -200,7 +200,8 @@ get_header(); ?>
         </div>
     </div>
 </section>
-<section class="our-team">
+
+<!-- <section class="our-team">
     <h2 class="nzlg-title our-team__team-title">
         <strong>Команда</strong> экспертов
     </h2>
@@ -234,35 +235,259 @@ get_header(); ?>
             </div>
         </div>
     </div>
-    <a href="#" class="our-team__btn-primary">
+    <a href="#" class="our-team__btn-primary button-animate">
         Получить консультацию эксперта
     </a>
-</section>
-<section class="service-video">
-    <h2 class="nzlg-title service-video__video-title">
-        Видео <strong>на тему услуги</strong>
+</section> -->
+
+
+<?php while ( have_rows( 'page_content', get_option('page_on_front') ) ) : the_row(); ?>
+    <?php if ( get_row_layout() == 'our_team_experts' ) : ?>
+
+<section class="our-team">
+    <h2 <?php live_edit('page_content, flex-our_team_experts--header', get_option('page_on_front')) ?>  class="nzlg-title our-team__team-title">
+        <?php echo strip_tags( get_sub_field( 'header', get_option('page_on_front') ), ['strong'] ); ?>
+
     </h2>
-    <p class="desktop-only service-video__text">
+    <div <?php live_edit('page_content, flex-our_team_experts--expert_card', get_option('page_on_front')) ?>  class="our-team__team-experts">
+		
+		<?php if (have_rows("expert_card")) : ?>
+    		<?php while (have_rows("expert_card")) : the_row(); ?>
+		
+        <div  class="team-experts__team-expert">
+			<?php if (get_sub_field('expert_img')) : ?>
+				
+				<div style="background-image: url('<?php the_sub_field("expert_img") ?>')" class="team-expert__expert-photo"></div>
+			<?php endif; ?>
+			
+            
+            <div class="team-expert__expert-info">
+				        <?php if (get_sub_field('expert_name')) : ?>
+							 <h3 class="expert-info__expert-name">
+								<?php the_sub_field("expert_name") ?>
+							</h3>
+							
+						<?php endif; ?>
+
+               
+                <div class="expert-info__expert-position">
+					<?php if (get_sub_field('expert_span')) : ?>
+						<?php the_sub_field("expert_span") ?>
+					<?php endif; ?>
+                    
+                </div>
+                <div class="expert-info__expert-desc">
+                    
+					 <?php if (get_sub_field('expert_info')) : ?>
+						<?php the_sub_field("expert_info") ?>
+					<?php endif; ?>
+                </div>
+            </div>
+        </div>
+		
+			<?php endwhile; ?>
+		<?php endif; ?>
+		
+    </div>
+    <a <?php live_edit('page_content, flex-our_team_experts--button_text', get_option('page_on_front')) ?> href="#" class="our-team__btn-primary button-animate btn-5">
+		<?php echo strip_tags( get_sub_field( 'button_text', get_option('page_on_front') ), ['strong'] ); ?>
+<!--         Получить консультацию эксперта -->
+    </a>
+</section>
+
+    <?php endif; ?>
+<?php endwhile; ?>
+
+
+
+<?php while ( have_rows( 'page_content', get_option('page_on_front') ) ) : the_row(); ?>
+    <?php if ( get_row_layout() == 'video_services' ) : ?>
+
+
+
+<section class="service-video">
+    <h2 <?php live_edit('page_content, flex-video_services--video_services_header_h', get_option('page_on_front')) ?>  class="nzlg-title service-video__video-title">
+		<?php echo strip_tags( get_sub_field( 'video_services_header_h', get_option('page_on_front') ), ['strong'] ); ?>
+        
+    </h2>
+    <p <?php live_edit('page_content, flex-video_services--video_services_header_text_p', get_option('page_on_front')) ?>  class="desktop-only service-video__text">
         <strong data-action="title-replace">
             <?php global $replace_title;
             if ($replace_title) {
                 echo $replace_title;
             } else {
                 ?>
-                Кредит под залог квартиры
+				<?php echo strip_tags( get_sub_field( 'video_services_header_text_p', get_option('page_on_front') ), ['strong'] ); ?>
+<!--                 Кредит под залог квартиры -->
                 <?php
             }
             ?>
         </strong>
+		
         <br>
         <br>
-        это удобный и надежный способ получить необходимую сумму денег при наличии недвижимости, которая будет выступать в роли залога. Наша компания предлагает выгодные условия кредитования и индивидуальный подход к каждому клиенту. Оформление кредита под залог квартиры позволяет получить средства налюбые нужды, будь то покупка новой недвижимости, образование или реализация бизнес-проекта
+		
+			<span <?php live_edit('page_content, flex-video_services--video_services_text_p', get_option('page_on_front')) ?>>
+				<?php echo strip_tags( get_sub_field( 'video_services_text_p', get_option('page_on_front') ), ['strong'] ); ?>
+			</span>
+	
+			
+<!--         это удобный и надежный способ получить необходимую сумму денег при наличии недвижимости, которая будет выступать в роли залога. Наша компания предлагает выгодные условия кредитования и индивидуальный подход к каждому клиенту. Оформление кредита под залог квартиры позволяет получить средства налюбые нужды, будь то покупка новой недвижимости, образование или реализация бизнес-проекта -->
     </p>
-    <div style="background-image: url('<?php bloginfo('template_url'); ?>/assets/img/service-video__video-player.jpg')" class="service-video__video-player">
-        <div class="video-player__icon-play"></div>
-    </div>
+
+<!-- 		style="background-image: url('<?php bloginfo('template_url'); ?>/assets/img/service-video__video-player.jpg')"  -->
+		          
+		<div class="service-video__video-player embed-container" <?php live_edit('page_content, flex-video_services--video_test', get_option('page_on_front')) ?> >
+<!-- 			<div class="video-player__icon-play"></div> -->
+			<?php the_sub_field( 'video_test' ); ?>
+		</div>
+	
+<!-- 		<div class="embed-container">
+				
+			</div> -->
+
+	
 </section>
+
+	<?php endif; ?>
+<?php endwhile; ?>
+
+
+
+<?php while ( have_rows( 'page_content', get_option('page_on_front') ) ) : the_row(); ?>
+    <?php if ( get_row_layout() == 'our_reviews' ) : ?>
+
 <section class="testimonials">
+    <div class="dsk-container">
+        <h2 <?php live_edit('page_content, flex-our_reviews--header', get_option('page_on_front')) ?>  class="nzlg-title testimonials__tst-title">
+				<?php echo strip_tags( get_sub_field( 'header', get_option('page_on_front') ), ['strong'] ); ?>
+<!--             За 3 года работы <strong>более 300 положительных отзывов</strong> -->
+        </h2>
+        <div class="flex-row testimonials__tst-tabs-header">
+            <div <?php live_edit('page_content, flex-our_reviews--reviews_tab_1', get_option('page_on_front')) ?>  data-modal="txt" class="tst-tabs-header__tabs-btn btn-active">
+					<?php echo strip_tags( get_sub_field( 'reviews_tab_1', get_option('page_on_front') ), ['strong'] ); ?>
+<!--                 Отзывы -->
+            </div>
+            <div <?php live_edit('page_content, flex-our_reviews--reviews_tab_2', get_option('page_on_front')) ?>  data-modal="vid" class="tst-tabs-header__tabs-btn">
+					<?php echo strip_tags( get_sub_field( 'reviews_tab_2', get_option('page_on_front') ), ['strong'] ); ?>
+<!--                 Видеоотзывы -->
+            </div>
+        </div>
+    </div>
+    <div data-modal="txt" class="testimonails__slider-tst">
+        <div <?php live_edit('page_content, flex-our_reviews--reviews_images', get_option('page_on_front')) ?> class="swiper slider-tst__slider js-slider-testimonials-txt">
+            <div   class="swiper-wrapper slider-tst__slide-wrapper">
+				
+				<?php if (have_rows("reviews_images")) : ?>
+					<?php while (have_rows("reviews_images")) : the_row(); ?>
+                <div class="swiper-slide slide-wrapper__tst-slide">
+								<?php if (get_sub_field('reviews_img')) : ?>
+									<img style="margin-left: -3%;" class="tst-slide__img" src="<?php the_sub_field("reviews_img") ?>" alt="">
+									
+								<?php endif; ?>
+
+
+                </div>
+				<?php endwhile; ?>
+			<?php endif; ?>
+					
+				
+<!--                 <div class="swiper-slide slide-wrapper__tst-slide">
+                    <img class="tst-slide__img" src="<?php bloginfo('template_url'); ?>/assets/img/tst-slide__img2.jpg" alt="">
+                </div>
+                <div class="swiper-slide slide-wrapper__tst-slide">
+                    <img class="tst-slide__img" src="<?php bloginfo('template_url'); ?>/assets/img/tst-slide__img2.jpg" alt="">
+                </div>
+                <div class="swiper-slide slide-wrapper__tst-slide">
+                    <img class="tst-slide__img" src="<?php bloginfo('template_url'); ?>/assets/img/tst-slide__img2.jpg" alt="">
+                </div>
+                <div class="swiper-slide slide-wrapper__tst-slide">
+                    <img class="tst-slide__img" src="<?php bloginfo('template_url'); ?>/assets/img/tst-slide__img2.jpg" alt="">
+                </div>
+                <div class="swiper-slide slide-wrapper__tst-slide">
+                    <img class="tst-slide__img" src="<?php bloginfo('template_url'); ?>/assets/img/tst-slide__img2.jpg" alt="">
+                </div>
+                <div class="swiper-slide slide-wrapper__tst-slide">
+                    <img class="tst-slide__img" src="<?php bloginfo('template_url'); ?>/assets/img/tst-slide__img2.jpg" alt="">
+                </div>
+                <div class="swiper-slide slide-wrapper__tst-slide">
+                    <img class="tst-slide__img" src="<?php bloginfo('template_url'); ?>/assets/img/tst-slide__img2.jpg" alt="">
+                </div>
+                <div class="swiper-slide slide-wrapper__tst-slide">
+                    <img class="tst-slide__img" src="<?php bloginfo('template_url'); ?>/assets/img/tst-slide__img2.jpg" alt="">
+                </div>
+                <div class="swiper-slide slide-wrapper__tst-slide">
+                    <img class="tst-slide__img" src="<?php bloginfo('template_url'); ?>/assets/img/tst-slide__img2.jpg" alt="">
+                </div>
+                <div class="swiper-slide slide-wrapper__tst-slide">
+                    <img class="tst-slide__img" src="<?php bloginfo('template_url'); ?>/assets/img/tst-slide__img2.jpg" alt="">
+                </div> -->
+            </div>
+            <div class="swiper-pagination" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+	
+	
+    <div data-modal="vid" style="display: none;" class="testimonails__slider-tst slider-tst-vid">
+        <div <?php live_edit('page_content, flex-our_reviews--reviews_videos', get_option('page_on_front')) ?>  class="swiper slider-tst__slider js-slider-testimonials-vid">
+            <div class="swiper-wrapper slider-tst__slide-wrapper slide-wrapper-vid">
+				<?php if (have_rows("reviews_videos")) : ?>
+    				<?php while (have_rows("reviews_videos")) : the_row(); ?>
+                <div class="swiper-slide slide-wrapper__tst-slide slider-tst-vid__single-vid">
+					<?php if (get_sub_field('reviews_video')) : ?>
+<!-- 							<div class="single-vid__player" style="background-image: url('<?php bloginfo('template_url'); ?>/assets/img/single-vid__player.jpg')"> -->
+<!-- 								<div class="player__play-btn"></div> -->
+								<?php the_sub_field("reviews_video") ?>
+<!-- 							</div> -->
+					<?php endif; ?>
+                    
+                </div>
+					<?php endwhile; ?>
+				<?php endif; ?>
+				
+<!--                 <div class="swiper-slide slide-wrapper__tst-slide slider-tst-vid__single-vid">
+                    <div class="single-vid__player" style="background-image: url('<?php bloginfo('template_url'); ?>/assets/img/single-vid__player.jpg')">
+                        <div class="player__play-btn"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide-wrapper__tst-slide slider-tst-vid__single-vid">
+                    <div class="single-vid__player" style="background-image: url('<?php bloginfo('template_url'); ?>/assets/img/single-vid__player.jpg')">
+                        <div class="player__play-btn"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide-wrapper__tst-slide slider-tst-vid__single-vid">
+                    <div class="single-vid__player" style="background-image: url('<?php bloginfo('template_url'); ?>/assets/img/single-vid__player.jpg')">
+                        <div class="player__play-btn"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide-wrapper__tst-slide slider-tst-vid__single-vid">
+                    <div class="single-vid__player" style="background-image: url('<?php bloginfo('template_url'); ?>/assets/img/single-vid__player.jpg')">
+                        <div class="player__play-btn"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide-wrapper__tst-slide slider-tst-vid__single-vid">
+                    <div class="single-vid__player" style="background-image: url('<?php bloginfo('template_url'); ?>/assets/img/single-vid__player.jpg')">
+                        <div class="player__play-btn"></div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+	
+	
+    <a <?php live_edit('page_content, flex-our_reviews--button_text', get_option('page_on_front')) ?>  href="#" class="testimonials__btn-primary button-animate btn-5">
+			<?php echo strip_tags( get_sub_field( 'button_text', get_option('page_on_front') ), ['strong'] ); ?>
+        
+    </a>
+</section>
+
+ <?php endif; ?>
+<?php endwhile; ?>
+
+
+
+<!-- <section class="testimonials">
     <div class="dsk-container">
         <h2 class="nzlg-title testimonials__tst-title">
             За 3 года работы <strong>более 300 положительных отзывов</strong>
@@ -353,10 +578,12 @@ get_header(); ?>
             <div class="swiper-pagination"></div>
         </div>
     </div>
-    <a href="#" class="testimonials__btn-primary">
+    <a href="#" class="testimonials__btn-primary button-animate">
         Напишите нам
     </a>
-</section>
+</section> -->
+
+
 <section class="about">
     <div class="about__text-content">
         <strong data-action="title-replace">
@@ -594,11 +821,109 @@ get_header(); ?>
     <div class="docs-checklist__checklist-disclaimer">
         *Для каждого клиента требуется свой уникальный набор документов, узнайте какой потребуется вам
     </div>
-    <a href="#" class="docs-checklist__btn-primary">
+    <a href="#" class="docs-checklist__btn-primary button-animate btn-5">
         Задать вопрос
     </a>
 </section>
-<section class="tariffs">
+
+
+<?php while ( have_rows( 'page_content', get_option('page_on_front') ) ) : the_row(); ?>
+    <?php if ( get_row_layout() == 'our_credit_programs' ) : ?>
+
+<div <?php live_edit('page_content, flex-our_credit_programs--dispaly_flex_none', get_option('page_on_front')) ?>>
+<section class="tariffs" style="display: <?php echo strip_tags( get_sub_field( 'dispaly_flex_none', get_option('page_on_front') ), ['strong'] ); ?>;">
+
+
+			    <h2 <?php live_edit('page_content, flex-our_credit_programs--header', get_option('page_on_front')) ?> class="nzlg-title tariffs__trf-title">
+        <?php echo strip_tags( get_sub_field( 'header', get_option('page_on_front') ), ['strong'] ); ?>
+    </h2>
+
+
+
+
+    <div <?php live_edit('page_content, flex-our_credit_programs--programm_car', get_option('page_on_front')	) ?> class="tariffs__tariff-wrap">
+		
+		
+		<?php if (have_rows("programm_car")) : ?>
+    		<?php while (have_rows("programm_car")) : the_row(); ?>
+		
+		<?php if (get_sub_field('color_card')) : ?>
+			<div class="<?php the_sub_field("color_card") ?> click-btn btn-style1">
+            
+        <?php endif; ?>
+        
+            <div class="tariff-item__icon-shield"></div>
+            <h3 class="tariff-item__tariff-header">
+				<?php if (get_sub_field('programm_name')) : ?>
+					<?php the_sub_field("programm_name") ?>
+				<?php endif; ?>
+
+            </h3>
+            <div class="tariff-item__tariff-desc">
+				<?php if (get_sub_field('programm_description')) : ?>
+					<?php the_sub_field("programm_description") ?>
+				<?php endif; ?>
+
+            </div>
+            <div class="tariff-item__list-title">
+				<?php if (get_sub_field('programm_condition')) : ?>
+					<?php the_sub_field("programm_condition") ?>
+				<?php endif; ?>
+
+            </div>
+				
+			
+            <ul class="tariff-item__desc-list">
+				<?php if (have_rows("programm_condition_ul")) : ?>
+    				<?php while (have_rows("programm_condition_ul")) : the_row(); ?>
+						<?php if (get_sub_field('programm_condition_ul_li')) : ?>
+                <li class="desc-list__desc-item">
+					
+						<?php the_sub_field("programm_condition_ul_li") ?>
+					
+
+                </li>
+				<?php endif; ?>
+								<?php endwhile; ?>
+<?php endif; ?>
+
+				</ul>
+            <a href="#" class="tariff-item__btn-primary button-animate btn-5">
+                <?php if (get_sub_field('button_text')) : ?>
+					<?php the_sub_field("button_text") ?>
+				<?php endif; ?>
+            </a>
+        </div>
+		
+		  <?php endwhile; ?>
+<?php endif; ?>
+		
+		
+
+    </div>
+
+
+
+    <a href="#" <?php live_edit('page_content, flex-our_credit_programs--all_programm', get_option('page_on_front')) ?>  class="tariffs__btn-secondary1  btn-5">
+
+		<?php echo strip_tags( get_sub_field( 'all_programm', get_option('page_on_front') ), ['strong'] ); ?>
+
+    </a>
+	
+</section>
+
+	</div>
+
+	<?php endif; ?>
+<?php endwhile; ?>
+	
+
+
+
+
+
+
+<!-- <section class="tariffs">
     <h2 class="nzlg-title tariffs__trf-title">
         Расшифровка <strong>кредитных программ</strong>
     </h2>
@@ -628,7 +953,7 @@ get_header(); ?>
                     Дополнительные требования: кредитная история без просрочек
                 </li>
             </ul>
-            <a href="#" class="tariff-item__btn-primary">
+            <a href="#" class="tariff-item__btn-primary button-animate">
                 Оформить
             </a>
         </div>
@@ -657,7 +982,7 @@ get_header(); ?>
                     Дополнительные требования: кредитная история без просрочек, возраст заемщика до 65 лет намомент погашения кредита
                 </li>
             </ul>
-            <a href="#" class="tariff-item__btn-primary">
+            <a href="#" class="tariff-item__btn-primary button-animate">
                 Оформить
             </a>
         </div>
@@ -686,7 +1011,7 @@ get_header(); ?>
                     Дополнительные требования: кредитная история без просрочек
                 </li>
             </ul>
-            <a href="#" class="tariff-item__btn-primary">
+            <a href="#" class="tariff-item__btn-primary button-animate">
                 Оформить
             </a>
         </div>
@@ -695,6 +1020,10 @@ get_header(); ?>
         Посмотреть все программы
     </a>
 </section>
+ -->
+
+
+
 <section class="roadmap">
     <h2 class="nzlg-title roadmap__rmp-title">
         Деньги <strong>за один день</strong>
@@ -825,11 +1154,24 @@ get_header(); ?>
                     </div>
                 <?php endwhile; ?>
             </div>
-            <div class="flex-row our-work__partners">
-                <div class="partners__header">
-                    Наши <strong>банки
-                        -партнеры</strong>
+		
+    <?php endif; ?>
+<?php endwhile; ?>	
+
+			  
+               
+ <?php while ( have_rows( 'page_content', get_option('page_on_front') ) ) : the_row(); ?>
+    <?php if ( get_row_layout() == 'partner_banks' ) : ?>
+              
+                     
+           
+			
+            <div class=" flex-row our-work__partners">
+                <div <?php live_edit('page_content, flex-partner_banks--partner_h', get_option('page_on_front')) ?> class="partners__header">
+					<?php echo strip_tags( get_sub_field( 'partner_h', get_option('page_on_front') ), ['strong'] ); ?>
+
                 </div>
+				
                 <div class="partners__prt-logos">
                     <div class="flex-row prt-logos__logos-row">
                         <div class="logos-row__logo-item">
@@ -846,39 +1188,147 @@ get_header(); ?>
                         <div class="logos-row__logo-item">
                             <img src="<?php bloginfo('template_url'); ?>/assets/img/logo4.png" alt="">
                         </div>
+						
                     </div>
+					
+
                 </div>
+		
             </div>
+			
+<!-- 			            <div class="flex-row our-work__partners">
+							<div <?php live_edit('page_content, flex-partner_banks--partner_h', get_option('page_on_front')) ?> class="partners__header">
+								<?php echo strip_tags( get_sub_field( 'partner_h', get_option('page_on_front') ), ['strong'] ); ?>
+
+							</div>
+
+							<div class="partners__prt-logos">
+								<div class="flex-row prt-logos__logos-row" style="flex-wrap: wrap;">
+									<div class="logos-row__logo-item">
+										<img class="img-crop" src="<?php bloginfo('template_url'); ?>/assets/img/logo1.png" alt="">
+									</div>
+									<div class="logos-row__logo-item">
+										<img src="<?php bloginfo('template_url'); ?>/assets/img/logo2.png" alt="">
+									</div>
+								
+									<div class="logos-row__logo-item">
+										<img src="<?php bloginfo('template_url'); ?>/assets/img/logo3.png" alt="">
+									</div>
+									<div class="logos-row__logo-item">
+										<img src="<?php bloginfo('template_url'); ?>/assets/img/logo4.png" alt="">
+									</div>
+									
+									<div class="logos-row__logo-item">
+										<img src="<?php bloginfo('template_url'); ?>/assets/img/logo3.png" alt="">
+									</div>
+									<div class="logos-row__logo-item">
+										<img src="<?php bloginfo('template_url'); ?>/assets/img/logo4.png" alt="">
+									</div>
+
+								</div>
+							</div>
+				
+
+				
+
+				
+            </div> -->
+			
+
+			
+
+			
         </section>
+
     <?php endif; ?>
 <?php endwhile; ?>
+
+		
+			
+
 <section class="action">
     <h3 class="action__title">
         Подберем для вас индивидуальные условия
     </h3>
-    <a href="#" class="action__btn-primary">
+    <a href="#" class="action__btn-primary button-animate btn-5">
         Подобрать условия кредитования
     </a>
 </section>
+
+<?php while ( have_rows( 'page_content', get_option('page_on_front') ) ) : the_row(); ?>
+    <?php if ( get_row_layout() == 'сontact_us' ) : ?>
+
+
 <section class="videos">
+    <h2 <?php live_edit('page_content, flex-сontact_us--header', get_option('page_on_front')) ?> class="nzlg-title videos__vds-title">
+			<?php echo strip_tags( get_sub_field( 'header', get_option('page_on_front') ), ['strong'] ); ?>
+<!--         Обратитесь <strong>к нам если</strong> -->
+    </h2>
+	
+    <div <?php live_edit('page_content, flex-сontact_us--contact_us_videos', get_option('page_on_front')) ?>  class="videos__video-wrapper">
+		<?php if (have_rows("contact_us_videos")) : ?>
+			<?php while (have_rows("contact_us_videos")) : the_row(); ?>
+        <div class="video-wrapper__vds-item">
+			
+<!-- 			<iframe class="vds-item__video" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+            <?php if (get_sub_field('contact_us_video')) : ?>
+				<?php the_sub_field("contact_us_video") ?>
+			<?php endif; ?>
+        
+            
+            <div class="vds-item__title">
+				 <?php if (get_sub_field('video_description')) : ?>
+					<?php the_sub_field("video_description") ?>
+				<?php endif; ?>
+
+            </div>
+        </div>
+			<?php endwhile; ?>
+		<?php endif; ?>
+		
+
+		
+
+		
+			
+
+<!--         <div class="video-wrapper__vds-item">
+            <iframe class="vds-item__video" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="vds-item__title">
+                Вам одобрили кредит с высокой процентной ставкой
+            </div>
+        </div> -->
+    </div>
+    <div class="videos__read-more-btn">
+        <a href="#" <?php live_edit('page_content, flex-сontact_us--button_text', get_option('page_on_front')) ?> class="read-more-btn__link">
+           <?php echo strip_tags( get_sub_field( 'button_text', get_option('page_on_front') ), ['strong'] ); ?>
+        </a>
+    </div>
+</section>
+
+<?php endif; ?>
+<?php endwhile; ?>
+
+
+<!-- <section class="videos">
     <h2 class="nzlg-title videos__vds-title">
         Обратитесь <strong>к нам если</strong>
     </h2>
     <div class="videos__video-wrapper">
         <div class="video-wrapper__vds-item">
-            <iframe class="vds-item__video" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class="vds-item__video" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <div class="vds-item__title">
                 Плохая кредитная история?
             </div>
         </div>
         <div class="video-wrapper__vds-item">
-            <iframe class="vds-item__video" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class="vds-item__video" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <div class="vds-item__title">
                 У вас нет времени ездить по банкам
             </div>
         </div>
         <div class="video-wrapper__vds-item">
-            <iframe class="vds-item__video" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class="vds-item__video" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <div class="vds-item__title">
                 Вам одобрили кредит с высокой процентной ставкой
             </div>
@@ -889,8 +1339,9 @@ get_header(); ?>
             Показать ещё
         </a>
     </div>
-</section>
-<section class="faq">
+</section> -->
+
+<!-- <section class="faq">
     <h2 class="nzlg-title faq__fq-title">
         Частые <strong>вопросы</strong>
     </h2>
@@ -941,12 +1392,164 @@ get_header(); ?>
             Не нашли ответа
             на свой вопрос?
         </div>
-        <a href="#" class="faq__btn-primary">
+        <a href="#" class="faq__btn-primary button-animate">
             Напишите нам
         </a>
     </div>
+</section> -->
+
+<?php while ( have_rows( 'page_content', get_option('page_on_front') ) ) : the_row(); ?>
+    <?php if ( get_row_layout() == 'our_faq_questions' ) : ?>
+
+
+<section class="faq">
+    <h2 <?php live_edit('page_content, flex-our_faq_questions--header', get_option('page_on_front')) ?> class="nzlg-title faq__fq-title">
+        <?php echo strip_tags( get_sub_field( 'header', get_option('page_on_front') ), ['strong'] ); ?>
+    </h2>
+	
+    <div class="faq__questions-wrapper">
+		
+        <div class="questions-wrapper__single-question question-expanded">
+            <div <?php live_edit('page_content, flex-our_faq_questions--faq_question_1', get_option('page_on_front')) ?> class="single-question__qstn-title">
+				<?php echo strip_tags( get_sub_field( 'faq_question_1', get_option('page_on_front') ), ['strong'] ); ?>
+<!--                 Какие документы необходимы для оформления кредита под залог недвижимости? -->
+            </div>
+            <div <?php live_edit('page_content, flex-our_faq_questions--faq_answer_1', get_option('page_on_front')) ?>  class="single-question__qstn-text">
+				<?php echo strip_tags( get_sub_field( 'faq_answer_1', get_option('page_on_front') ), ['strong'] ); ?>
+<!--                 Помимо стандартного пакета, включающего паспорт и справку о доходах, потребуется предоставить в банк документы на квартиру (свидетельство о регистрации), отчет об оценке, согласие супруга и/или других собственников на оформление залога. Дополнительно может понадобиться водительское удостоверение, загранпаспорт, договор купли-продажи недвижимости и другие документы по регламенту банка. -->
+            </div>
+        </div>
+		
+		
+        <div <?php live_edit('page_content, flex-our_faq_questions--faq_question_2', get_option('page_on_front')) ?> class="questions-wrapper__single-question">
+            <div class="single-question__qstn-title">
+				<?php echo strip_tags( get_sub_field( 'faq_question_2', get_option('page_on_front') ), ['strong'] ); ?>
+<!--                 Каковы минимальные и максимальные суммы кредита под залог недвижимости? -->
+            </div>
+            <div <?php live_edit('page_content, flex-our_faq_questions--faq_answer_2', get_option('page_on_front')) ?> class="single-question__qstn-text">
+				<?php echo strip_tags( get_sub_field( 'faq_answer_2', get_option('page_on_front') ), ['strong'] ); ?>
+<!--                 Помимо стандартного пакета, включающего паспорт и справку о доходах, потребуется предоставить в банк документы на квартиру (свидетельство о регистрации), отчет об оценке, согласие супруга и/или других собственников на оформление залога. Дополнительно может понадобиться водительское удостоверение, загранпаспорт, договор купли-продажи недвижимости и другие документы по регламенту банка. -->
+            </div>
+        </div>
+		<div <?php live_edit('page_content, flex-our_faq_questions--faq_question_3', get_option('page_on_front')) ?> class="questions-wrapper__single-question">
+            <div class="single-question__qstn-title">
+				<?php echo strip_tags( get_sub_field( 'faq_question_3', get_option('page_on_front') ), ['strong'] ); ?>
+<!--                 Каковы минимальные и максимальные суммы кредита под залог недвижимости? -->
+            </div>
+            <div <?php live_edit('page_content, flex-our_faq_questions--faq_answer_3', get_option('page_on_front')) ?> class="single-question__qstn-text">
+				<?php echo strip_tags( get_sub_field( 'faq_answer_3', get_option('page_on_front') ), ['strong'] ); ?>
+<!--                 Помимо стандартного пакета, включающего паспорт и справку о доходах, потребуется предоставить в банк документы на квартиру (свидетельство о регистрации), отчет об оценке, согласие супруга и/или других собственников на оформление залога. Дополнительно может понадобиться водительское удостоверение, загранпаспорт, договор купли-продажи недвижимости и другие документы по регламенту банка. -->
+            </div>
+        </div>
+		<div <?php live_edit('page_content, flex-our_faq_questions--faq_question_4', get_option('page_on_front')) ?> class="questions-wrapper__single-question">
+            <div class="single-question__qstn-title">
+				<?php echo strip_tags( get_sub_field( 'faq_question_4', get_option('page_on_front') ), ['strong'] ); ?>
+<!--                 Каковы минимальные и максимальные суммы кредита под залог недвижимости? -->
+            </div>
+            <div <?php live_edit('page_content, flex-our_faq_questions--faq_answer_4', get_option('page_on_front')) ?> class="single-question__qstn-text">
+				<?php echo strip_tags( get_sub_field( 'faq_answer_4', get_option('page_on_front') ), ['strong'] ); ?>
+<!--                 Помимо стандартного пакета, включающего паспорт и справку о доходах, потребуется предоставить в банк документы на квартиру (свидетельство о регистрации), отчет об оценке, согласие супруга и/или других собственников на оформление залога. Дополнительно может понадобиться водительское удостоверение, загранпаспорт, договор купли-продажи недвижимости и другие документы по регламенту банка. -->
+            </div>
+        </div>
+		<div <?php live_edit('page_content, flex-our_faq_questions--faq_question_5', get_option('page_on_front')) ?> class="questions-wrapper__single-question">
+            <div class="single-question__qstn-title">
+				<?php echo strip_tags( get_sub_field( 'faq_question_5', get_option('page_on_front') ), ['strong'] ); ?>
+<!--                 Каковы минимальные и максимальные суммы кредита под залог недвижимости? -->
+            </div>
+            <div <?php live_edit('page_content, flex-our_faq_questions--faq_answer_5', get_option('page_on_front')) ?> class="single-question__qstn-text">
+				<?php echo strip_tags( get_sub_field( 'faq_answer_5', get_option('page_on_front') ), ['strong'] ); ?>
+<!--                 Помимо стандартного пакета, включающего паспорт и справку о доходах, потребуется предоставить в банк документы на квартиру (свидетельство о регистрации), отчет об оценке, согласие супруга и/или других собственников на оформление залога. Дополнительно может понадобиться водительское удостоверение, загранпаспорт, договор купли-продажи недвижимости и другие документы по регламенту банка. -->
+            </div>
+        </div>
+<!--         <div class="questions-wrapper__single-question">
+            <div class="single-question__qstn-title">
+                Какие сроки рассмотрения заявки на кредит под залог недвижимости
+            </div>
+            <div class="single-question__qstn-text">
+                Помимо стандартного пакета, включающего паспорт и справку о доходах, потребуется предоставить в банк документы на квартиру (свидетельство о регистрации), отчет об оценке, согласие супруга и/или других собственников на оформление залога. Дополнительно может понадобиться водительское удостоверение, загранпаспорт, договор купли-продажи недвижимости и другие документы по регламенту банка.
+            </div>
+        </div>
+        <div class="questions-wrapper__single-question">
+            <div class="single-question__qstn-title">
+                Можно ли досрочно погасить кредит под залог недвижимости? Как это сделать?
+            </div>
+            <div class="single-question__qstn-text">
+                Помимо стандартного пакета, включающего паспорт и справку о доходах, потребуется предоставить в банк документы на квартиру (свидетельство о регистрации), отчет об оценке, согласие супруга и/или других собственников на оформление залога. Дополнительно может понадобиться водительское удостоверение, загранпаспорт, договор купли-продажи недвижимости и другие документы по регламенту банка.
+            </div>
+        </div>
+        <div class="questions-wrapper__single-question">
+            <div class="single-question__qstn-title">
+                Какие виды недвижимости могут быть предложены в качестве залога?
+            </div>
+            <div class="single-question__qstn-text">
+                Помимо стандартного пакета, включающего паспорт и справку о доходах, потребуется предоставить в банк документы на квартиру (свидетельство о регистрации), отчет об оценке, согласие супруга и/или других собственников на оформление залога. Дополнительно может понадобиться водительское удостоверение, загранпаспорт, договор купли-продажи недвижимости и другие документы по регламенту банка.
+            </div>
+        </div> -->
+    </div>
+    <div class="flex-row faq__fq-cta">
+        <div <?php live_edit('page_content, flex-our_faq_questions--faq_not_answer', get_option('page_on_front')) ?> class="fq-cta__cta-title">
+			<?php echo strip_tags( get_sub_field( 'faq_not_answer', get_option('page_on_front') ), ['strong'] ); ?>
+<!--             Не нашли ответа
+            на свой вопрос? -->
+        </div>
+        <a <?php live_edit('page_content, flex-our_faq_questions--button_text', get_option('page_on_front')) ?> href="#" class="faq__btn-primary button-animate btn-5">
+			<?php echo strip_tags( get_sub_field( 'button_text', get_option('page_on_front') ), ['strong'] ); ?>
+<!--             Напишите нам -->
+        </a>
+    </div>
 </section>
+
+ <?php endif; ?>
+<?php endwhile; ?>
+
+
+<?php while ( have_rows( 'page_content', get_option('page_on_front') ) ) : the_row(); ?>
+    <?php if ( get_row_layout() == 'our_certificates' ) : ?>
+
 <section class="certificates">
+    <h2 <?php live_edit('page_content, flex-our_certificates--header', get_option('page_on_front')) ?> class="nzlg-title certificates__crt-title">
+                        <?php echo strip_tags( get_sub_field( 'header', get_option('page_on_front') ), ['strong'] ); ?>
+    </h2>
+    <div class="certificates__slider-crt">
+        <div <?php live_edit('page_content, flex-our_certificates--certificates', get_option('page_on_front')) ?> class="swiper slider-crt__slide-wrapper js-slider-certificates">
+            <div  class="swiper-wrapper">
+			<?php if (have_rows("certificates")) : ?>
+				<?php while (have_rows("certificates")) : the_row(); ?>
+                <div class="slide-wrapper__crt-slide swiper-slide">
+						<?php if (get_sub_field('certificates_image')) : ?>
+							<img class="cert__slide-img" src="<?php the_sub_field("certificates_image") ?>" alt="">
+							
+						<?php endif; ?>
+                    
+                </div>
+				<?php endwhile; ?>
+			<?php endif; ?>
+<!--                 <div class="slide-wrapper__crt-slide swiper-slide">
+                    <img class="cert__slide-img" src="<?php bloginfo('template_url'); ?>/assets/img/certificate2.jpg" alt="">
+                </div>
+                <div class="slide-wrapper__crt-slide swiper-slide">
+                    <img class="cert__slide-img" src="<?php bloginfo('template_url'); ?>/assets/img/certificate3.jpg" alt="">
+                </div>
+                <div class="slide-wrapper__crt-slide swiper-slide">
+                    <img class="cert__slide-img" src="<?php bloginfo('template_url'); ?>/assets/img/certificate4.jpg" alt="">
+                </div>
+                <div class="slide-wrapper__crt-slide swiper-slide">
+                    <img class="cert__slide-img" src="<?php bloginfo('template_url'); ?>/assets/img/certificate5.jpg" alt="">
+                </div>
+                <div class="slide-wrapper__crt-slide swiper-slide">
+                    <img class="cert__slide-img" src="<?php bloginfo('template_url'); ?>/assets/img/certificate6.jpg" alt="">
+                </div> -->
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+<?php endif; ?>
+<?php endwhile; ?>
+
+
+<!-- <section class="certificates">
     <h2 class="nzlg-title certificates__crt-title">
         <strong>Сертификаты</strong>
     </h2>
@@ -975,7 +1578,8 @@ get_header(); ?>
             <div class="swiper-pagination"></div>
         </div>
     </div>
-</section>
+</section> -->
+
 <section class="our-services">
     <h2 class="nzlg-title our-services__os-title">
         <strong>Наши услуги</strong>
@@ -1060,7 +1664,7 @@ get_header(); ?>
             Нажмите на ссылку, чтобы перейти
             на страницу скачивания файла
         </div>
-        <form action="/" class="modal-front__callback-form">
+        <form action="" class="modal-front__callback-form">
             <a href="#" class="callback-form__text-input text-input-link">
                 http:/yandex.disk/urldownloadfilechecklistfinance
             </a>
@@ -1079,7 +1683,7 @@ get_header(); ?>
             После отправки формы вы получите
             ссылку на файл с чек-листом
         </div>
-        <form action="/" class="modal-front__callback-form">
+        <form action="" class="modal-front__callback-form">
             <input placeholder="Ваше имя" type="text" class="callback-form__text-input">
             <input placeholder="Номер телефона" type="text" class="callback-form__text-input">
             <button type="submit" class="callback-form__btn-primary">
@@ -1104,7 +1708,7 @@ get_header(); ?>
             Наш сотрудник свяжется
             с Вами в ближайшее время
         </div>
-        <form action="/" class="modal-front__callback-form">
+        <form action="" class="modal-front__callback-form">
             <input placeholder="Ваше имя" type="text" class="callback-form__text-input">
             <input placeholder="Номер телефона" type="text" class="callback-form__text-input">
             <button type="submit" class="callback-form__btn-primary">

@@ -2,34 +2,34 @@
     <div class="flex-row nzlg-foot__foot-top">
         <ul class="flex-row foot-top__foot-menus">
             <li class="foot-menus__foot-menu-item">
-                <a href="#" class="foot-menu-item__foot-link">
+                <a href="https://n-zalog.analog-girl.ru/" class="foot-menu-item__foot-link click-btn btn-style2">
                     Главная
                 </a>
             </li>
             <li class="foot-menus__foot-menu-item">
-                <a href="#" class="foot-menu-item__foot-link">
+                <a href="https://n-zalog.analog-girl.ru/about/" class="foot-menu-item__foot-link click-btn btn-style2">
                     О нас
                 </a>
             </li>
             <li class="foot-menus__foot-menu-item">
-                <a href="#" class="foot-menu-item__foot-link">
+                <a href="#" class="foot-menu-item__foot-link click-btn btn-style2">
                     Услуги
                 </a>
             </li>
             <li class="foot-menus__foot-menu-item">
-                <a href="#" class="foot-menu-item__foot-link">
+                <a href="https://n-zalog.analog-girl.ru/contacts/" class="foot-menu-item__foot-link click-btn btn-style2">
                     Контакты
                 </a>
             </li>
         </ul>
         <div class="foot-top__foot-contacts">
-            <a href="#" class="foot-contacts__foot-phone">
+            <a href="tel:+79196088865" class="foot-contacts__foot-phone click-btn btn-style2">
                 +7 (919) 608-88-65
             </a>
             <div class="flex-row foot-contacts__foot-socials">
-                <a href="#" class="foot-socials__icon-search"></a>
-                <a href="#" class="foot-socials__icon-wa"></a>
-                <a href="#" class="foot-socials__icon-tg"></a>
+                <a href="#" class="foot-socials__icon-search click-btn btn-style2"></a>
+                <a href="https://wa.me/+79196088865" class="foot-socials__icon-wa click-btn btn-style2"></a>
+                <a href="https://t.me/ValerieAndriyako" class="foot-socials__icon-tg click-btn btn-style2"></a>
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
             <div class="copyright-policy__item">
                 © Все права защищены
             </div>
-            <a href="#" class="copyright-policy__item">
+            <a href="#" class="copyright-policy__item click-btn btn-style2">
                 Политика конфиденциальности
             </a>
         </div>

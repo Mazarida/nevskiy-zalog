@@ -95,7 +95,7 @@ get_header(); ?>
   <h2 class="nzlg-title about-video__ov-title">
     <strong>Ваши интересы</strong> перед банками будут представлять наши сотрудники
   </h2>
-  <iframe class="about-video__player" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe class="about-video__player" src="https://www.youtube.com/embed/wyWT3KRDoaA?modestbranding=1&autohide=1&showinfo=0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 <section class="partner">
   <h2 class="nzlg-title partner__prt-title">

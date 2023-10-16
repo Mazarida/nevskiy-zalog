@@ -21,31 +21,31 @@ get_header(); ?>
         <div class="contacts-info__conts-slogan">
             Свяжитесь с нами и мы подберем Вам подходящую кредитную программу
         </div>
-        <a href="#" class="flex-row contacts-info__conts-item">
+        <a href="tel:+79196088865" class="flex-row contacts-info__conts-item">
             <span class="conts-item__icon-phone"></span>
             <span class="conts-item__link-text">
       +7 (919) 608-88-65
     </span>
         </a>
-        <a href="#" class="flex-row contacts-info__conts-item">
+        <a href="mailto:nevskizalog@gmail.com" class="flex-row contacts-info__conts-item">
             <span class="conts-item__icon-envelope"></span>
             <span class="conts-item__link-text">
-      info@mail.ru
+      nevskizalog@gmail.com
     </span>
         </a>
-        <a href="#" class="flex-row contacts-info__conts-item">
+        <a href="https://yandex.ru/maps/-/CDaJA-NS" class="flex-row contacts-info__conts-item">
             <span class="conts-item__icon-map-marker"></span>
             <span class="conts-item__link-text">
       г. Санкт-Петербург
     </span>
         </a>
-        <a href="#" class="flex-row contacts-info__conts-item">
+        <a href="https://t.me/ValerieAndriyako" class="flex-row contacts-info__conts-item">
             <span class="conts-item__icon-tg"></span>
             <span class="conts-item__link-text conts-underline">
       Написать в Telegram
     </span>
         </a>
-        <a href="#" class="flex-row contacts-info__conts-item">
+        <a href="https://wa.me/+79196088865" class="flex-row contacts-info__conts-item">
             <span class="conts-item__icon-wa"></span>
             <span class="conts-item__link-text conts-underline">
       Написать в Whatsapp
