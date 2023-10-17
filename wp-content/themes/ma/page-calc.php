@@ -912,11 +912,6 @@ if ($replace_img) {
 
     </div> -->
 
-    <!-- <?php get_field('programs_page', 'option')"?>  -->
-
-
-
-
     <a href="#" <?php live_edit('page_content, flex-our_credit_programs--all_programm', get_option('page_on_front')) ?>  class="tariffs__btn-secondary1  btn-5">
 
 		<?php echo strip_tags( get_sub_field( 'all_programm', get_option('page_on_front') ), ['strong'] ); ?>
