@@ -23,12 +23,14 @@ get_header(); ?>
         <?php if (have_rows("programm_car")) : ?>
     		<?php while (have_rows("programm_car")) : the_row(); ?>
 
-            <?php if (get_sub_field('color_card')) : ?>
-			<div class="<?php the_sub_field("color_card") ?> click-btn btn-style1">
+          
 
             <?php endif; ?>
 
-            <div class="tariff-wrap__tariff-item">
+            <?php if (get_sub_field('color_card')) : ?>
+                <div class="<?php the_sub_field("color_card") ?> click-btn btn-style1">
+            <?php endif; ?>
+
                 <div class="tariff-item__icon-shield"></div>
                 <h3 class="tariff-item__tariff-header">
                     <?php if (get_sub_field('programm_name')) : ?>
