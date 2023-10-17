@@ -18,7 +18,7 @@ get_header(); ?>
     <?php if ( get_row_layout() == 'our_credit_programs' ) : ?>
 
 
-        <div <?php live_edit('page_content2, flex-our_credit_programs--programm_car', get_option('page_on_front')	) ?> class="tariffs__tariff-wrap">
+        <div <?php live_edit('page_content2, flex-our_credit_programs--programm_car') ?> class="tariffs__tariff-wrap">
 
         <?php if (have_rows("programm_car")) : ?>
     		<?php while (have_rows("programm_car")) : the_row(); ?>
@@ -26,7 +26,7 @@ get_header(); ?>
             <?php if (get_sub_field('color_card')) : ?>
 			<div class="<?php the_sub_field("color_card") ?> click-btn btn-style1">
 
-        <?php endif; ?>
+            <?php endif; ?>
 
             <div class="tariff-wrap__tariff-item">
                 <div class="tariff-item__icon-shield"></div>
@@ -64,6 +64,9 @@ get_header(); ?>
             </div>
 
         </div>
+
+        <?php endwhile; ?>
+    <?php endif; ?>
 
     <?php endif; ?>
 <?php endwhile; ?>
