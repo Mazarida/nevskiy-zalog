@@ -916,6 +916,8 @@ get_header(); ?>
 
 	<?php endif; ?>
 <?php endwhile; ?>
+
+<?php the_field('test' , 'options'); ?>
 	
 
 
