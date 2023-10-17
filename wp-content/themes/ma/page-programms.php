@@ -1,4 +1,4 @@
-<?php // // Template Name: Кредитный программы
+<?php // // Template Name: Кредитные программы
 $filters = get_calc_filters();
 get_header(); ?>
 
