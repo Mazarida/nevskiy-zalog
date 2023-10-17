@@ -851,7 +851,7 @@ if ($replace_img) {
 
 
 
-        <!-- <div <?php live_edit('page_content, flex-our_credit_programs--programm_car', get_option('page_on_front')	) ?> class="tariffs__tariff-wrap">
+        <div <?php live_edit('page_content, flex-our_credit_programs--programm_car', get_option('page_on_front')	) ?> class="tariffs__tariff-wrap">
 
 
 		<?php if (have_rows("programm_car")) : ?>
@@ -910,74 +910,10 @@ if ($replace_img) {
 
         
 
-        </div> -->
-
-
-        <!-- start Test-->
-
-                <div <?php live_edit('page_content, flex-our_credit_programs--programm_car', get_option('page_on_front')	) ?> class="tariffs__tariff-wrap">
-
-
-		<?php if (have_rows("programm_car")) : ?>
-    		<?php while (have_rows("programm_car")) : the_row(); ?>
-
-		<?php if (get_sub_field('color_card')) : ?>
-			<div class="<?php the_sub_field("color_card") ?> click-btn btn-style1">
-
-        <?php endif; ?>
-
-            <div class="tariff-item__icon-shield"></div>
-            <h3 class="tariff-item__tariff-header">
-				<?php if (get_sub_field('programm_name')) : ?>
-					<?php the_sub_field("programm_name") ?>
-				<?php endif; ?>
-
-            </h3>
-            <div class="tariff-item__tariff-desc">
-				<?php if (get_sub_field('programm_description')) : ?>
-					<?php the_sub_field("programm_description") ?>
-				<?php endif; ?>
-
-            </div>
-            <div class="tariff-item__list-title">
-				<?php if (get_sub_field('programm_condition')) : ?>
-					<?php the_sub_field("programm_condition") ?>
-				<?php endif; ?>
-
-            </div>
-
-
-            <ul class="tariff-item__desc-list">
-				<?php if (have_rows("programm_condition_ul")) : ?>
-    				<?php while (have_rows("programm_condition_ul")) : the_row(); ?>
-						<?php if (get_sub_field('programm_condition_ul_li')) : ?>
-                <li class="desc-list__desc-item">
-
-						<?php the_sub_field("programm_condition_ul_li") ?>
-
-
-                </li>
-				<?php endif; ?>
-								<?php endwhile; ?>
-                <?php endif; ?>
-
-				</ul>
-            <a href="#" class="tariff-item__btn-primary button-animate btn-5">
-                <?php if (get_sub_field('button_text')) : ?>
-					<?php the_sub_field("button_text") ?>
-				<?php endif; ?>
-            </a>
         </div>
 
-                <?php endwhile; ?>
-        <?php endif; ?>
 
         
-
-        </div> 
-
-
-        <!-- end Test-->
 
         
               
