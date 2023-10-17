@@ -846,7 +846,7 @@ if ($replace_img) {
         <?php echo strip_tags( get_sub_field( 'header', get_option('page_on_front') ), ['strong'] ); ?>
     </h2>
 
-    <?php the_field('test_clone')?>
+    <?php get_field('programs_page', 'option')"?>
 
 
 
