@@ -10,7 +10,7 @@ get_header(); ?>
         <div class="tariff-wrap__tariff-item">
             <div class="tariff-item__icon-shield"></div>
             <h3 class="tariff-item__tariff-header">
-                <strong>6% доступное</strong> решение
+                <strong>6% доступное!</strong> решение
             </h3>
             <div class="tariff-item__tariff-desc">
                 Выгодная кредитная программа с низкой процентной ставкой для реализации вашей мечты
