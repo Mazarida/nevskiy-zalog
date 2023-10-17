@@ -915,32 +915,32 @@ if ($replace_img) {
 
         <!-- start Test-->
 
-            <div class="tariffs__tariff-wrap">
+                <div <?php live_edit('page_content, flex-our_credit_programs--programm_car', get_option('page_on_front')	) ?> class="tariffs__tariff-wrap">
 
 
-		<?php if (have_rows("programm_car", 181)) : ?>
+		<?php if (have_rows("programm_car")) : ?>
     		<?php while (have_rows("programm_car")) : the_row(); ?>
 
-		<?php if (get_sub_field('color_card', 181)) : ?>
+		<?php if (get_sub_field('color_card')) : ?>
 			<div class="<?php the_sub_field("color_card") ?> click-btn btn-style1">
 
         <?php endif; ?>
 
             <div class="tariff-item__icon-shield"></div>
             <h3 class="tariff-item__tariff-header">
-				<?php if (get_sub_field('programm_name', 181)) : ?>
+				<?php if (get_sub_field('programm_name')) : ?>
 					<?php the_sub_field("programm_name") ?>
 				<?php endif; ?>
 
             </h3>
             <div class="tariff-item__tariff-desc">
-				<?php if (get_sub_field('programm_description', 181)) : ?>
+				<?php if (get_sub_field('programm_description')) : ?>
 					<?php the_sub_field("programm_description") ?>
 				<?php endif; ?>
 
             </div>
             <div class="tariff-item__list-title">
-				<?php if (get_sub_field('programm_condition', 181)) : ?>
+				<?php if (get_sub_field('programm_condition')) : ?>
 					<?php the_sub_field("programm_condition") ?>
 				<?php endif; ?>
 
@@ -948,9 +948,9 @@ if ($replace_img) {
 
 
             <ul class="tariff-item__desc-list">
-				<?php if (have_rows("programm_condition_ul", 181)) : ?>
+				<?php if (have_rows("programm_condition_ul")) : ?>
     				<?php while (have_rows("programm_condition_ul")) : the_row(); ?>
-						<?php if (get_sub_field('programm_condition_ul_li', 181)) : ?>
+						<?php if (get_sub_field('programm_condition_ul_li')) : ?>
                 <li class="desc-list__desc-item">
 
 						<?php the_sub_field("programm_condition_ul_li") ?>
@@ -974,46 +974,13 @@ if ($replace_img) {
 
         
 
-        </div>
+        </div> 
+
 
         <!-- end Test-->
 
         
-        <?php if ( have_rows( 'page_content2' ) ): ?>
-                <?php while ( have_rows( 'page_content2' ) ) : the_row(); ?>
-                    <?php if ( get_row_layout() == 'our_credit_programs' ) : ?>
-                        <?php the_sub_field( 'header' ); ?>
-                        <?php if ( have_rows( 'programm_car' ) ) : ?>
-                            <?php while ( have_rows( 'programm_car' ) ) : the_row(); ?>
-                                <?php the_sub_field( 'color_card' ); ?>
-                                <?php the_sub_field( 'programm_name' ); ?>
-                                <?php the_sub_field( 'programm_description' ); ?>
-                                <?php the_sub_field( 'programm_condition' ); ?>
-                                <?php if ( have_rows( 'programm_condition_ul' ) ) : ?>
-                                    <?php while ( have_rows( 'programm_condition_ul' ) ) : the_row(); ?>
-                                        <?php the_sub_field( 'programm_condition_ul_li' ); ?>
-                                    <?php endwhile; ?>
-                                <?php else : ?>
-                                    <?php // no rows found ?>
-                                <?php endif; ?>
-                                <?php the_sub_field( 'button_text' ); ?>
-                                <?php // out_pagemain ( value )
-                                $out_pagemain_array = get_sub_field( 'out_pagemain' );
-                                if ( $out_pagemain_array ):
-                                    foreach ( $out_pagemain_array as $out_pagemain_item ):
-                                        echo $out_pagemain_item;
-                                    endforeach;
-                                endif; ?>
-                            <?php endwhile; ?>
-                        <?php else : ?>
-                            <?php // no rows found ?>
-                        <?php endif; ?>
-                        <?php the_sub_field( 'all_programm' ); ?>
-                    <?php endif; ?>
-                <?php endwhile; ?>
-            <?php else: ?>
-                <?php // no layouts found ?>
-            <?php endif; ?>               
+              
 
         <a href="#" <?php live_edit('page_content, flex-our_credit_programs--all_programm', get_option('page_on_front')) ?>  class="tariffs__btn-secondary1  btn-5">
 
