@@ -1,27 +1,11 @@
-<?php // Template Name: Calc
+<?php // Template Name: Услуга
 $filters = get_calc_filters();
-get_header();
-global $replace_img;
-$style_head_offer = '';
-$style_head_offer_ctr = '';
-if ($replace_img) {
-    $style_head_offer = "background-image: url('$replace_img'); background-position: 100% 50%;";
-    $style_head_offer_ctr = "background-image: none;";
-}
-?>
+get_header(); ?>
 
-<section class="head-offer head-offer-dsk"<?=($style_head_offer ? ' style="'.$style_head_offer.'"' : '')?>>
-    <div class="dsk-container head-offer__ctr"<?=($style_head_offer_ctr ? ' style="'.$style_head_offer_ctr.'"' : '')?>>
+<section class="head-offer head-offer-dsk">
+    <div class="dsk-container head-offer__ctr">
         <h1 data-action="title-replace" class="head-offer__offer-title">
-            <?php global $replace_title;
-            if ($replace_title) {
-                echo $replace_title;
-            } else {
-                ?>
-                <strong>Получи</strong> лучшее предложение по кредиту
-                <?php
-            }
-            ?>
+            <?php echo get_the_title(); ?>
         </h1>
         <ul class="head-offers__head-benefits">
             <li class="head-benefits__head-benefit">
