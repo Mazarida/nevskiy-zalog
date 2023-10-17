@@ -50,6 +50,17 @@ jQuery(function($){
                     const responseObj = JSON.parse(data)
                     $('[data-action="title-replace"]').html(responseObj.title)
                     $('title').html(responseObj.title)
+                    if (responseObj.img) {
+                        $('.head-offer').css('background-image', `url('${responseObj.img}')`)
+                        $('.head-offer').css('background-position-x', 'right')
+                        $('.head-offer').css('background-position-y', 'center')
+                        $('.head-offer__ctr').css('background-image', 'none')
+                    } else {
+                        $('.head-offer').css('background-image', '')
+                        $('.head-offer').css('background-position-x', '')
+                        $('.head-offer').css('background-position-y', '')
+                        $('.head-offer__ctr').css('background-image', '')
+                    }
                     window.history.replaceState({}, responseObj.title, responseObj.url)
                 },
                 complete: function () {

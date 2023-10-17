@@ -62,11 +62,15 @@ function get_calc_data() {
 //    $max_depth = (int)get_field('max_depth', 'option');
     if (!$calc_data) {
         $filters = get_calc_filters();
+        $img = '';
         $url_fragments = [];
 //        $bullets = [];
         foreach ($filters['vals'] as $filter_val) {
             if (in_array($filter_val['filter_option_slug'], $_POST)) {
 //                if (count($url_fragments) < $max_depth) {
+                    if ($filter_val['filter_option_head_offer_img'] && !$img) {
+                        $img = $filter_val['filter_option_head_offer_img'];
+                    }
                     $url_fragments[] = $filter_val['filter_option_slug'];
 //                } else {
 //                    $bullets[] = $filter_val['filter_option_template'];
@@ -76,6 +80,7 @@ function get_calc_data() {
         $url = '/kredit/'.implode('/', $url_fragments).'/';
         $calc_data = [
             'title' => get_calc_template($url),
+            'img' => $img,
 //            'bullets' => $bullets,
             'url' => $url,
         ];
@@ -136,11 +141,13 @@ function get_calc_filters() {
                     'filter_option_label' => get_sub_field( 'filter_option_label' ),
                     'filter_option_slug' => get_sub_field( 'filter_option_slug' ),
                     'filter_option_template' => lcfirst(get_sub_field( 'filter_option_template' )),
+                    'filter_option_head_offer_img' => get_sub_field( 'filter_option_head_offer_img' ),
                 ];
                 $filters_array['avail_filters'][$filter_slug]['options'][] = [
                     'filter_option_label' => get_sub_field( 'filter_option_label' ),
                     'filter_option_slug' => get_sub_field( 'filter_option_slug' ),
                     'filter_option_template' => get_sub_field( 'filter_option_template' ),
+                    'filter_option_head_offer_img' => get_sub_field( 'filter_option_head_offer_img' ),
                 ];
             endwhile;
         endwhile;
@@ -155,8 +162,14 @@ function get_calc_template($url = '', $n = 4) {
     }
     $url = explode('/', $url);
     $filters = get_calc_filters();
+    global $replace_img;
+    $replace_img = '';
     foreach ($filters['vals'] as $filter) {
         if (in_array($filter['filter_option_slug'], $url)) {
+            if ($filter['filter_option_head_offer_img'] && !$replace_img) {
+                $replace_img = $filter['filter_option_head_offer_img'];
+            }
+
             if ($n > 0) {
                 $template[] = mb_strtolower($filter['filter_option_template']);
             }
