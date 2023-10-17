@@ -236,5 +236,6 @@ jQuery(function($){
 
 let modalBtn = document.querySelectorAll('.callback-form__btn-primary');
 console.log(modalBtn);
+console.log(modalBtn);
 
 /* -- end Скрипт попапов  --*/
