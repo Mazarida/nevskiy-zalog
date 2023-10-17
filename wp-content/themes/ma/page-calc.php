@@ -925,7 +925,7 @@ if ($replace_img) {
 	<?php endif; ?>
 <?php endwhile; ?>
 
-<?php the_field('test' , 'options'); ?>
+<?php the_field('page_content2' , 'options'); ?>
 	
 
 
