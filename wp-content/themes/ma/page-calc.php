@@ -928,7 +928,7 @@ if ($replace_img) {
 <?php if ( get_row_layout() == 'our_credit_programs', 181 ) : ?>
 
 
-    <div <?php live_edit('page_content2, flex-our_credit_programs--programm_car', 181) ?> class="tariffs__tariff-wrap">
+    <div <?php live_edit('page_content2, flex-our_credit_programs--programm_car') ?> class="tariffs__tariff-wrap">
 
         <?php if (have_rows("programm_car", 181)) : ?>
     	<?php while (have_rows("programm_car", 181)) : the_row(); ?>
