@@ -230,3 +230,11 @@ jQuery(function($){
     });
     $('body').on('change', '.calculate__calculator select', recount)
 });
+
+
+/* -- start Скрипт попапов --*/
+
+let modalBtn = document.querySelectorAll('.callback-form__btn-primary');
+console.log(modalBtn);
+
+/* -- end Скрипт попапов  --*/
