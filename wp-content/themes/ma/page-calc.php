@@ -912,6 +912,13 @@ if ($replace_img) {
 
     </div> -->
 
+    <?php $programs_page = get_field( 'programs_page' ); ?>
+        <?php if ( $programs_page ): ?>
+            <?php foreach ( $programs_page as $p ): ?>
+                <a href="<?php echo get_permalink( $p ); ?>"><?php echo get_the_title( $p ); ?></a>
+            <?php endforeach; ?>
+    <?php endif; ?>
+
     <a href="#" <?php live_edit('page_content, flex-our_credit_programs--all_programm', get_option('page_on_front')) ?>  class="tariffs__btn-secondary1  btn-5">
 
 		<?php echo strip_tags( get_sub_field( 'all_programm', get_option('page_on_front') ), ['strong'] ); ?>
