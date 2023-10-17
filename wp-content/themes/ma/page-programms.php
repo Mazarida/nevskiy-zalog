@@ -25,11 +25,11 @@ get_header(); ?>
 
           
 
-            <?php endif; ?>
+               
 
-            <?php if (get_sub_field('color_card')) : ?>
-                <div class="<?php the_sub_field("color_card") ?> click-btn btn-style1">
-            <?php endif; ?>
+                <?php if (get_sub_field('color_card')) : ?>
+            <div class="<?php the_sub_field("color_card") ?> click-btn btn-style1">
+                <?php endif; ?>
 
                 <div class="tariff-item__icon-shield"></div>
                 <h3 class="tariff-item__tariff-header">
