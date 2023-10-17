@@ -50,6 +50,14 @@ jQuery(function($){
                     const responseObj = JSON.parse(data)
                     $('[data-action="title-replace"]').html(responseObj.title)
                     $('title').html(responseObj.title)
+                    window.responseObj = responseObj
+                    window.$ = $
+                    $('[data-default-content]').each(function () {
+                        $(this).html($(this).attr('data-default-content'))
+                    })
+                    responseObj.bullets.forEach((el, index) => {
+                        $(`[data-bullet="${index}"]`).html(el)
+                    })
                     if (responseObj.img) {
                         $('.head-offer').css('background-image', `url('${responseObj.img}')`)
                         $('.head-offer').css('background-position-x', 'right')

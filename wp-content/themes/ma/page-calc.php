@@ -2,6 +2,7 @@
 $filters = get_calc_filters();
 get_header();
 global $replace_img;
+global $replace_bullets;
 $style_head_offer = '';
 $style_head_offer_ctr = '';
 if ($replace_img) {
@@ -24,20 +25,40 @@ if ($replace_img) {
             ?>
         </h1>
         <ul class="head-offers__head-benefits">
-            <li class="head-benefits__head-benefit">
-                За <strong>1 день</strong>
+            <li data-bullet="0" data-default-content="<?=htmlentities('За <strong>1 день</strong>')?>" class="head-benefits__head-benefit">
+                <?php if (isset($replace_bullets[0])) {
+                    echo $replace_bullets[0];
+                } else { ?>
+                    За <strong>1 день</strong>
+                <?php } ?>
             </li>
-            <li class="head-benefits__head-benefit">
-                Ставка <strong>5%</strong>
+            <li data-bullet="1" data-default-content="<?=htmlentities('Ставка <strong>5%</strong>')?>" class="head-benefits__head-benefit">
+                <?php if (isset($replace_bullets[1])) {
+                    echo $replace_bullets[1];
+                } else { ?>
+                    Ставка <strong>5%</strong>
+                <?php } ?>
             </li>
-            <li class="head-benefits__head-benefit">
-                С любой <strong>кредитной историей</strong>
+            <li data-bullet="2" data-default-content="<?=htmlentities('С любой <strong>кредитной историей</strong>')?>" class="head-benefits__head-benefit">
+                <?php if (isset($replace_bullets[2])) {
+                    echo $replace_bullets[2];
+                } else { ?>
+                    С любой <strong>кредитной историей</strong>
+                <?php } ?>
             </li>
-            <li class="head-benefits__head-benefit">
-                Минимум <strong>документов</strong>
+            <li data-bullet="3" data-default-content="<?=htmlentities('Минимум <strong>документов</strong>')?>" class="head-benefits__head-benefit">
+                <?php if (isset($replace_bullets[3])) {
+                    echo $replace_bullets[3];
+                } else { ?>
+                    Минимум <strong>документов</strong>
+                <?php } ?>
             </li>
-            <li class="head-benefits__head-benefit">
-                Максимальная <strong>сумма кредита</strong>
+            <li data-bullet="4" data-default-content="<?=htmlentities('Максимальная <strong>сумма кредита</strong>')?>" class="head-benefits__head-benefit">
+                <?php if (isset($replace_bullets[4])) {
+                    echo $replace_bullets[4];
+                } else { ?>
+                    Максимальная <strong>сумма кредита</strong>
+                <?php } ?>
             </li>
         </ul>
         <a href="#" class="head-offer__offer-link button-animate btn-5">
@@ -989,7 +1010,7 @@ if ($replace_img) {
 <?php endwhile; ?>
 
 <?php the_field('our_credit_programs' , 'options'); ?>
-	
+
 
 
 
