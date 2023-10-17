@@ -925,44 +925,44 @@ if ($replace_img) {
 <?php endwhile; ?>
 
 <?php while ( have_rows( 'page_content2', 181 ) ) : the_row(); ?>
-<?php if ( get_row_layout() == 'our_credit_programs', 181 ) : ?>
+<?php if ( get_row_layout() == 'our_credit_programs') : ?>
 
 
     <div <?php live_edit('page_content2, flex-our_credit_programs--programm_car') ?> class="tariffs__tariff-wrap">
 
         <?php if (have_rows("programm_car", 181)) : ?>
-    	<?php while (have_rows("programm_car", 181)) : the_row(); ?>
+    	<?php while (have_rows("programm_car")) : the_row(); ?>
 
 
 
                
 
                 <?php if (get_sub_field('color_card', 181)) : ?>
-                <div class="<?php the_sub_field("color_card", 181) ?> click-btn  btn-style1">
+                <div class="<?php the_sub_field("color_card") ?> click-btn  btn-style1">
                     <?php endif; ?>
 
                     <div class="tariff-item__icon-shield"></div>
                     <h3 class="tariff-item__tariff-header">
                         <?php if (get_sub_field('programm_name', 181)) : ?>
-                            <?php the_sub_field("programm_name", 181) ?>
+                            <?php the_sub_field("programm_name") ?>
                         <?php endif; ?>
                     </h3>
                     <div class="tariff-item__tariff-desc">
                         <?php if (get_sub_field('programm_description', 181)) : ?>
-                            <?php the_sub_field("programm_description", 181) ?>
+                            <?php the_sub_field("programm_description") ?>
                         <?php endif; ?>
                     </div>
                     <div class="tariff-item__list-title">
                         <?php if (get_sub_field('programm_condition', 181)) : ?>
-                            <?php the_sub_field("programm_condition", 181) ?>
+                            <?php the_sub_field("programm_condition") ?>
                         <?php endif; ?>
                     </div>
                     <ul class="tariff-item__desc-list">
                         <?php if (have_rows("programm_condition_ul", 181)) : ?>
-                            <?php while (have_rows("programm_condition_ul", 181)) : the_row(); ?>
+                            <?php while (have_rows("programm_condition_ul")) : the_row(); ?>
                                 <?php if (get_sub_field('programm_condition_ul_li', 181)) : ?>
                                     <li class="desc-list__desc-item">
-                                        <?php the_sub_field("programm_condition_ul_li", 181) ?>
+                                        <?php the_sub_field("programm_condition_ul_li") ?>
                                     </li>
                                 <?php endif; ?>
                             <?php endwhile; ?>
@@ -970,7 +970,7 @@ if ($replace_img) {
                     </ul>
                     <a href="#" class="tariff-item__btn-primary button-animate">
                         <?php if (get_sub_field('button_text', 181)) : ?>
-                            <?php the_sub_field("button_text", 181) ?>
+                            <?php the_sub_field("button_text") ?>
                         <?php endif; ?>
                     </a>
                 </div>
