@@ -64,12 +64,15 @@ function get_calc_data() {
         $filters = get_calc_filters();
         $img = '';
         $url_fragments = [];
-//        $bullets = [];
+        $bullets = [];
         foreach ($filters['vals'] as $filter_val) {
             if (in_array($filter_val['filter_option_slug'], $_POST)) {
 //                if (count($url_fragments) < $max_depth) {
                     if ($filter_val['filter_option_head_offer_img'] && !$img) {
                         $img = $filter_val['filter_option_head_offer_img'];
+                    }
+                    if ($filter_val['filter_option_bullet']) {
+                        $bullets[] = $filter_val['filter_option_bullet'];
                     }
                     $url_fragments[] = $filter_val['filter_option_slug'];
 //                } else {
@@ -81,7 +84,7 @@ function get_calc_data() {
         $calc_data = [
             'title' => get_calc_template($url),
             'img' => $img,
-//            'bullets' => $bullets,
+            'bullets' => $bullets,
             'url' => $url,
         ];
     }
@@ -142,6 +145,7 @@ function get_calc_filters() {
                     'filter_option_slug' => get_sub_field( 'filter_option_slug' ),
                     'filter_option_template' => lcfirst(get_sub_field( 'filter_option_template' )),
                     'filter_option_head_offer_img' => get_sub_field( 'filter_option_head_offer_img' ),
+                    'filter_option_bullet' => get_sub_field( 'filter_option_bullet' ),
                 ];
                 $filters_array['avail_filters'][$filter_slug]['options'][] = [
                     'filter_option_label' => get_sub_field( 'filter_option_label' ),
@@ -163,11 +167,16 @@ function get_calc_template($url = '', $n = 4) {
     $url = explode('/', $url);
     $filters = get_calc_filters();
     global $replace_img;
+    global $replace_bullets;
     $replace_img = '';
+    $replace_bullets = [];
     foreach ($filters['vals'] as $filter) {
         if (in_array($filter['filter_option_slug'], $url)) {
             if ($filter['filter_option_head_offer_img'] && !$replace_img) {
                 $replace_img = $filter['filter_option_head_offer_img'];
+            }
+            if ($filter['filter_option_bullet']) {
+                $replace_bullets[] = $filter['filter_option_bullet'];
             }
 
             if ($n > 0) {
