@@ -851,11 +851,11 @@ if ($replace_img) {
 
 
 
-    <!-- <div <?php live_edit('page_content, flex-our_credit_programs--programm_car', get_option('page_on_front')	) ?> class="tariffs__tariff-wrap">
+    <div <?php live_edit('page_content, flex-our_credit_programs--programm_car', get_option('page_on_front')) ?> class="tariffs__tariff-wrap">
 
 
-		<?php if (have_rows("programm_car")) : ?>
-    		<?php while (have_rows("programm_car")) : the_row(); ?>
+		<?php if (have_rows(('programs_page', 'option'))) : ?>
+    		<?php while (have_rows(('programs_page', 'option'))) : the_row(); ?>
 
 		<?php if (get_sub_field('color_card')) : ?>
 			<div class="<?php the_sub_field("color_card") ?> click-btn btn-style1">
@@ -910,9 +910,9 @@ if ($replace_img) {
 
         
 
-    </div> -->
+    </div>
 
-    <?php get_field('programs_page', 'option')"?> 
+    <!-- <?php get_the_field('programs_page', 'option')"?>  -->
 
 
 
