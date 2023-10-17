@@ -851,7 +851,7 @@ if ($replace_img) {
 
 
 
-        <div <?php live_edit('page_content, flex-our_credit_programs--programm_car', get_option('page_on_front')	) ?> class="tariffs__tariff-wrap">
+        <!-- <div <?php live_edit('page_content, flex-our_credit_programs--programm_car', get_option('page_on_front')	) ?> class="tariffs__tariff-wrap">
 
 
 		<?php if (have_rows("programm_car")) : ?>
@@ -910,7 +910,97 @@ if ($replace_img) {
 
         
 
+        </div> -->
+
+        <div class="tariffs__tariff-wrap">
+        <div class="tariff-wrap__tariff-item">
+            <div class="tariff-item__icon-shield"></div>
+            <h3 class="tariff-item__tariff-header">
+                <strong>6% доступное</strong> решение
+            </h3>
+            <div class="tariff-item__tariff-desc">
+                Выгодная кредитная программа с низкой процентной ставкой для реализации вашей мечты
+            </div>
+            <div class="tariff-item__list-title">
+                Основные условия:
+            </div>
+            <ul class="tariff-item__desc-list">
+                <li class="desc-list__desc-item">
+                    Процентная ставка: 6% годовых
+                </li>
+                <li class="desc-list__desc-item">
+                    Срок кредита: до 20 лет
+                </li>
+                <li class="desc-list__desc-item">
+                    Необходимые документы: паспорт, справка о доходах, документы на квартиру
+                </li>
+                <li class="desc-list__desc-item">
+                    Дополнительные требования: кредитная история без просрочек
+                </li>
+            </ul>
+            <a href="#" class="tariff-item__btn-primary button-animate">
+                Оформить
+            </a>
         </div>
+        <div class="tariff-wrap__tariff-item item-accent">
+            <div class="tariff-item__icon-shield"></div>
+            <h3 class="tariff-item__tariff-header">
+                9.8% больше <strong>возможностей</strong>
+            </h3>
+            <div class="tariff-item__tariff-desc">
+                Кредитная программа с увеличенным сроком и суммой кредита для тех, кто хочет реализовать крупные планы и мечты
+            </div>
+            <div class="tariff-item__list-title">
+                Основные условия:
+            </div>
+            <ul class="tariff-item__desc-list">
+                <li class="desc-list__desc-item">
+                    Процентная ставка: 9,8% годовых
+                </li>
+                <li class="desc-list__desc-item">
+                    Срок кредита: до 25 лет
+                </li>
+                <li class="desc-list__desc-item">
+                    Необходимые документы: паспорт, справка о доходах, документы на квартиру, подтверждение целевого использования средств
+                </li>
+                <li class="desc-list__desc-item">
+                    Дополнительные требования: кредитная история без просрочек, возраст заемщика до 65 лет намомент погашения кредита
+                </li>
+            </ul>
+            <a href="#" class="tariff-item__btn-primary button-animate">
+                Оформить
+            </a>
+        </div>
+        <div class="tariff-wrap__tariff-item">
+            <div class="tariff-item__icon-shield"></div>
+            <h3 class="tariff-item__tariff-header">
+                <strong>6% доступное</strong> решение
+            </h3>
+            <div class="tariff-item__tariff-desc">
+                Выгодная кредитная программа с низкой процентной ставкой для реализации вашей мечты
+            </div>
+            <div class="tariff-item__list-title">
+                Основные условия:
+            </div>
+            <ul class="tariff-item__desc-list">
+                <li class="desc-list__desc-item">
+                    Процентная ставка: 6% годовых
+                </li>
+                <li class="desc-list__desc-item">
+                    Срок кредита: до 20 лет
+                </li>
+                <li class="desc-list__desc-item">
+                    Необходимые документы: паспорт, справка о доходах, документы на квартиру
+                </li>
+                <li class="desc-list__desc-item">
+                    Дополнительные требования: кредитная история без просрочек
+                </li>
+            </ul>
+            <a href="#" class="tariff-item__btn-primary button-animate">
+                Оформить
+            </a>
+        </div>
+    </div>
 
 
         
