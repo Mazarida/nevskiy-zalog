@@ -912,49 +912,49 @@ if ($replace_img) {
 
         </div> -->
 
-    <?php if ( have_rows( 'page_content2', get_field('programs_page', 'option') ) ): ?>
-        <?php while ( have_rows( 'page_content2', get_field('programs_page', 'option') ) ) : the_row(); ?>
-            <?php if ( get_row_layout() == 'our_credit_programs' ) :?>                    
+        <?php if ( have_rows( 'page_content2' ) ): ?>
+            <?php while ( have_rows( 'page_content2' ) ) : the_row(); ?>
+                <?php if ( get_row_layout() == 'our_credit_programs' ) : ?>
 
         <div class="tariffs__tariff-wrap">
 
 
-            <?php if (have_rows("programm_car", get_field('programs_page', 'option'))) : ?>
-                <?php while (have_rows("programm_car", get_field('programs_page', 'option'))) : the_row(); ?>
+            <?php if (have_rows("programm_car")) : ?>
+                <?php while (have_rows("programm_car")) : the_row(); ?>
 
-            <?php if (get_sub_field('color_card', get_field('programs_page', 'option'))) : ?>
-                <div class="<?php the_sub_field("color_card", get_field('programs_page', 'option')) ?> click-btn btn-style1">
+            <?php if (get_sub_field('color_card')) : ?>
+                <div class="<?php the_sub_field("color_card") ?> click-btn btn-style1">
 
             <?php endif; ?>
 
                 <div class="tariff-item__icon-shield"></div>
                 <h3 class="tariff-item__tariff-header">
-                    <?php if (get_sub_field('programm_name', get_field('programs_page', 'option'))) : ?>
-                        <?php the_sub_field("programm_name", get_field('programs_page', 'option')) ?>
+                    <?php if (get_sub_field('programm_name')) : ?>
+                        <?php the_sub_field("programm_name") ?>
                     <?php endif; ?>
 
                 </h3>
                 <div class="tariff-item__tariff-desc">
-                    <?php if (get_sub_field('programm_description', get_field('programs_page', 'option'))) : ?>
-                        <?php the_sub_field("programm_description", get_field('programs_page', 'option')) ?>
+                    <?php if (get_sub_field('programm_description')) : ?>
+                        <?php the_sub_field("programm_description") ?>
                     <?php endif; ?>
 
                 </div>
                 <div class="tariff-item__list-title">
-                    <?php if (get_sub_field('programm_condition', get_field('programs_page', 'option'))) : ?>
-                        <?php the_sub_field("programm_condition", get_field('programs_page', 'option')) ?>
+                    <?php if (get_sub_field('programm_condition')) : ?>
+                        <?php the_sub_field("programm_condition") ?>
                     <?php endif; ?>
 
                 </div>
 
 
                 <ul class="tariff-item__desc-list">
-                    <?php if (have_rows("programm_condition_ul", get_field('programs_page', 'option'))) : ?>
-                        <?php while (have_rows("programm_condition_ul", get_field('programs_page', 'option'))) : the_row(); ?>
-                            <?php if (get_sub_field('programm_condition_ul_li', get_field('programs_page', 'option'))) : ?>
+                    <?php if (have_rows("programm_condition_ul")) : ?>
+                        <?php while (have_rows("programm_condition_ul")) : the_row(); ?>
+                            <?php if (get_sub_field('programm_condition_ul_li')) : ?>
                     <li class="desc-list__desc-item">
 
-                            <?php the_sub_field("programm_condition_ul_li", get_field('programs_page', 'option')) ?>
+                            <?php the_sub_field("programm_condition_ul_li") ?>
 
 
                     </li>
@@ -970,8 +970,11 @@ if ($replace_img) {
                 </a>
             </div>
 
-                    <?php endwhile; ?>
-            <?php endif; ?>
+                    <?php endif; ?>
+	<?php endwhile; ?>
+<?php else: ?>
+	<?php // no layouts found ?>
+<?php endif; ?>
 
         
 
