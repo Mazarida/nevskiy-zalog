@@ -47,24 +47,13 @@ get_header(); ?>
 				<?php if (have_rows("programm_condition_ul")) : ?>
     				<?php while (have_rows("programm_condition_ul")) : the_row(); ?>
 						<?php if (get_sub_field('programm_condition_ul_li')) : ?>
-                <li class="desc-list__desc-item">
-					
-						<?php the_sub_field("programm_condition_ul_li") ?>
-					
-<!--                     Процентная ставка: 6% годовых -->
-                </li>
-				<?php endif; ?>
-								<?php endwhile; ?>
-<?php endif; ?>
-<!--                 <li class="desc-list__desc-item">
-                    Срок кредита: до 20 лет
-                </li>
-                <li class="desc-list__desc-item">
-                    Необходимые документы: паспорт, справка о доходах, документы на квартиру
-                </li>
-                <li class="desc-list__desc-item">
-                    Дополнительные требования: кредитная история без просрочек
-                </li> -->
+                            <li class="desc-list__desc-item">
+						        <?php the_sub_field("programm_condition_ul_li") ?>
+                            </li>
+				        <?php endif; ?>
+					<?php endwhile; ?>
+                <?php endif; ?>
+
             </ul>
 
             <a href="#" class="tariff-item__btn-primary button-animate btn-5">

@@ -838,8 +838,8 @@ if ($replace_img) {
 <?php while ( have_rows( 'page_content', get_option('page_on_front') ) ) : the_row(); ?>
     <?php if ( get_row_layout() == 'our_credit_programs' ) : ?>
 
-<div <?php live_edit('page_content, flex-our_credit_programs--dispaly_flex_none', get_option('page_on_front')) ?>>
-<section class="tariffs" style="display: <?php echo strip_tags( get_sub_field( 'dispaly_flex_none', get_option('page_on_front') ), ['strong'] ); ?>;">
+
+<section class="tariffs">
 
 
 			    <h2 <?php live_edit('page_content, flex-our_credit_programs--header', get_option('page_on_front')) ?> class="nzlg-title tariffs__trf-title">
@@ -849,7 +849,7 @@ if ($replace_img) {
 
 
 
-    <div <?php live_edit('page_content, flex-our_credit_programs--programm_car', get_option('page_on_front')	) ?> class="tariffs__tariff-wrap">
+    <!-- <div <?php live_edit('page_content, flex-our_credit_programs--programm_car', get_option('page_on_front')	) ?> class="tariffs__tariff-wrap">
 
 
 		<?php if (have_rows("programm_car")) : ?>
@@ -908,7 +908,7 @@ if ($replace_img) {
 
 
 
-    </div>
+    </div> -->
 
 
 
@@ -920,7 +920,7 @@ if ($replace_img) {
 
 </section>
 
-	</div>
+
 
 	<?php endif; ?>
 <?php endwhile; ?>
