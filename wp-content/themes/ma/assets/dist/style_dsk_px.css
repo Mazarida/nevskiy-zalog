@@ -545,6 +545,7 @@ strong {
 .our-team__team-experts {
     display: flex;
     gap: 32px;
+    margin-bottom: 30px;
 }
 
 .our-team__team-experts--mod {
