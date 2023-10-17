@@ -257,12 +257,12 @@ if ($replace_img) {
         <?php echo strip_tags( get_sub_field( 'header', get_option('page_on_front') ), ['strong'] ); ?>
 
     </h2>
-    <div <?php live_edit('page_content, flex-our_team_experts--expert_card', get_option('page_on_front')) ?>  class="our-team__team-experts">
+    <div <?php live_edit('page_content, flex-our_team_experts--expert_card', get_option('page_on_front')) ?>  class="our-team__team-experts our-team__team-experts--mod">
 
 		<?php if (have_rows("expert_card")) : ?>
     		<?php while (have_rows("expert_card")) : the_row(); ?>
 
-        <div  class="team-experts__team-expert">
+        <div  class="team-experts__team-expert team-experts__team-expert--mod">
 			<?php if (get_sub_field('expert_img')) : ?>
 
 				<div style="background-image: url('<?php the_sub_field("expert_img") ?>')" class="team-expert__expert-photo"></div>

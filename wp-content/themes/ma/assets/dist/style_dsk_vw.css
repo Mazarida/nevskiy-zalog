@@ -546,10 +546,23 @@ strong {
     gap: 2.37037vw;
 }
 
+.our-team__team-experts--mod {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
 .team-experts__team-expert {
     max-width: 29.25926vw;
     margin: 2.74074vw 0;
     margin-bottom: 3.7037vw;
+}
+
+.team-experts__team-expert--mod {
+    max-width: 29.25926vw;
+    margin: 0;
+    margin-bottom: 0;
 }
 
 .team-expert__expert-photo {

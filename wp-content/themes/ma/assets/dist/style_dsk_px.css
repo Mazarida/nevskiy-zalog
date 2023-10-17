@@ -547,10 +547,23 @@ strong {
     gap: 32px;
 }
 
+.our-team__team-experts--mod {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 30px;
+    column-gap: 30px;
+}
+
 .team-experts__team-expert {
     max-width: 395px;
     margin: 37px 0;
     margin-bottom: 50px;
+}
+
+.team-experts__team-expert--mod {
+    
+    margin: 0;
+    margin-bottom: 0;
 }
 
 .team-expert__expert-photo {
