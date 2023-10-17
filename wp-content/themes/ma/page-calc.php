@@ -925,7 +925,7 @@ if ($replace_img) {
 	<?php endif; ?>
 <?php endwhile; ?>
 
-<?php the_field('page_content2' , 'options'); ?>
+<?php the_field('our_credit_programs' , 'options'); ?>
 	
 
 
