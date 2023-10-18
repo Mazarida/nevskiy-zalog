@@ -234,45 +234,7 @@ jQuery(function($){
 
 /* -- start Скрипт попапов --*/
 
-    document.getElementById("open-modal-btn1").addEventListener("click", function() {
-       document.getElementById("my-modal1").classList.add("open");
-    })
-
-    document.getElementById("open-modal-btn2").addEventListener("click", function() {
-        document.getElementById("my-modal2").classList.add("open");
-     })
-
-     document.getElementById("open-modal-btn2-1").addEventListener("click", function() {
-        document.getElementById("my-modal2-1").classList.add("open");
-     })
-
-     document.getElementById("open-modal-btn3").addEventListener("click", function() {
-        document.getElementById("my-modal3").classList.add("open");
-     })
-
-     document.getElementById("open-modal-btn4").addEventListener("click", function() {
-        document.getElementById("my-modal4").classList.add("open");
-     })
- 
-     document.getElementById("close-my-modal-btn1").addEventListener("click", function() {
-        document.getElementById("my-modal1").classList.remove("open");
-     })
- 
-     // Закрыть модальное окно при нажатии на Esc
- window.addEventListener('keydown', (e) => {
-     if (e.key === "Escape") {
-         document.getElementById("my-modal1").classList.remove("open")
-     }
- });
- 
- // Закрыть модальное окно при клике вне его
- document.querySelector(".modal__modal-front").addEventListener('click', event => {
-     event._isClickWithInModal = true;
- });
- document.getElementById("my-modal1").addEventListener('click', event => {
-     if (event._isClickWithInModal) return;
-     event.currentTarget.classList.remove('open');
- });
+   
 
 
 /* -- end Скрипт попапов  --*/

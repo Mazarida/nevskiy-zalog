@@ -1779,10 +1779,10 @@ if ($replace_img) {
     </div>
 </div>
 
-<div class="modal modal-sm" id="my-modal1">
+<div class="modal modal-sm">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front">
-        <div class="modal-front__close"></div>
+        <div class="modal-front__close" id="close-my-modal-btn1">></div>
         <div class="modal-front__modal-header">
             Заполните поля и
             получите чек-лист
@@ -1805,10 +1805,10 @@ if ($replace_img) {
     </div>
 </div>
 
-<div class="modal modal-sm" id="my-modal2">
+<div class="modal modal-sm">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front">
-        <div class="modal-front__close"></div>
+        <div class="modal-front__close" id="close-my-modal-btn2"></div>
         <div class="modal-front__modal-header">
             Заполните заявку
             ниже
@@ -1831,37 +1831,10 @@ if ($replace_img) {
     </div>
 </div>
 
-<div class="modal modal-sm" id="my-modal2-1">
+<div class="modal modal-sm">
     <div class="modal__modal-back"></div>
-    <div class="modal__modal-front">
-        <div class="modal-front__close"></div>
-        <div class="modal-front__modal-header">
-        Оформите заявку
-        на программу
-
-        </div>
-        <div class="modal-front__modal-subheader">
-            Наш сотрудник свяжется
-            с Вами в ближайшее время
-        </div>
-        <form action="" class="modal-front__callback-form">
-            <input placeholder="Ваше имя" type="text" class="callback-form__text-input">
-            <input placeholder="Номер телефона" type="text" class="callback-form__text-input">
-            <button type="submit" class="callback-form__btn-primary">
-                Отправить
-            </button>
-            <div class="callback-form__modal-disclaimer">
-                Отправляя заявку Вы даете свое согласие
-                на обработку персональных данных
-            </div>
-        </form>
-    </div>
-</div>
-
-<div class="modal modal-sm" id="my-modal3">
-    <div class="modal__modal-back"></div>
-    <div class="modal__modal-front">
-        <div class="modal-front__close" id="close-my-modal-btn1"></div>
+    <div class="modal__modal-front" id="close-my-modal-btn1">
+        <div class="modal-front__close" </div>
         <div class="modal-front__modal-header">
             Для консультации заполните заявку
         </div>
@@ -1872,32 +1845,6 @@ if ($replace_img) {
         <form action="" class="modal-front__callback-form">
             <input placeholder="Ваше имя" type="text" class="callback-form__text-input">
             <input placeholder="Номер телефона" type="text" class="callback-form__text-input">
-            <button type="submit" class="callback-form__btn-primary">
-                Отправить
-            </button>
-            <div class="callback-form__modal-disclaimer">
-                Отправляя заявку Вы даете свое согласие
-                на обработку персональных данных
-            </div>
-        </form>
-    </div>
-</div>
-
-<div class="modal modal-sm" id="my-modal4">
-    <div class="modal__modal-back"></div>
-    <div class="modal__modal-front">
-        <div class="modal-front__close"></div>
-        <div class="modal-front__modal-header">
-            Напишите ваш вопрос ниже
-        </div>
-        <div class="modal-front__modal-subheader">
-            Наш сотрудник свяжется
-            с Вами в ближайшее время
-        </div>
-        <form action="" class="modal-front__callback-form">
-            <input placeholder="Ваше имя" type="text" class="callback-form__text-input">
-            <input placeholder="Номер телефона" type="text" class="callback-form__text-input">
-            <input placeholder="Введите сообщение" type="text" class="callback-form__text-input">
             <button type="submit" class="callback-form__btn-primary">
                 Отправить
             </button>
