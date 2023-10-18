@@ -244,7 +244,7 @@ btns.forEach((el) => {
         modals.forEach((el) => {
             el.classList.add('modal--visible');
         } );
-        document.querySelector(`[data-target="${path}"]`).classList.add
+        document.querySelector(`[data-target="${path}"]`).classList.add('modal--visible');
     });
 });
    
