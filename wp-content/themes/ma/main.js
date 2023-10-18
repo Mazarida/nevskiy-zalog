@@ -269,20 +269,20 @@ modalsClose.forEach((el) => {
 
 document.addEventListener( 'wpcf7submit', function( event ) {
 	alert('Форма отправилась!');
+
+    modals.forEach((el) => {
+        el.classList.remove('modal--visible');
+    })
 	
 	 var id = event.detail.contactFormId;
     	if ( id == 374 || id == 372) {
       alert( "The contact form ID is 374. Бесплатная консультация" );
-      modals.forEach((el) => {
-            el.classList.remove('modal--visible');
-        })
+      document.querySelector('#form_success').classList.add('modal--visible');
+      
     } else {
 		alert('Проблема в Id');
 	}
   }, false );
-
-
-
 
 
 
