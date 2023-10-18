@@ -236,6 +236,7 @@ jQuery(function($){
 
 const btns = document.querySelectorAll('.modal-btn');
 const modals = document.querySelectorAll('.modal-sm');
+const modalsClose = document.querySelectorAll('.modal-front__close');
 
 
 
@@ -248,6 +249,12 @@ btns.forEach((el) => {
             el.classList.remove('modal--visible');
         })
         document.querySelector(`[data-target="${path}"]`).classList.add('modal--visible');
+    });
+});
+
+modalsClose.forEach((el) => {
+    el.addEventListener('click', (e) => {
+        el.classList.remove('modal--visible');
     });
 });
 
