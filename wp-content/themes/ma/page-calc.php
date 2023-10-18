@@ -158,7 +158,7 @@ if ($replace_img) {
                         <div class="result-item__value">
                             <span class="js-monthly">от 17 652</span> Р
                         </div>
-                        <a href="#" class="calc-result__btn button-animate-light btn-5">
+                        <a href="#" class="calc-result__btn button-animate-light btn-5" id="open-modal-btn1">
                             Оформить сейчас
                         </a>
                     </div>
@@ -1777,7 +1777,7 @@ if ($replace_img) {
         </form>
     </div>
 </div>
-<div class="modal modal-sm">
+<div class="modal modal-sm" id="my-modal1">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front">
         <div class="modal-front__close"></div>

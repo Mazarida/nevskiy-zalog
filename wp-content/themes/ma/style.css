@@ -262,3 +262,9 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 img {max-width: 100%;height: auto;}
 * {outline: none;box-sizing: border-box;}
 a {text-decoration: none; color: inherit;}
+
+
+.open {
+    opacity: 1;
+    z-index: 7000;
+}
