@@ -1356,7 +1356,7 @@ if ($replace_img) {
     <h3 class="action__title">
         Подберем для вас индивидуальные условия
     </h3>
-    <button href="#" class="action__btn-primary button-animate btn-5 modal-btn" data-target="two">
+    <button href="#" class="action__btn-primary button-animate btn-5 modal-btn" data-target="five">
         Подобрать условия кредитования
     </button>
 </section>
