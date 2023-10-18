@@ -242,9 +242,9 @@ btns.forEach((el) => {
         let path = e.currentTarget.getAttribute('data-path');
         console.log(path);
         modals.forEach((el) => {
-            el.classList.add('.modal--visible');
+            el.classList.add('modal--visible');
         } );
-        document.querySelector(`[data-target="${path}"]`);
+        document.querySelector(`[data-target="${path}"]`).classList.add
     });
 });
    

@@ -40,9 +40,9 @@ if ($replace_img) {
                 Максимальная <strong>сумма кредита</strong>
             </li>
         </ul>
-        <a href="#" class="head-offer__offer-link button-animate btn-5 modal-btn" data-path="two">
+        <button class="head-offer__offer-link button-animate btn-5 modal-btn" data-path="two">
             Получить финансирование
-        </a>
+        </button>
         <div class="flex-row head-offer__bonus-banner">
             <div class="bonus-banner__banner-img"></div>
             <div class="bonus-banner__banner-text">
@@ -158,9 +158,9 @@ if ($replace_img) {
                         <div class="result-item__value">
                             <span class="js-monthly">от 17 652</span> Р
                         </div>
-                        <a href="#" class="calc-result__btn button-animate-light btn-5 modal-btn" data-path="one">
+                        <button class="calc-result__btn button-animate-light btn-5 modal-btn" data-path="one">
                             Оформить сейчас
-                        </a>
+                            </button>
                     </div>
                     <div class="results__result-item">
                         <div class="result-item__title title-gap">
@@ -297,10 +297,10 @@ if ($replace_img) {
 		<?php endif; ?>
 
     </div>
-    <a <?php live_edit('page_content, flex-our_team_experts--button_text', get_option('page_on_front')) ?> href="#" class="our-team__btn-primary button-animate btn-5 modal-btn" data-path="three">
+    <button <?php live_edit('page_content, flex-our_team_experts--button_text', get_option('page_on_front')) ?> class="our-team__btn-primary button-animate btn-5 modal-btn" data-path="three">
 		<?php echo strip_tags( get_sub_field( 'button_text', get_option('page_on_front') ), ['strong'] ); ?>
 <!--         Получить консультацию эксперта -->
-    </a>
+                     </button>
 </section>
 
     <?php endif; ?>
@@ -829,9 +829,9 @@ if ($replace_img) {
     <div class="docs-checklist__checklist-disclaimer">
         *Для каждого клиента требуется свой уникальный набор документов, узнайте какой потребуется вам
     </div>
-    <a href="#" class="docs-checklist__btn-primary button-animate btn-5 modal-btn" data-path="four">
+    <button class="docs-checklist__btn-primary button-animate btn-5 modal-btn" data-path="four">
         Задать вопрос
-    </a>
+        </button>
 </section>
 
 
