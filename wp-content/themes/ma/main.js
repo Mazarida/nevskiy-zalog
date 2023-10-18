@@ -268,7 +268,7 @@ modalsClose.forEach((el) => {
 //   }, false );
 
 document.addEventListener( 'wpcf7submit', function( event ) {
-	alert('Форма отправилась!');
+	// alert('Форма отправилась!');
 
     modals.forEach((el) => {
         el.classList.remove('modal--visible');
@@ -276,9 +276,13 @@ document.addEventListener( 'wpcf7submit', function( event ) {
 	
 	 var id = event.detail.contactFormId;
     	if ( id == 374 || id == 372) {
-      alert( "The contact form ID is 374. Бесплатная консультация" );
+      
       document.querySelector('#form_success').classList.add('modal--visible');
       
+    } else if ( id == 373 ) {
+        document.querySelector('#form_success_ques').classList.add('modal--visible');
+    } else if ( id == 375 ) {
+        document.querySelector('#fchek-list').classList.add('modal--visible');
     } else {
 		alert('Проблема в Id');
 	}

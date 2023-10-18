@@ -1760,7 +1760,7 @@ if ($replace_img) {
     </ul>
 </section>
 
-<div class="modal modal-sm">
+<div class="modal modal-sm" id="chek-list">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front">
         <div class="modal-front__close"></div>
@@ -1818,7 +1818,7 @@ if ($replace_img) {
             ссылку на файл с чек-листом
         </div>
         
-            <?php echo do_shortcode('[contact-form-7 id="d63a7de" title="Заполните заявку"]'); ?>
+            <?php echo do_shortcode('[contact-form-7 id="6e04126" title="Получите чек лист"]'); ?>
             <div class="callback-form__modal-disclaimer">
                 Отправляя заявку Вы даете свое согласие
                 на обработку персональных данных
