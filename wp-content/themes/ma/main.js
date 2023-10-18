@@ -254,8 +254,8 @@ jQuery(function($){
         document.getElementById("my-modal4").classList.add("open");
      })
  
-     document.getElementById("close-my-modal-btn").addEventListener("click", function() {
-        document.getElementById("my-modal").classList.remove("open");
+     document.getElementById("close-my-modal-btn1").addEventListener("click", function() {
+        document.getElementById("my-modal1").classList.remove("open");
      })
  
      // Закрыть модальное окно при нажатии на Esc
@@ -266,7 +266,7 @@ jQuery(function($){
  });
  
  // Закрыть модальное окно при клике вне его
- document.querySelector("#my-modal1 .modal__modal-front").addEventListener('click', event => {
+ document.querySelector(".modal__modal-front").addEventListener('click', event => {
      event._isClickWithInModal = true;
  });
  document.getElementById("my-modal1").addEventListener('click', event => {

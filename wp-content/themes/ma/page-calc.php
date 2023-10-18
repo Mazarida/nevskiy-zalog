@@ -1861,7 +1861,7 @@ if ($replace_img) {
 <div class="modal modal-sm" id="my-modal3">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front">
-        <div class="modal-front__close"></div>
+        <div class="modal-front__close" id="close-my-modal-btn1"></div>
         <div class="modal-front__modal-header">
             Для консультации заполните заявку
         </div>
