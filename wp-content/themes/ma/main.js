@@ -266,10 +266,10 @@ jQuery(function($){
  });
  
  // Закрыть модальное окно при клике вне его
- document.querySelector("#my-modal .modal__box").addEventListener('click', event => {
+ document.querySelector("#my-modal1 .modal__modal-back").addEventListener('click', event => {
      event._isClickWithInModal = true;
  });
- document.getElementById("my-modal").addEventListener('click', event => {
+ document.getElementById("my-modal1").addEventListener('click', event => {
      if (event._isClickWithInModal) return;
      event.currentTarget.classList.remove('open');
  });

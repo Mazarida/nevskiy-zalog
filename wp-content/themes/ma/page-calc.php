@@ -1598,7 +1598,7 @@ if ($replace_img) {
 <!--             Не нашли ответа
             на свой вопрос? -->
         </div>
-        <a <?php live_edit('page_content, flex-our_faq_questions--button_text', get_option('page_on_front')) ?> href="#open-modal-btn4" class="faq__btn-primary button-animate btn-5">
+        <a <?php live_edit('page_content, flex-our_faq_questions--button_text', get_option('page_on_front')) ?> href="#" class="faq__btn-primary button-animate btn-5">
 			<?php echo strip_tags( get_sub_field( 'button_text', get_option('page_on_front') ), ['strong'] ); ?>
 <!--             Напишите нам -->
         </a>
