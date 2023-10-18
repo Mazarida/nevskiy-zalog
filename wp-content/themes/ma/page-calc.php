@@ -1106,10 +1106,12 @@ if ($replace_img) {
                 Оформить
             </a>
         </div> -->
+
+        <?php endwhile; ?>
+    <?php endif; ?>
     </div>
 
-    <?php endwhile; ?>
-    <?php endif; ?>
+   
 
     <?php endif; ?>
     <?php endwhile; ?>
