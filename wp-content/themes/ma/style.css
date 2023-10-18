@@ -267,7 +267,8 @@ html {
 .head-offer__offer-link,
 .our-team__btn-primary,
 .docs-checklist__btn-primary,
-.action__btn-primary {
+.action__btn-primary,
+.callback-form__btn-primary {
     border: none!important;
     color: #FFF;
     text-align: center;

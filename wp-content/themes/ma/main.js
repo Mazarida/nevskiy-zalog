@@ -260,6 +260,13 @@ modalsClose.forEach((el) => {
     });
 });
 
+document.addEventListener( 'wpcf7submit', function( event ) {
+    if ( 'c823372' == event.detail.contactFormId ) {
+      alert( "The contact form ID is c823372. Бесплатная консультация" );
+      // do something productive
+    }
+  }, false );
+
 
 
 
