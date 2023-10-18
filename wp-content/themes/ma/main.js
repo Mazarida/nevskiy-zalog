@@ -261,12 +261,12 @@ jQuery(function($){
      // Закрыть модальное окно при нажатии на Esc
  window.addEventListener('keydown', (e) => {
      if (e.key === "Escape") {
-         document.getElementById("my-modal").classList.remove("open")
+         document.getElementById("my-modal1").classList.remove("open")
      }
  });
  
  // Закрыть модальное окно при клике вне его
- document.querySelector("#my-modal1 .modal__modal-back").addEventListener('click', event => {
+ document.querySelector("#my-modal1 .modal__modal-front").addEventListener('click', event => {
      event._isClickWithInModal = true;
  });
  document.getElementById("my-modal1").addEventListener('click', event => {
