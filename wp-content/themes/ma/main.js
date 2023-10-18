@@ -254,7 +254,9 @@ btns.forEach((el) => {
 
 modalsClose.forEach((el) => {
     el.addEventListener('click', (e) => {
-        document.querySelector(`[data-target="${path}"]`).classList.remove('modal--visible');
+        modals.forEach((el) => {
+            el.classList.remove('modal--visible');
+        })
     });
 });
 
