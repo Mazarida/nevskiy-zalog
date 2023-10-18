@@ -1779,7 +1779,7 @@ if ($replace_img) {
     </div>
 </div>
 
-<div class="modal modal-sm modal--1" data-target="one">
+<!-- <div class="modal modal-sm modal--1" data-target="one">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front " >
         <div class="modal-front__close"></div>
@@ -1803,9 +1803,31 @@ if ($replace_img) {
             </div>
         </form>
     </div>
+</div> -->
+
+<div class="modal modal-sm modal--1" data-target="one">
+    <div class="modal__modal-back"></div>
+    <div class="modal__modal-front " >
+        <div class="modal-front__close"></div>
+        <div class="modal-front__modal-header">
+            Заполните поля и
+            получите чек-лист
+        </div>
+        <div class="modal-front__modal-subheader">
+            После отправки формы вы получите
+            ссылку на файл с чек-листом
+        </div>
+        
+            <?php echo do_shortcode('[contact-form-7 id="d63a7de" title="Заполните заявку"]'); ?>
+            <div class="callback-form__modal-disclaimer">
+                Отправляя заявку Вы даете свое согласие
+                на обработку персональных данных
+            </div>
+        
+    </div>
 </div>
 
-<div class="modal modal-sm modal--2" data-target="two">
+<!-- <div class="modal modal-sm modal--2" data-target="two">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front ">
         <div class="modal-front__close"></div>
@@ -1827,9 +1849,33 @@ if ($replace_img) {
             </div>
         </form>
     </div>
+</div> -->
+
+<div class="modal modal-sm modal--2" data-target="two">
+    <div class="modal__modal-back"></div>
+    <div class="modal__modal-front ">
+        <div class="modal-front__close"></div>
+        <div class="modal-front__modal-header">
+            Заполните заявку
+            ниже
+        </div>
+        <div class="modal-front__modal-subheader">
+            Наш сотрудник свяжется
+            с Вами в ближайшее время
+        </div>
+   
+
+       
+            <?php echo do_shortcode('[contact-form-7 id="e6bc70f" title="Ваш вопрос"]'); ?>
+            <div class="callback-form__modal-disclaimer">
+                Отправляя заявку Вы даете свое согласие
+                на обработку персональных данных
+            </div>
+        
+    </div>
 </div>
 
-<div class="modal modal-sm  modal--3" data-target="three">
+<!-- <div class="modal modal-sm  modal--3" data-target="three">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front" >
         <div class="modal-front__close"> </div>
@@ -1851,6 +1897,27 @@ if ($replace_img) {
                 на обработку персональных данных
             </div>
         </form>
+    </div>
+</div> -->
+
+<div class="modal modal-sm  modal--3" data-target="three">
+    <div class="modal__modal-back"></div>
+    <div class="modal__modal-front" >
+        <div class="modal-front__close"> </div>
+        <div class="modal-front__modal-header">
+            Для консультации заполните заявку
+        </div>
+        <div class="modal-front__modal-subheader">
+            Наш сотрудник свяжется
+            с Вами в ближайшее время
+        </div>
+       
+            <?php echo do_shortcode('[contact-form-7 id="c823372" title="Бесплатная консультация"]'); ?>
+            <div class="callback-form__modal-disclaimer">
+                Отправляя заявку Вы даете свое согласие
+                на обработку персональных данных
+            </div>
+       
     </div>
 </div>
 
