@@ -234,7 +234,7 @@ jQuery(function($){
 
 /* -- start Скрипт попапов --*/
 
-const btns = document.querySelectorAll('.btn');
+const btns = document.querySelectorAll('.modal-btn');
 const modals = document.querySelectorAll('.modal-sm');
 
 btns.forEach((el) => {
