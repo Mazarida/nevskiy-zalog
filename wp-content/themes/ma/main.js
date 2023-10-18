@@ -282,7 +282,7 @@ document.addEventListener( 'wpcf7submit', function( event ) {
     } else if ( id == 373 ) {
         document.querySelector('#form_success_ques').classList.add('modal--visible');
     } else if ( id == 375 ) {
-        document.querySelector('#fchek-list').classList.add('modal--visible');
+        document.querySelector('#chek-list').classList.add('modal--visible');
     } else {
 		alert('Проблема в Id');
 	}
