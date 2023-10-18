@@ -234,6 +234,19 @@ jQuery(function($){
 
 /* -- start Скрипт попапов --*/
 
+const btns = document.querySelectorAll('.btn');
+const modals = document.querySelectorAll('.modal-sm');
+
+btns.forEach((el) => {
+    el.addEventListener('click', (e) => {
+        let path = e.currentTarget.getAttribute('data-path');
+        console.log(path);
+        modals.forEach((el) => {
+            el.classList.add('.modal--visible');
+        } );
+        document.querySelector(`[data-target="${path}"]`);
+    });
+});
    
 
 

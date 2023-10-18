@@ -264,3 +264,9 @@ img {max-width: 100%;height: auto;}
 a {text-decoration: none; color: inherit;}
 
 
+.modal-visible {
+    z-index: 150!important;
+    opacity: 1!important;
+    pointer-events: auto!important;
+}
+
