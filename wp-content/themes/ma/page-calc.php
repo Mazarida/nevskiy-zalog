@@ -1943,7 +1943,19 @@ if ($replace_img) {
     </div>
 </div>
 
-<div class="modal modal-sm">
+<div class="modal modal-sm" id="form_success">
+    <div class="modal__modal-back"></div>
+    <div class="modal__modal-front modal-front-success">
+        <div class="modal-front__close"></div>
+        <div class="modal-front__modal-success-icon"></div>
+        <div class="modal-front__modal-header">
+            Ваша заявка
+            успешно отправлена
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-sm" id="form_success_ques">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front modal-front-success">
         <div class="modal-front__close"></div>

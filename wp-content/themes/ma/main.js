@@ -260,12 +260,27 @@ modalsClose.forEach((el) => {
     });
 });
 
+// document.addEventListener( 'wpcf7submit', function( event ) {
+//     if ( 'c823372' == event.detail.contactFormId ) {
+//       alert( "The contact form ID is c823372. Бесплатная консультация" );
+//       // do something productive
+//     } else {}
+//   }, false );
+
 document.addEventListener( 'wpcf7submit', function( event ) {
-    if ( 'c823372' == event.detail.contactFormId ) {
-      alert( "The contact form ID is c823372. Бесплатная консультация" );
-      // do something productive
-    }
+	alert('Форма отправилась!');
+	
+	 var id = event.detail.contactFormId;
+    	if ( id == 374 || id == 372) {
+      alert( "The contact form ID is 374. Бесплатная консультация" );
+      modals.forEach((el) => {
+            el.classList.remove('modal--visible');
+        })
+    } else {
+		alert('Проблема в Id');
+	}
   }, false );
+
 
 
 
