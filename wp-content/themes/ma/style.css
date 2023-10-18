@@ -266,7 +266,8 @@ html {
 .calc-result__btn,
 .head-offer__offer-link,
 .our-team__btn-primary,
-.docs-checklist__btn-primary {
+.docs-checklist__btn-primary,
+.action__btn-primary {
     border: none!important;
 }
 

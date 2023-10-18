@@ -1356,9 +1356,9 @@ if ($replace_img) {
     <h3 class="action__title">
         Подберем для вас индивидуальные условия
     </h3>
-    <a href="#" class="action__btn-primary button-animate btn-5">
+    <button href="#" class="action__btn-primary button-animate btn-5">
         Подобрать условия кредитования
-    </a>
+    </button>
 </section>
 
 <?php while ( have_rows( 'page_content', get_option('page_on_front') ) ) : the_row(); ?>
@@ -1828,6 +1828,14 @@ if ($replace_img) {
                 на обработку персональных данных
             </div>
         </form>
+
+        <form action="" class="modal-front__callback-form">
+            <?php echo do_shortcode('[contact-form-7 id="d63a7de" title="Заполните заявку"]'); ?>
+            <div class="callback-form__modal-disclaimer">
+                Отправляя заявку Вы даете свое согласие
+                на обработку персональных данных
+            </div>
+        </form>
     </div>
 </div>
 
@@ -1861,7 +1869,7 @@ if ($replace_img) {
     <div class="modal__modal-front " >
         <div class="modal-front__close"> </div>
         <div class="modal-front__modal-header">
-            Для консультации заполните заявку
+            Напишите ваш вопрос ниже
         </div>
         <div class="modal-front__modal-subheader">
             Наш сотрудник свяжется
@@ -1870,6 +1878,7 @@ if ($replace_img) {
         <form action="" class="modal-front__callback-form">
             <input placeholder="Ваше имя" type="text" class="callback-form__text-input">
             <input placeholder="Номер телефона" type="text" class="callback-form__text-input">
+            <input placeholder="Введите сообщение" type="text" class="callback-form__text-input">
             <button type="submit" class="callback-form__btn-primary">
                 Отправить
             </button>
