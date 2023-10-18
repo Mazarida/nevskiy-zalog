@@ -1356,7 +1356,7 @@ if ($replace_img) {
     <h3 class="action__title">
         Подберем для вас индивидуальные условия
     </h3>
-    <button href="#" class="action__btn-primary button-animate btn-5" data-path="five">
+    <button href="#" class="action__btn-primary button-animate btn-5" data-target="two">
         Подобрать условия кредитования
     </button>
 </section>
@@ -1772,9 +1772,9 @@ if ($replace_img) {
             на страницу скачивания файла
         </div>
         <form action="" class="modal-front__callback-form">
-            <a href="http:/yandex.disk/urldownloadfilechecklistfinance" class="callback-form__text-input text-input-link">
+            <button class="callback-form__text-input text-input-link">
                 http:/yandex.disk/urldownloadfilechecklistfinance
-            </a>
+            <button>
         </form>
     </div>
 </div>
@@ -1967,5 +1967,3 @@ if ($replace_img) {
     </div>
 </div>
 <?php get_footer(); ?>
-
-<?php echo do_shortcode('[contact-form-7 id="fb3f485" title="Подобрать подробности"]'); ?>
