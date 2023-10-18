@@ -40,7 +40,7 @@ if ($replace_img) {
                 Максимальная <strong>сумма кредита</strong>
             </li>
         </ul>
-        <a href="#" class="head-offer__offer-link button-animate btn-5" id="open-modal-btn1">
+        <a href="#" class="head-offer__offer-link button-animate btn-5">
             Получить финансирование
         </a>
         <div class="flex-row head-offer__bonus-banner">
@@ -1759,8 +1759,6 @@ if ($replace_img) {
         </li>
     </ul>
 </section>
-
-
 <div class="modal modal-sm">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front">
@@ -1779,7 +1777,6 @@ if ($replace_img) {
         </form>
     </div>
 </div>
-
 <div class="modal modal-sm">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front">
@@ -1805,8 +1802,7 @@ if ($replace_img) {
         </form>
     </div>
 </div>
-
-<div class="modal modal-sm my-modal">
+<div class="modal modal-sm">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front">
         <div class="modal-front__close"></div>
@@ -1831,8 +1827,6 @@ if ($replace_img) {
         </form>
     </div>
 </div>
-
-
 <div class="modal modal-sm">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front modal-front-success">
