@@ -241,6 +241,18 @@ jQuery(function($){
     document.getElementById("open-modal-btn2").addEventListener("click", function() {
         document.getElementById("my-modal2").classList.add("open");
      })
+
+     document.getElementById("open-modal-btn2-1").addEventListener("click", function() {
+        document.getElementById("my-modal2-1").classList.add("open");
+     })
+
+     document.getElementById("open-modal-btn3").addEventListener("click", function() {
+        document.getElementById("my-modal3").classList.add("open");
+     })
+
+     document.getElementById("open-modal-btn4").addEventListener("click", function() {
+        document.getElementById("my-modal4").classList.add("open");
+     })
  
      document.getElementById("close-my-modal-btn").addEventListener("click", function() {
         document.getElementById("my-modal").classList.remove("open");

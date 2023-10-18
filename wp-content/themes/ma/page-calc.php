@@ -40,7 +40,7 @@ if ($replace_img) {
                 Максимальная <strong>сумма кредита</strong>
             </li>
         </ul>
-        <a href="#" class="head-offer__offer-link button-animate btn-5">
+        <a href="#" class="head-offer__offer-link button-animate btn-5" id="open-modal-btn2">
             Получить финансирование
         </a>
         <div class="flex-row head-offer__bonus-banner">
@@ -297,7 +297,7 @@ if ($replace_img) {
 		<?php endif; ?>
 
     </div>
-    <a <?php live_edit('page_content, flex-our_team_experts--button_text', get_option('page_on_front')) ?> href="#" class="our-team__btn-primary button-animate btn-5">
+    <a <?php live_edit('page_content, flex-our_team_experts--button_text', get_option('page_on_front')) ?> href="#" class="our-team__btn-primary button-animate btn-5" id="open-modal-btn3">
 		<?php echo strip_tags( get_sub_field( 'button_text', get_option('page_on_front') ), ['strong'] ); ?>
 <!--         Получить консультацию эксперта -->
     </a>
@@ -484,7 +484,7 @@ if ($replace_img) {
     </div>
 
 
-    <a <?php live_edit('page_content, flex-our_reviews--button_text', get_option('page_on_front')) ?>  href="#" class="testimonials__btn-primary button-animate btn-5">
+    <a <?php live_edit('page_content, flex-our_reviews--button_text', get_option('page_on_front')) ?>  href="#open-modal-btn4" class="testimonials__btn-primary button-animate btn-5">
 			<?php echo strip_tags( get_sub_field( 'button_text', get_option('page_on_front') ), ['strong'] ); ?>
 
     </a>
@@ -801,7 +801,7 @@ if ($replace_img) {
         </div>
     </div>
 </section>
-<section class="docs-checklist">
+<section class="docs-checklist" id="ques_us">
     <h2 class="nzlg-title docs-checklist__dcs-title">
         Минимальный перечень <strong>документов</strong>
     </h2>
@@ -829,7 +829,7 @@ if ($replace_img) {
     <div class="docs-checklist__checklist-disclaimer">
         *Для каждого клиента требуется свой уникальный набор документов, узнайте какой потребуется вам
     </div>
-    <a href="#" class="docs-checklist__btn-primary button-animate btn-5">
+    <a href="#" class="docs-checklist__btn-primary button-animate btn-5" id="open-modal-btn4">
         Задать вопрос
     </a>
 </section>
@@ -1598,7 +1598,7 @@ if ($replace_img) {
 <!--             Не нашли ответа
             на свой вопрос? -->
         </div>
-        <a <?php live_edit('page_content, flex-our_faq_questions--button_text', get_option('page_on_front')) ?> href="#" class="faq__btn-primary button-animate btn-5">
+        <a <?php live_edit('page_content, flex-our_faq_questions--button_text', get_option('page_on_front')) ?> href="#open-modal-btn4" class="faq__btn-primary button-animate btn-5">
 			<?php echo strip_tags( get_sub_field( 'button_text', get_option('page_on_front') ), ['strong'] ); ?>
 <!--             Напишите нам -->
         </a>
@@ -1759,6 +1759,7 @@ if ($replace_img) {
         </li>
     </ul>
 </section>
+
 <div class="modal modal-sm">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front">
@@ -1777,6 +1778,7 @@ if ($replace_img) {
         </form>
     </div>
 </div>
+
 <div class="modal modal-sm" id="my-modal1">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front">
@@ -1802,7 +1804,8 @@ if ($replace_img) {
         </form>
     </div>
 </div>
-<div class="modal modal-sm">
+
+<div class="modal modal-sm" id="my-modal2">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front">
         <div class="modal-front__close"></div>
@@ -1827,6 +1830,85 @@ if ($replace_img) {
         </form>
     </div>
 </div>
+
+<div class="modal modal-sm" id="my-modal2-1">
+    <div class="modal__modal-back"></div>
+    <div class="modal__modal-front">
+        <div class="modal-front__close"></div>
+        <div class="modal-front__modal-header">
+        Оформите заявку
+        на программу
+
+        </div>
+        <div class="modal-front__modal-subheader">
+            Наш сотрудник свяжется
+            с Вами в ближайшее время
+        </div>
+        <form action="" class="modal-front__callback-form">
+            <input placeholder="Ваше имя" type="text" class="callback-form__text-input">
+            <input placeholder="Номер телефона" type="text" class="callback-form__text-input">
+            <button type="submit" class="callback-form__btn-primary">
+                Отправить
+            </button>
+            <div class="callback-form__modal-disclaimer">
+                Отправляя заявку Вы даете свое согласие
+                на обработку персональных данных
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal modal-sm" id="my-modal3">
+    <div class="modal__modal-back"></div>
+    <div class="modal__modal-front">
+        <div class="modal-front__close"></div>
+        <div class="modal-front__modal-header">
+            Для консультации заполните заявку
+        </div>
+        <div class="modal-front__modal-subheader">
+            Наш сотрудник свяжется
+            с Вами в ближайшее время
+        </div>
+        <form action="" class="modal-front__callback-form">
+            <input placeholder="Ваше имя" type="text" class="callback-form__text-input">
+            <input placeholder="Номер телефона" type="text" class="callback-form__text-input">
+            <button type="submit" class="callback-form__btn-primary">
+                Отправить
+            </button>
+            <div class="callback-form__modal-disclaimer">
+                Отправляя заявку Вы даете свое согласие
+                на обработку персональных данных
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal modal-sm" id="my-modal4">
+    <div class="modal__modal-back"></div>
+    <div class="modal__modal-front">
+        <div class="modal-front__close"></div>
+        <div class="modal-front__modal-header">
+            Напишите ваш вопрос ниже
+        </div>
+        <div class="modal-front__modal-subheader">
+            Наш сотрудник свяжется
+            с Вами в ближайшее время
+        </div>
+        <form action="" class="modal-front__callback-form">
+            <input placeholder="Ваше имя" type="text" class="callback-form__text-input">
+            <input placeholder="Номер телефона" type="text" class="callback-form__text-input">
+            <input placeholder="Введите сообщение" type="text" class="callback-form__text-input">
+            <button type="submit" class="callback-form__btn-primary">
+                Отправить
+            </button>
+            <div class="callback-form__modal-disclaimer">
+                Отправляя заявку Вы даете свое согласие
+                на обработку персональных данных
+            </div>
+        </form>
+    </div>
+</div>
+
 <div class="modal modal-sm">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front modal-front-success">
