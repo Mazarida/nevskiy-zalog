@@ -1817,19 +1817,9 @@ if ($replace_img) {
             Наш сотрудник свяжется
             с Вами в ближайшее время
         </div>
-        <form action="" class="modal-front__callback-form">
-            <input placeholder="Ваше имя" type="text" class="callback-form__text-input">
-            <input placeholder="Номер телефона" type="text" class="callback-form__text-input">
-            <button type="submit" class="callback-form__btn-primary">
-                Отправить
-            </button>
-            <div class="callback-form__modal-disclaimer">
-                Отправляя заявку Вы даете свое согласие
-                на обработку персональных данных
-            </div>
-        </form>
+   
 
-        <form action="" class="modal-front__callback-form">
+        <form action="" class=" wpcf7">
             <?php echo do_shortcode('[contact-form-7 id="d63a7de" title="Заполните заявку"]'); ?>
             <div class="callback-form__modal-disclaimer">
                 Отправляя заявку Вы даете свое согласие
