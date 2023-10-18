@@ -1018,19 +1018,23 @@ if ($replace_img) {
         <div class="<?php the_sub_field('color_card', get_field('programs_page', 'option')) ?> click-btn  btn-style1">
             <div class="tariff-item__icon-shield"></div>
             <h3 class="tariff-item__tariff-header">
-                <?php the_sub_field('programm_name', get_field('programs_page', 'option')) ?>
+                <?php the_sub_field('programm_name') ?>
             </h3>
             <div class="tariff-item__tariff-desc">
-                Выгодная кредитная программа с низкой процентной ставкой для реализации вашей мечты
+                <?php the_sub_field("programm_description") ?>
             </div>
             <div class="tariff-item__list-title">
-                Основные условия:
+                <?php the_sub_field("programm_condition") ?>
             </div>
             <ul class="tariff-item__desc-list">
+                <?php if (have_rows("programm_condition_ul")) : ?>
+                    <?php while (have_rows("programm_condition_ul")) : the_row(); ?>
                 <li class="desc-list__desc-item">
                     Процентная ставка: 6% годовых
                 </li>
-                <li class="desc-list__desc-item">
+                    <?php endwhile; ?>
+                <?php endif; ?>
+                <!-- <li class="desc-list__desc-item">
                     Срок кредита: до 20 лет
                 </li>
                 <li class="desc-list__desc-item">
@@ -1038,13 +1042,13 @@ if ($replace_img) {
                 </li>
                 <li class="desc-list__desc-item">
                     Дополнительные требования: кредитная история без просрочек
-                </li>
+                </li> -->
             </ul>
             <a href="#" class="tariff-item__btn-primary button-animate">
-                Оформить
+                <?php the_sub_field("button_text") ?>
             </a>
         </div>
-        <div class="tariff-wrap__tariff-item item-accent">
+        <!-- <div class="tariff-wrap__tariff-item item-accent">
             <div class="tariff-item__icon-shield"></div>
             <h3 class="tariff-item__tariff-header">
                 9.8% больше <strong>возможностей</strong>
@@ -1101,7 +1105,7 @@ if ($replace_img) {
             <a href="#" class="tariff-item__btn-primary button-animate">
                 Оформить
             </a>
-        </div>
+        </div> -->
     </div>
 
     <?php endwhile; ?>
