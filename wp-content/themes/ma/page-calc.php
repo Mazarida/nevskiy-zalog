@@ -1008,11 +1008,17 @@ if ($replace_img) {
     <?php while ( have_rows( 'page_content2', get_field('programs_page', 'option')) ) : the_row(); ?>
     <?php if ( get_row_layout() == 'our_credit_programs' ) : ?>
 
+        
+
     <div class="tariffs__tariff-wrap">
-        <div class="tariff-wrap__tariff-item">
+
+    <?php if (have_rows("programm_car")) : ?>
+    	<?php while (have_rows("programm_car")) : the_row(); ?>
+
+        <div class="<?php the_sub_field('color_card', get_field('programs_page', 'option')) ?> click-btn  btn-style1">">
             <div class="tariff-item__icon-shield"></div>
             <h3 class="tariff-item__tariff-header">
-                <strong>6% доступное</strong> решение
+                <?php the_sub_field('programm_name', get_field('programs_page', 'option')) ?>
             </h3>
             <div class="tariff-item__tariff-desc">
                 Выгодная кредитная программа с низкой процентной ставкой для реализации вашей мечты
@@ -1097,6 +1103,9 @@ if ($replace_img) {
             </a>
         </div>
     </div>
+
+    <?php endwhile; ?>
+    <?php endif; ?>
 
     <?php endif; ?>
     <?php endwhile; ?>
