@@ -1015,7 +1015,7 @@ if ($replace_img) {
     <?php if (have_rows("programm_car")) : ?>
     	<?php while (have_rows("programm_car")) : the_row(); ?>
 
-        <div class="<?php the_sub_field('color_card', get_field('programs_page', 'option')) ?> click-btn  btn-style1">">
+        <div class="<?php the_sub_field('color_card', get_field('programs_page', 'option')) ?> click-btn  btn-style1">
             <div class="tariff-item__icon-shield"></div>
             <h3 class="tariff-item__tariff-header">
                 <?php the_sub_field('programm_name', get_field('programs_page', 'option')) ?>
