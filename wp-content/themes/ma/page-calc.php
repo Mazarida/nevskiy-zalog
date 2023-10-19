@@ -1885,11 +1885,11 @@ if ($replace_img) {
             Нажмите на ссылку, чтобы перейти
             на страницу скачивания файла
         </div>
-        <form action="" class="modal-front__callback-form">
+        <div class="modal-front__callback-form">
             <button class="callback-form__text-input text-input-link">
                 http:/yandex.disk/urldownloadfilechecklistfinance
             <button>
-        </form>
+        </div>
     </div>
 </div>
 
