@@ -8,8 +8,9 @@
 						<?php if ( have_posts() ) : ?>
 <h1 class="entry-title"><?php printf( __( 'Результаты поиска: %s', 'blankslate' ), get_search_query() ); ?></h1>
 <?php while ( have_posts() ) : the_post(); ?>
-        <?php the_title(); ?>
+        <!-- <?php the_title(); ?> -->
         <?php the_content(); ?>
+        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a><br>
 <?php endwhile; ?>
     <?php global $wp_query; if ( $wp_query->max_num_pages > 1 ) { ?>
         <nav id="nav-below" class="navigation" role="navigation">
