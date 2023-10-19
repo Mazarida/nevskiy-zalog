@@ -146,17 +146,13 @@ get_header(); ?>
                 Перезвоните мне
             </strong>
         </h2>
-        <form action="#" class="call-me__call-form">
-            <input type="text" placeholder="Ваше имя" class="call-form__text-input">
-            <input type="text" placeholder="Номер телефона" class="call-form__text-input">
-            <button type="submit" class="call-form__btn-primary">
-                Отправить
-            </button>
+        
+            <?php echo do_shortcode('[contact-form-7 id="d63a7de" title="Заполните заявку"]'); ?>
             <div class="call-form__disclaimer">
                 Отправляя заявку Вы даете свое согласие <br>
                 на обработку персональных данных
             </div>
-        </form>
+     
     </div>
     <div class="contacts-map">
         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7affce878c32b0f7df2e0146576ae885b983e559c42f765f7b7cba1ec6159428&amp;width=100%25&amp;height=530&amp;lang=ru_RU&amp;scroll=false"></script>
