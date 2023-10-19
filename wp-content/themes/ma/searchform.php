@@ -5,6 +5,9 @@
 
       <input type="text" placeholder="Поиск..." class="desktop-only head-bot__search-input screen-reader-text" for="s">
       <input type="text" value="<?php echo get_search_query() ?>" name="s" id="s" />
-        <a href="#" class="head-bot__head-search-icon"></a>
-        <input type="submit" id="searchsubmit" class="head-bot__head-search-icon" value="найти" />
+<!--   		<a href="#"  id="searchsubmit" class="head-bot__head-search-icon"></a> -->
+        <input type="submit" id="searchsubmit" class="head-bot__head-search-icon" value="" />
+
+			
+	</div>
 </form>

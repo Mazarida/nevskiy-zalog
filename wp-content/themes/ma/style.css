@@ -348,5 +348,19 @@ a {text-decoration: none; color: inherit;}
     font-size: 12px;
 }
 
+.head-bot__head-search-icon1 {
+    background-image: url(img/head-bot__head-search-icon.svg);
+    background-size: 20px;
+    width: 32px;
+    height: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    background-color: #AB090D;
+    margin-right: 0;
+    position: relative;
+    z-index: 5;
+    border: none;
+}
 
 
