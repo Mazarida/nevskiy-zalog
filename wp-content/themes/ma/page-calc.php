@@ -2097,8 +2097,8 @@ if ($replace_img) {
         <div class="modal-front__close"></div>
         <div class="modal-front__modal-success-icon"></div>
         <div class="modal-front__modal-header">
-            Ваша заявка
-            успешно отправлена
+        Ваш вопрос
+        успешно отправлен
         </div>
     </div>
 </div>
