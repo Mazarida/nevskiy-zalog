@@ -348,7 +348,7 @@ a {text-decoration: none; color: inherit;}
     font-size: 12px;
 }
 
-.head-bot__head-search-icon1 {
+.head-bot__head-search-icon {
     background-image: url(img/head-bot__head-search-icon.svg);
     background-size: 20px;
     width: 32px;
