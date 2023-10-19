@@ -275,7 +275,7 @@ document.addEventListener( 'wpcf7submit', function( event ) {
     })
 	
 	 var id = event.detail.contactFormId;
-    	if ( id == 374 || id == 372 || id == 376) {
+    	if ( id == 374 || id == 372 || id == 376 || id == 384) {
       
       document.querySelector('#form_success').classList.add('modal--visible');
       
