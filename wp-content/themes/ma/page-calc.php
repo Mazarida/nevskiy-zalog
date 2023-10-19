@@ -1012,10 +1012,10 @@ if ($replace_img) {
 
     <div class="tariffs__tariff-wrap">
 
-    <?php if (have_rows("programm_car")) : ?>
-    	<?php while (have_rows("programm_car")) : the_row(); ?>
+    <?php if (have_rows("programm_car"), get_field('programs_page', 'option')) : ?>
+    	<?php while (have_rows("programm_car"), get_field('programs_page', 'option')) : the_row(); ?>
 
-        <div class="<?php the_sub_field('color_card', get_field('programs_page', 'option')) ?> click-btn  btn-style1">
+        <div class="<?php the_sub_field('color_card') ?> click-btn  btn-style1">
             <div class="tariff-item__icon-shield"></div>
             <h3 class="tariff-item__tariff-header">
                 <?php the_field('programm_name') ?>
@@ -1027,8 +1027,8 @@ if ($replace_img) {
                 <?php the_field("programm_condition") ?>
             </div>
             <ul class="tariff-item__desc-list">
-                <?php if (have_rows("programm_condition_ul")) : ?>
-                    <?php while (have_rows("programm_condition_ul")) : the_row(); ?>
+                <?php if (have_rows("programm_condition_ul", get_field('programs_page', 'option'))) : ?>
+                    <?php while (have_rows("programm_condition_ul"), get_field('programs_page', 'option')) : the_row(); ?>
                     <li class="desc-list__desc-item">
                         <?php the_field("programm_condition_ul_li") ?>
                     </li>
