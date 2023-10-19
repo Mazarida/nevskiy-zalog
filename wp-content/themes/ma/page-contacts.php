@@ -148,7 +148,7 @@ get_header(); ?>
         </h2>
         <div class="call-me__call-form">
             <?php echo do_shortcode('[contact-form-7 id="b959bc2" title="Заполните заявку Контакты"]'); ?>
-            <div class="call-form__disclaimer">
+            <div class="call-form__disclaimer" style="margin-top: 0;">
                 Отправляя заявку Вы даете свое согласие <br>
                 на обработку персональных данных
             </div>
