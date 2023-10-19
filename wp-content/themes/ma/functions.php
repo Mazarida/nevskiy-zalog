@@ -13,14 +13,8 @@ function blankslate_load_scripts()
     wp_enqueue_script( 'jquery_ui', get_bloginfo('template_url').'/lib/jquery-ui.min.js', array('jquery'), '1.0', true );
     wp_enqueue_script( 'punch', get_bloginfo('template_url').'/lib/jquery.ui.touch-punch.min.js', array('jquery_ui'), '1.0', true );
     wp_enqueue_script( 'mamain', get_bloginfo('template_url').'/main.js', array('punch'), '1.0', true );
-    wp_enqueue_script(
-        "ma-ajax-search",
-        get_theme_file_uri("assets/js/ajax-search.js"), array(), "", true
-    );
+
 }
-
-require get_template_directory() . "/functions/ajax-search.php"; # AJAX search
-
 add_action( 'comment_form_before', 'blankslate_enqueue_comment_reply_script' );
 function blankslate_enqueue_comment_reply_script()
 {
