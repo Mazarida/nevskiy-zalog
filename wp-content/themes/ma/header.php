@@ -113,7 +113,7 @@
             </span>
         </a>
         <?php get_search_form(); ?>
-        <input type="text" placeholder="Поиск..." class="desktop-only head-bot__search-input">
-        <a href="#" class="head-bot__head-search-icon"></a>
+        <!-- <input type="text" placeholder="Поиск..." class="desktop-only head-bot__search-input">
+        <a href="#" class="head-bot__head-search-icon"></a> -->
     </div>
 </header>
