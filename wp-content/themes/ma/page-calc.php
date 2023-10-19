@@ -1029,9 +1029,9 @@ if ($replace_img) {
             <ul class="tariff-item__desc-list">
                 <?php if (have_rows("programm_condition_ul")) : ?>
                     <?php while (have_rows("programm_condition_ul")) : the_row(); ?>
-                <li class="desc-list__desc-item">
-                    Процентная ставка: 6% годовых
-                </li>
+                    <li class="desc-list__desc-item">
+                                        <?php the_sub_field("programm_condition_ul_li") ?>
+                                    </li>
                     <?php endwhile; ?>
                 <?php endif; ?>
                 <!-- <li class="desc-list__desc-item">
