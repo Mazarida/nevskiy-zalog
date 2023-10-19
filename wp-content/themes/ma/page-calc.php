@@ -1018,20 +1018,20 @@ if ($replace_img) {
         <div class="<?php the_sub_field('color_card', get_field('programs_page', 'option')) ?> click-btn  btn-style1">
             <div class="tariff-item__icon-shield"></div>
             <h3 class="tariff-item__tariff-header">
-                <?php the_sub_field('programm_name') ?>
+                <?php the_field('programm_name') ?>
             </h3>
             <div class="tariff-item__tariff-desc">
-                <?php the_sub_field("programm_description") ?>
+                <?php the_field("programm_description") ?>
             </div>
             <div class="tariff-item__list-title">
-                <?php the_sub_field("programm_condition") ?>
+                <?php the_field("programm_condition") ?>
             </div>
             <ul class="tariff-item__desc-list">
                 <?php if (have_rows("programm_condition_ul")) : ?>
                     <?php while (have_rows("programm_condition_ul")) : the_row(); ?>
-                <li class="desc-list__desc-item">
-                    Процентная ставка: 6% годовых
-                </li>
+                    <li class="desc-list__desc-item">
+                        <?php the_field("programm_condition_ul_li") ?>
+                    </li>
                     <?php endwhile; ?>
                 <?php endif; ?>
                 <!-- <li class="desc-list__desc-item">
