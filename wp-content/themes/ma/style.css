@@ -373,4 +373,14 @@ a {text-decoration: none; color: inherit;}
     margin-left: 5px;
 }
 
+.search-result {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding: 19px 11px;
+    line-height: 1.23;
+    font-size: 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
 
