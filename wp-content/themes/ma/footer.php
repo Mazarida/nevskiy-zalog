@@ -27,7 +27,7 @@
                 +7 (919) 608-88-65
             </a>
             <div class="flex-row foot-contacts__foot-socials">
-                <a href="#" class="foot-socials__icon-search click-btn btn-style2"></a>
+                <a href="#searchform" class="foot-socials__icon-search click-btn btn-style2"></a>
                 <a href="https://wa.me/+79196088865" class="foot-socials__icon-wa click-btn btn-style2"></a>
                 <a href="https://t.me/ValerieAndriyako" class="foot-socials__icon-tg click-btn btn-style2"></a>
             </div>
