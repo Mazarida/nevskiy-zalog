@@ -363,4 +363,14 @@ a {text-decoration: none; color: inherit;}
     border: none!important;
 }
 
+#searchform {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#searchsubmit {
+    margin-left: 5px;
+}
+
 
