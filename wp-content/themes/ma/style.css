@@ -396,6 +396,14 @@ a {text-decoration: none; color: inherit;}
     width: 225px;
 }
 
+.searchwp-live-search-result p a {
+    font-size: 12px;
+}
+
+.searchwp-live-search-result p {
+    padding: 0.5em !important;
+}
+
 @media (max-width: 767px) {
     .global-search {
         width: 170px;
