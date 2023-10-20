@@ -230,3 +230,68 @@ jQuery(function($){
     });
     $('body').on('change', '.calculate__calculator select', recount)
 });
+
+
+/* -- start Скрипт попапов --*/
+
+const btns = document.querySelectorAll('.modal-btn');
+const modals = document.querySelectorAll('.modal-sm');
+const modalsClose = document.querySelectorAll('.modal-front__close');
+
+
+
+btns.forEach((el) => {
+    el.addEventListener('click', (e) => {
+        let path = e.currentTarget.getAttribute('data-path');
+        console.log(path);
+        
+        modals.forEach((el) => {
+            el.classList.remove('modal--visible');
+        })
+        document.querySelector(`[data-target="${path}"]`).classList.add('modal--visible');
+    });
+});
+
+modalsClose.forEach((el) => {
+    el.addEventListener('click', (e) => {
+        modals.forEach((el) => {
+            el.classList.remove('modal--visible');
+        })
+    });
+});
+
+// document.addEventListener( 'wpcf7submit', function( event ) {
+//     if ( 'c823372' == event.detail.contactFormId ) {
+//       alert( "The contact form ID is c823372. Бесплатная консультация" );
+//       // do something productive
+//     } else {}
+//   }, false );
+
+document.addEventListener( 'wpcf7submit', function( event ) {
+	// alert('Форма отправилась!');
+
+    modals.forEach((el) => {
+        el.classList.remove('modal--visible');
+    })
+	
+	 var id = event.detail.contactFormId;
+    	if ( id == 374 || id == 372 || id == 376 || id == 384) {
+      
+      document.querySelector('#form_success').classList.add('modal--visible');
+      
+    } else if ( id == 373 ) {
+        document.querySelector('#form_success_ques').classList.add('modal--visible');
+    } else if ( id == 375 ) {
+        document.querySelector('#chek-list').classList.add('modal--visible');
+    } else {
+		alert('Проблема в Id');
+	}
+  }, false );
+
+
+
+   
+   
+
+
+/* -- end Скрипт попапов  --*/
