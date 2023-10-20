@@ -367,6 +367,7 @@ a {text-decoration: none; color: inherit;}
     display: flex;
     align-items: center;
     justify-content: space-around;
+    position: relative;
 }
 
 #searchsubmit {
