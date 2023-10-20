@@ -404,6 +404,9 @@ a {text-decoration: none; color: inherit;}
     padding: 0.5em !important;
 }
 
+.searchwp-live-search-results {
+    min-height: 0px !important;
+}
 @media (max-width: 767px) {
     .global-search {
         width: 170px;
