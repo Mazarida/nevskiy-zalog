@@ -2,22 +2,22 @@
     <div class="flex-row nzlg-foot__foot-top">
         <ul class="flex-row foot-top__foot-menus">
             <li class="foot-menus__foot-menu-item">
-                <a href="https://n-zalog.analog-girl.ru/" class="foot-menu-item__foot-link click-btn btn-style2">
+                <a href="/" class="foot-menu-item__foot-link click-btn btn-style2">
                     Главная
                 </a>
             </li>
             <li class="foot-menus__foot-menu-item">
-                <a href="https://n-zalog.analog-girl.ru/about/" class="foot-menu-item__foot-link click-btn btn-style2">
+                <a href="/about/" class="foot-menu-item__foot-link click-btn btn-style2">
                     О нас
                 </a>
             </li>
             <li class="foot-menus__foot-menu-item">
-                <a href="#" class="foot-menu-item__foot-link click-btn btn-style2">
+                <a href="/hub/" class="foot-menu-item__foot-link click-btn btn-style2">
                     Услуги
                 </a>
             </li>
             <li class="foot-menus__foot-menu-item">
-                <a href="https://n-zalog.analog-girl.ru/contacts/" class="foot-menu-item__foot-link click-btn btn-style2">
+                <a href="/contacts/" class="foot-menu-item__foot-link click-btn btn-style2">
                     Контакты
                 </a>
             </li>
@@ -27,7 +27,7 @@
                 +7 (919) 608-88-65
             </a>
             <div class="flex-row foot-contacts__foot-socials">
-                <a href="#" class="foot-socials__icon-search click-btn btn-style2"></a>
+                <a href="#searchform" class="foot-socials__icon-search click-btn btn-style2"></a>
                 <a href="https://wa.me/+79196088865" class="foot-socials__icon-wa click-btn btn-style2"></a>
                 <a href="https://t.me/ValerieAndriyako" class="foot-socials__icon-tg click-btn btn-style2"></a>
             </div>

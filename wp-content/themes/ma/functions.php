@@ -48,6 +48,7 @@ add_filter( 'show_admin_bar', '__return_false' );
 add_action('init', 'anew_rewrite_rule');
 function anew_rewrite_rule(){
     add_rewrite_rule('^kredit\\/(.*)','index.php?is_generated_page=1','top');
+    add_rewrite_rule('^hub\\/(.*)','index.php?is_hub_page=1','top');
 }
 
 add_action('init', 'get_calc_data_response');
@@ -80,7 +81,7 @@ function get_calc_data() {
 //                }
             }
         }
-        $url = '/kredit/'.implode('/', $url_fragments).'/';
+        $url = count($url_fragments) ? ('/kredit/'.implode('/', $url_fragments).'/') : '/';
         $calc_data = [
             'title' => get_calc_template($url),
             'img' => $img,
@@ -94,6 +95,7 @@ function get_calc_data() {
 add_action('query_vars','controller_set_query_var');
 function controller_set_query_var($vars) {
     array_push($vars, 'is_generated_page'); // ref url redirected to in add rewrite rule
+    array_push($vars, 'is_hub_page'); // ref url redirected to in add rewrite rule
 
     return $vars;
 }
@@ -105,6 +107,12 @@ function include_controller($template){
         if(file_exists($new_template)){
             $template = $new_template;
             add_filter('document_title', 'get_calc_title');
+        }
+    }
+    if(get_query_var('is_hub_page')){
+        $new_template = get_stylesheet_directory().'/page-hub.php';
+        if(file_exists($new_template)){
+            $template = $new_template;
         }
     }
     return $template;
@@ -186,6 +194,37 @@ function get_calc_template($url = '', $n = 4) {
         }
     }
     return implode(' ', $template);
+}
+
+function correct_link($url, $calc_filters, $prefix) {
+    if ($url == '/kredit/') {
+        return '/';
+    }
+    $url_parts = explode('/', $url);
+    $result = [];
+    foreach ($calc_filters['vals'] as $filter_val) {
+        foreach ($url_parts as $url_part) {
+            if ($url_part == $filter_val['filter_option_slug']) {
+                $result[] = $url_part;
+            }
+        }
+    }
+    return $prefix.(count($result) ? implode('/', $result).'/' : '');
+}
+$redirects = [
+    '/kredit/' => '/',
+    '/refinansirovanie-zajmov/' => '/',
+    '/karta-sajta/' => '/hub/',
+    '/kredity-na-razvitie-biznesa/' => '/kredit/ooo/',
+    '/kredit-bez-otkaza-2/' => '/',
+    '/zajm-ot-chastnogo-investora/zajm-ot-chastnogo-investora-pod-zalog-komnaty/' => '/kredit/komnata/chastnyy-investor/',
+    '/kredit-nalichnymi/dlya-ooo/na-ispolnenie-gos.kontraktov.htm' => '/kredit/ooo/nalichnymi/',
+    '/nebolshoy/priobretaemaya-nedvijimost' => '/kredit/nebolshoy/nedvijimost/',
+    '/kredit-nalichnymi/dlya-biznesa/kreditnye-biznes-karty.htm' => '/kredit/ooo/nalichnymi/',
+];
+if (in_array($_SERVER['REQUEST_URI'], array_keys($redirects))) {
+    header("Location: {$redirects[$_SERVER['REQUEST_URI']]}", true, 301);
+    die();
 }
 
 if( function_exists('acf_add_options_page') ) {
