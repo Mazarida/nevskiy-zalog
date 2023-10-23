@@ -1042,6 +1042,7 @@ strong {
 .our-work__head-img {
     height: 473px;
     background-size: cover;
+    background-position: center;
     margin-top: 37px;
     width: 460px;
     margin-left: auto;
@@ -1307,6 +1308,10 @@ strong {
 .slide-wrapper__crt-slide {
     overflow: visible;
     padding: 0 35px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slider-crt__slider-nav {

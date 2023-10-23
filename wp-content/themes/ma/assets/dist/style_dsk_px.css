@@ -562,7 +562,7 @@ strong {
 }
 
 .team-experts__team-expert--mod {
-    
+
     margin: 0;
     margin-bottom: 0;
 }
@@ -1239,6 +1239,7 @@ strong {
 .our-work__head-img {
     height: 623px;
     background-size: cover;
+    background-position: center;
     margin-top: 37px;
     width: 100%;
     margin-left: auto;

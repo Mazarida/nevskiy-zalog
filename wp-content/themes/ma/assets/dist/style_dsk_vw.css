@@ -1239,6 +1239,7 @@ strong {
 .our-work__head-img {
     height: 46.14815vw;
     background-size: cover;
+    background-position: center;
     margin-top: 2.74074vw;
     width: 100%;
     margin-left: auto;
@@ -2696,7 +2697,7 @@ strong {
 
 .click-btn {
   margin: 0.5rem;
-  
+
   text-decoration: none;
   transition: all 0.35s;
   box-sizing: border-box;
@@ -2735,7 +2736,7 @@ strong {
   text-align: center;
 
 
-  
+
   cursor: pointer;
 
   position:relative;
@@ -2761,13 +2762,13 @@ strong {
 
 .btn-style2 {
 
-  
-  
+
+
   &:hover {
-   
+
     transform: translateY(-0.25em);
-    
-   
+
+
   }
 }
 
@@ -2784,18 +2785,18 @@ strong {
     margin: 0 auto;
 }
 
-    .embed-container { 
-        position: relative; 
+    .embed-container {
+        position: relative;
         padding-bottom: 56.25%;
         overflow: hidden;
         max-width: 100%;
         height: auto;
 		border-radius: 5px;
-    } 
+    }
 
     .embed-container iframe,
     .embed-container object,
-    .embed-container embed { 
+    .embed-container embed {
         position: absolute;
 		border-radius: 5px;
         top: 0;
