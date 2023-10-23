@@ -9,7 +9,6 @@ if ($replace_img) {
     $style_head_offer_ctr = "background-image: none;";
 }
 ?>
-
 <section class="head-offer head-offer-dsk"<?=($style_head_offer ? ' style="'.$style_head_offer.'"' : '')?>>
     <div class="dsk-container head-offer__ctr"<?=($style_head_offer_ctr ? ' style="'.$style_head_offer_ctr.'"' : '')?>>
         <h1 data-action="title-replace" class="head-offer__offer-title">
@@ -24,20 +23,40 @@ if ($replace_img) {
             ?>
         </h1>
         <ul class="head-offers__head-benefits">
-            <li class="head-benefits__head-benefit">
-                За <strong>1 день</strong>
+            <li data-bullet="0" data-default-content="<?=htmlentities('За <strong>1 день</strong>')?>" class="head-benefits__head-benefit">
+                <?php if (isset($replace_bullets[0])) {
+                    echo $replace_bullets[0];
+                } else { ?>
+                    За <strong>1 день</strong>
+                <?php } ?>
             </li>
-            <li class="head-benefits__head-benefit">
-                Ставка <strong>5%</strong>
+            <li data-bullet="1" data-default-content="<?=htmlentities('Ставка <strong>5%</strong>')?>" class="head-benefits__head-benefit">
+                <?php if (isset($replace_bullets[1])) {
+                    echo $replace_bullets[1];
+                } else { ?>
+                    Ставка <strong>5%</strong>
+                <?php } ?>
             </li>
-            <li class="head-benefits__head-benefit">
-                С любой <strong>кредитной историей</strong>
+            <li data-bullet="2" data-default-content="<?=htmlentities('С любой <strong>кредитной историей</strong>')?>" class="head-benefits__head-benefit">
+                <?php if (isset($replace_bullets[2])) {
+                    echo $replace_bullets[2];
+                } else { ?>
+                    С любой <strong>кредитной историей</strong>
+                <?php } ?>
             </li>
-            <li class="head-benefits__head-benefit">
-                Минимум <strong>документов</strong>
+            <li data-bullet="3" data-default-content="<?=htmlentities('Минимум <strong>документов</strong>')?>" class="head-benefits__head-benefit">
+                <?php if (isset($replace_bullets[3])) {
+                    echo $replace_bullets[3];
+                } else { ?>
+                    Минимум <strong>документов</strong>
+                <?php } ?>
             </li>
-            <li class="head-benefits__head-benefit">
-                Максимальная <strong>сумма кредита</strong>
+            <li data-bullet="4" data-default-content="<?=htmlentities('Максимальная <strong>сумма кредита</strong>')?>" class="head-benefits__head-benefit">
+                <?php if (isset($replace_bullets[4])) {
+                    echo $replace_bullets[4];
+                } else { ?>
+                    Максимальная <strong>сумма кредита</strong>
+                <?php } ?>
             </li>
         </ul>
         <button class="head-offer__offer-link button-animate btn-5 modal-btn" data-path="two">
@@ -846,7 +865,7 @@ if ($replace_img) {
             <?php echo strip_tags( get_sub_field( 'header', get_option('page_on_front') ), ['strong'] ); ?>
         </h2>
 
-    
+
 
 
 
@@ -908,7 +927,7 @@ if ($replace_img) {
                 <?php endwhile; ?>
         <?php endif; ?>
 
-        
+
 
         </div> -->
 
@@ -1008,7 +1027,7 @@ if ($replace_img) {
     <!-- <?php while ( have_rows( 'page_content2', get_field('programs_page', 'option')) ) : the_row(); ?>
     <?php if ( get_row_layout() == 'our_credit_programs' ) : ?>
 
-        
+
 
     <div class="tariffs__tariff-wrap">
 
@@ -1034,7 +1053,7 @@ if ($replace_img) {
                                     </li>
                     <?php endwhile; ?>
                 <?php endif; ?>
-          
+
             </ul>
             <a href="#" class="tariff-item__btn-primary button-animate">
                 <?php the_sub_field("button_text") ?>
@@ -1046,16 +1065,16 @@ if ($replace_img) {
     <?php endif; ?>
     </div>
 
-   
+
 
     <?php endif; ?>
     <?php endwhile; ?> -->
 
-        
+
 
     <?php while ( have_rows( 'page_content' ) ) : the_row(); ?>
-    <?php if ( get_row_layout() == 'our_credit_programs' ) : ?>  
-              
+    <?php if ( get_row_layout() == 'our_credit_programs' ) : ?>
+
 
         <a href="#" <?php live_edit('page_content, flex-our_credit_programs--all_programm', get_option('page_on_front')) ?>  class="tariffs__btn-secondary1  btn-5">
 
@@ -1071,7 +1090,7 @@ if ($replace_img) {
 <?php endwhile; ?>
 
 
-	
+
 
 
 
@@ -1866,13 +1885,13 @@ if ($replace_img) {
             После отправки формы вы получите
             ссылку на файл с чек-листом
         </div>
-        
+
             <?php echo do_shortcode('[contact-form-7 id="6e04126" title="Получите чек лист"]'); ?>
             <div class="callback-form__modal-disclaimer">
                 Отправляя заявку Вы даете свое согласие
                 на обработку персональных данных
             </div>
-        
+
     </div>
 </div>
 
@@ -1888,7 +1907,7 @@ if ($replace_img) {
             Наш сотрудник свяжется
             с Вами в ближайшее время
         </div>
-   
+
 
         <form action="" class=" wpcf7">
             <?php echo do_shortcode('[contact-form-7 id="d63a7de" title="Заполните заявку"]'); ?>
@@ -1912,15 +1931,15 @@ if ($replace_img) {
             Наш сотрудник свяжется
             с Вами в ближайшее время
         </div>
-   
 
-       
+
+
             <?php echo do_shortcode('[contact-form-7 id="d63a7de" title="Заполните заявку"]'); ?>
             <div class="callback-form__modal-disclaimer">
                 Отправляя заявку Вы даете свое согласие
                 на обработку персональных данных
             </div>
-        
+
     </div>
 </div>
 
@@ -1960,13 +1979,13 @@ if ($replace_img) {
             Наш сотрудник свяжется
             с Вами в ближайшее время
         </div>
-       
+
             <?php echo do_shortcode('[contact-form-7 id="c823372" title="Бесплатная консультация"]'); ?>
             <div class="callback-form__modal-disclaimer">
                 Отправляя заявку Вы даете свое согласие
                 на обработку персональных данных
             </div>
-       
+
     </div>
 </div>
 
@@ -1981,14 +2000,14 @@ if ($replace_img) {
             Наш сотрудник свяжется
             с Вами в ближайшее время
         </div>
-        
-            
+
+
             <?php echo do_shortcode('[contact-form-7 id="e6bc70f" title="Ваш вопрос"]'); ?>
             <div class="callback-form__modal-disclaimer">
                 Отправляя заявку Вы даете свое согласие
                 на обработку персональных данных
             </div>
-       
+
     </div>
 </div>
 
@@ -2003,14 +2022,14 @@ if ($replace_img) {
             Наш сотрудник свяжется
             с Вами в ближайшее время
         </div>
-        
-            
+
+
             <?php echo do_shortcode('[contact-form-7 id="fb3f485" title="Подобрать подробности"]'); ?>
             <div class="callback-form__modal-disclaimer">
                 Отправляя заявку Вы даете свое согласие
                 на обработку персональных данных
             </div>
-       
+
     </div>
 </div>
 
