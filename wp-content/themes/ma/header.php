@@ -101,6 +101,16 @@
                         Контакты
                     </a>
                 </li>
+                <li class="menu-item-pop__pop-link-wrap">
+                    <a href="/category/bloki-seo/" class="pop-link-wrap__link click-btn btn-style2">
+                        Популярные услуги
+                    </a>
+                </li>
+				<li class="menu-item-pop__pop-link-wrap">
+                    <a href="/hub/" class="pop-link-wrap__link click-btn btn-style2">
+                        Все услуги
+                    </a>
+                </li>
             </ul>
             <a href="#" class="popup-menus__close-btn">
                 &times;
