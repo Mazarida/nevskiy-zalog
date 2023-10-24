@@ -1754,7 +1754,7 @@ if ($replace_img) {
     </div>
 </section> -->
 
-<section class="our-services">
+<!-- <section class="our-services">
     <h2 class="nzlg-title our-services__os-title">
         <strong>Наши услуги</strong>
     </h2>
@@ -1826,8 +1826,39 @@ if ($replace_img) {
             </a>
         </li>
     </ul>
+</section> -->
+<section class="our-services">
+    <h2 class="nzlg-title our-services__os-title">
+        <strong>Наши услуги</strong>
+    </h2>
+    <ul class="flex-row our-services__our-svc-links">
+        <?php
+        $args = array(
+            'cat' => 'bloki-seo', // Замените на ID рубрики "Блоки SEO"
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'posts_per_page' => -1, // Вывести все статьи из рубрики "Блоки SEO"
+        );
+
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) :
+            while ($query->have_posts()) : $query->the_post();
+        ?>
+            <li class="our-svc-links__our-svc-item">
+                <a href="<?php the_permalink(); ?>" class="our-svc-item__our-svc-link">
+                    <?php the_title(); ?>
+                </a>
+            </li>
+        <?php
+            endwhile;
+            wp_reset_postdata();
+        endif;
+        ?>
+    </ul>
 </section>
 
+<!-- shod-end -->
 <div class="modal modal-sm" id="chek-list">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front">
