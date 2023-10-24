@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="flex-row dsk-container hub-links-container">
-    <h1 class="hub-title">Перейти в раздел:</h1>
+    <h1 class="hub-title">Все статьи:</h1>
     <?php
     if (have_posts()) :
         while (have_posts()) : the_post();
