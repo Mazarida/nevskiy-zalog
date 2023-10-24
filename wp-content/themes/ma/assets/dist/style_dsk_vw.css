@@ -98,7 +98,8 @@ strong {
     max-width: 94.81481vw;
     margin: 0 auto;
     width: 100%;
-    padding: 1.25926vw 6.14815vw 1.25926vw 4.81481vw;
+    /* padding: 1.25926vw 6.14815vw 1.25926vw 4.81481vw; */
+    padding: 17px 0px 17px 0px;
     background: #FFF;
 }
 
@@ -130,7 +131,7 @@ strong {
     display: flex;
     justify-content: flex-start;
     text-transform: uppercase;
-    gap: 2.74074vw;
+    /* gap: 2.74074vw; */
 }
 
 .menu-item-pop__pop-link-wrap {
