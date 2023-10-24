@@ -1548,7 +1548,7 @@ strong {
 
 .our-services__our-svc-links {
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding: 19px 11px;
     line-height: 1.23;
     font-size: 24px;
