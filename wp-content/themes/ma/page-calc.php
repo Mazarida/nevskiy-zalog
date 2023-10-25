@@ -853,350 +853,110 @@ if ($replace_img) {
         </button>
 </section>
 
+<!-- shod-start -->
+<section class="tariffs">
+    <?php
+// Замените 'page_id' на фактический ID вашей страницы
+$page_id = 181; // Замените на фактический ID вашей страницы
+$args = array(
+    'post_type' => 'page', // Тип записи - страница
+    'p' => $page_id, // ID страницы
+    'posts_per_page' => -1, // Ограничение на одну запись
+    'orderby' => 'post_date',
+    'order' => 'DESC'
+);
 
-<?php while ( have_rows( 'page_content', get_option('page_on_front') ) ) : the_row(); ?>
-    <?php if ( get_row_layout() == 'our_credit_programs' ) : ?>
+$query = new WP_Query($args);
 
-
-    <section class="tariffs">
-
-
-		<h2 <?php live_edit('page_content, flex-our_credit_programs--header', get_option('page_on_front')) ?> class="nzlg-title tariffs__trf-title">
-            <?php echo strip_tags( get_sub_field( 'header', get_option('page_on_front') ), ['strong'] ); ?>
+if ($query->have_posts()) {
+    while ($query->have_posts()) {
+        $query->the_post(); ?>
+         <h2 <?php live_edit('flex-our_credit_programs--header', get_option('page_on_front')) ?> class="nzlg-title tariffs__trf-title">
+            <?php //echo strip_tags( get_sub_field( 'header', get_option('page_on_front') ), ['strong'] ); ?>
+			<?php the_field( 'header' ); ?>
         </h2>
-
-
-
-
-
-
-        <!-- <div <?php live_edit('page_content, flex-our_credit_programs--programm_car', get_option('page_on_front')	) ?> class="tariffs__tariff-wrap">
-
-
-		<?php if (have_rows("programm_car")) : ?>
-    		<?php while (have_rows("programm_car")) : the_row(); ?>
-
-		<?php if (get_sub_field('color_card')) : ?>
-			<div class="<?php the_sub_field("color_card") ?> click-btn btn-style1">
-
-        <?php endif; ?>
-
-            <div class="tariff-item__icon-shield"></div>
-            <h3 class="tariff-item__tariff-header">
-				<?php if (get_sub_field('programm_name')) : ?>
-					<?php the_sub_field("programm_name") ?>
-				<?php endif; ?>
-
-            </h3>
-            <div class="tariff-item__tariff-desc">
-				<?php if (get_sub_field('programm_description')) : ?>
-					<?php the_sub_field("programm_description") ?>
-				<?php endif; ?>
-
-            </div>
-            <div class="tariff-item__list-title">
-				<?php if (get_sub_field('programm_condition')) : ?>
-					<?php the_sub_field("programm_condition") ?>
-				<?php endif; ?>
-
-            </div>
-
-
-            <ul class="tariff-item__desc-list">
-				<?php if (have_rows("programm_condition_ul")) : ?>
-    				<?php while (have_rows("programm_condition_ul")) : the_row(); ?>
-						<?php if (get_sub_field('programm_condition_ul_li')) : ?>
-                <li class="desc-list__desc-item">
-
-						<?php the_sub_field("programm_condition_ul_li") ?>
-
-
-                </li>
-				<?php endif; ?>
-								<?php endwhile; ?>
-                <?php endif; ?>
-
-				</ul>
-            <a href="#" class="tariff-item__btn-primary button-animate btn-5">
-                <?php if (get_sub_field('button_text')) : ?>
-					<?php the_sub_field("button_text") ?>
-				<?php endif; ?>
-            </a>
-        </div>
-
-                <?php endwhile; ?>
-        <?php endif; ?>
-
-
-
-        </div> -->
-
-        <div class="tariffs__tariff-wrap">
-        <div class="tariff-wrap__tariff-item">
-            <div class="tariff-item__icon-shield"></div>
-            <h3 class="tariff-item__tariff-header">
-                <strong>6% доступное</strong> решение
-            </h3>
-            <div class="tariff-item__tariff-desc">
-                Выгодная кредитная программа с низкой процентной ставкой для реализации вашей мечты
-            </div>
-            <div class="tariff-item__list-title">
-                Основные условия:
-            </div>
-            <ul class="tariff-item__desc-list">
-                <li class="desc-list__desc-item">
-                    Процентная ставка: 6% годовых
-                </li>
-                <li class="desc-list__desc-item">
-                    Срок кредита: до 20 лет
-                </li>
-                <li class="desc-list__desc-item">
-                    Необходимые документы: паспорт, справка о доходах, документы на квартиру
-                </li>
-                <li class="desc-list__desc-item">
-                    Дополнительные требования: кредитная история без просрочек
-                </li>
-            </ul>
-            <a href="#" class="tariff-item__btn-primary button-animate">
-                Оформить
-            </a>
-        </div>
-        <div class="tariff-wrap__tariff-item item-accent">
-            <div class="tariff-item__icon-shield"></div>
-            <h3 class="tariff-item__tariff-header">
-                9.8% больше <strong>возможностей</strong>
-            </h3>
-            <div class="tariff-item__tariff-desc">
-                Кредитная программа с увеличенным сроком и суммой кредита для тех, кто хочет реализовать крупные планы и мечты
-            </div>
-            <div class="tariff-item__list-title">
-                Основные условия:
-            </div>
-            <ul class="tariff-item__desc-list">
-                <li class="desc-list__desc-item">
-                    Процентная ставка: 9,8% годовых
-                </li>
-                <li class="desc-list__desc-item">
-                    Срок кредита: до 25 лет
-                </li>
-                <li class="desc-list__desc-item">
-                    Необходимые документы: паспорт, справка о доходах, документы на квартиру, подтверждение целевого использования средств
-                </li>
-                <li class="desc-list__desc-item">
-                    Дополнительные требования: кредитная история без просрочек, возраст заемщика до 65 лет намомент погашения кредита
-                </li>
-            </ul>
-            <a href="#" class="tariff-item__btn-primary button-animate">
-                Оформить
-            </a>
-        </div>
-        <div class="tariff-wrap__tariff-item">
-            <div class="tariff-item__icon-shield"></div>
-            <h3 class="tariff-item__tariff-header">
-                <strong>6% доступное</strong> решение
-            </h3>
-            <div class="tariff-item__tariff-desc">
-                Выгодная кредитная программа с низкой процентной ставкой для реализации вашей мечты
-            </div>
-            <div class="tariff-item__list-title">
-                Основные условия:
-            </div>
-            <ul class="tariff-item__desc-list">
-                <li class="desc-list__desc-item">
-                    Процентная ставка: 6% годовых
-                </li>
-                <li class="desc-list__desc-item">
-                    Срок кредита: до 20 лет
-                </li>
-                <li class="desc-list__desc-item">
-                    Необходимые документы: паспорт, справка о доходах, документы на квартиру
-                </li>
-                <li class="desc-list__desc-item">
-                    Дополнительные требования: кредитная история без просрочек
-                </li>
-            </ul>
-            <a href="#" class="tariff-item__btn-primary button-animate">
-                Оформить
-            </a>
-        </div>
-    </div>
-
-    <?php endif; ?>
-    <?php endwhile; ?>
-
-    <!-- <?php while ( have_rows( 'page_content2', get_field('programs_page', 'option')) ) : the_row(); ?>
-    <?php if ( get_row_layout() == 'our_credit_programs' ) : ?>
-
-
-
-    <div class="tariffs__tariff-wrap">
-
-    <?php if (have_rows("programm_car")) : ?>
+<?php while ( have_rows( 'page_content2' ) ) : the_row(); ?>
+<?php if ( get_row_layout() == 'our_credit_programs' ) : ?>
+    <div <?php live_edit('page_content2, flex-our_credit_programs--programm_car') ?> class="tariffs__tariff-wrap">
+        <?php if (have_rows("programm_car")) : ?>
     	<?php while (have_rows("programm_car")) : the_row(); ?>
-
-        <div class="<?php the_sub_field('color_card', get_field('programs_page', 'option')) ?> click-btn  btn-style1">
-            <div class="tariff-item__icon-shield"></div>
-            <h3 class="tariff-item__tariff-header">
-                <?php the_sub_field('programm_name') ?>
-            </h3>
-            <div class="tariff-item__tariff-desc">
-                <?php the_sub_field("programm_description") ?>
-            </div>
-            <div class="tariff-item__list-title">
-                <?php the_sub_field("programm_condition") ?>
-            </div>
-            <ul class="tariff-item__desc-list">
-                <?php if (have_rows("programm_condition_ul")) : ?>
-                    <?php while (have_rows("programm_condition_ul")) : the_row(); ?>
-                    <li class="desc-list__desc-item">
+                <?php if (get_sub_field('color_card')) : ?>
+                <div class="<?php the_sub_field("color_card") ?> click-btn  btn-style1">
+                    <?php endif; ?>
+                    <div class="tariff-item__icon-shield"></div>
+                    <h3 class="tariff-item__tariff-header">
+                        <?php if (get_sub_field('programm_name')) : ?>
+                            <?php the_sub_field("programm_name") ?>
+                        <?php endif; ?>
+                    </h3>
+                    <div class="tariff-item__tariff-desc">
+                        <?php if (get_sub_field('programm_description')) : ?>
+                            <?php the_sub_field("programm_description") ?>
+                        <?php endif; ?>
+                    </div>
+                    <div class="tariff-item__list-title">
+                        <?php if (get_sub_field('programm_condition')) : ?>
+                            <?php the_sub_field("programm_condition") ?>
+                        <?php endif; ?>
+                    </div>
+                    <ul class="tariff-item__desc-list">
+                        <?php if (have_rows("programm_condition_ul")) : ?>
+                            <?php while (have_rows("programm_condition_ul")) : the_row(); ?>
+                                <?php if (get_sub_field('programm_condition_ul_li')) : ?>
+                                    <li class="desc-list__desc-item">
                                         <?php the_sub_field("programm_condition_ul_li") ?>
                                     </li>
-                    <?php endwhile; ?>
-                <?php endif; ?>
-
-            </ul>
-            <a href="#" class="tariff-item__btn-primary button-animate">
-                <?php the_sub_field("button_text") ?>
-            </a>
-        </div>
-
-
-        <?php endwhile; ?>
+                                <?php endif; ?>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </ul>
+                    <a href="#" class="tariff-item__btn-primary button-animate">
+                        <?php if (get_sub_field('button_text')) : ?>
+                            <?php the_sub_field("button_text") ?>
+                        <?php endif; ?>
+                    </a>
+                </div>
+    <?php endwhile; ?>
     <?php endif; ?>
     </div>
-
-
-
-    <?php endif; ?>
-    <?php endwhile; ?> -->
-
-
-
-    <?php while ( have_rows( 'page_content' ) ) : the_row(); ?>
+<?php endif; ?>
+<?php endwhile; ?>
+<!--         <a <?php live_edit('flex-our_credit_programs--имя_поля', get_option('page_on_front')) ?>href="#" class="tariffs__btn-secondary">
+            <?php //echo strip_tags( get_sub_field( 'all_programm', get_option('page_on_front') ), ['strong'] ); ?>
+			<?php the_field( 'all_programm' ); ?>
+        </a> --><? 
+    }
+}
+wp_reset_postdata();
+?>
+<?php while ( have_rows( 'page_content' ) ) : the_row(); ?>
     <?php if ( get_row_layout() == 'our_credit_programs' ) : ?>
 
 
-        <a href="#" <?php live_edit('page_content, flex-our_credit_programs--all_programm', get_option('page_on_front')) ?>  class="tariffs__btn-secondary1  btn-5">
+        <a href="/kreditnyie-programmyi/" <?php live_edit('page_content, flex-our_credit_programs--all_programm', get_option('page_on_front')) ?>  class="tariffs__btn-secondary1  btn-5">
 
             <?php echo strip_tags( get_sub_field( 'all_programm', get_option('page_on_front') ), ['strong'] ); ?>
 
         </a>
 
-    </section>
+    
 
 
 
 	<?php endif; ?>
 <?php endwhile; ?>
+ <script>
+        // Найдем все элементы с атрибутом data-live-edit-post_id="181"
+        var elements = document.querySelectorAll('[data-live-edit-post_id="181"]');
 
+        // Удаляем все элементы, кроме первого
+        for (var i = 1; i < elements.length; i++) {
+            elements[i].parentNode.removeChild(elements[i]);
+        }
+    </script>
 
-
-
-
-
-
-
-
-<!-- <section class="tariffs">
-    <h2 class="nzlg-title tariffs__trf-title">
-        Расшифровка <strong>кредитных программ</strong>
-    </h2>
-    <div class="tariffs__tariff-wrap">
-        <div class="tariff-wrap__tariff-item">
-            <div class="tariff-item__icon-shield"></div>
-            <h3 class="tariff-item__tariff-header">
-                <strong>6% доступное</strong> решение
-            </h3>
-            <div class="tariff-item__tariff-desc">
-                Выгодная кредитная программа с низкой процентной ставкой для реализации вашей мечты
-            </div>
-            <div class="tariff-item__list-title">
-                Основные условия:
-            </div>
-            <ul class="tariff-item__desc-list">
-                <li class="desc-list__desc-item">
-                    Процентная ставка: 6% годовых
-                </li>
-                <li class="desc-list__desc-item">
-                    Срок кредита: до 20 лет
-                </li>
-                <li class="desc-list__desc-item">
-                    Необходимые документы: паспорт, справка о доходах, документы на квартиру
-                </li>
-                <li class="desc-list__desc-item">
-                    Дополнительные требования: кредитная история без просрочек
-                </li>
-            </ul>
-            <a href="#" class="tariff-item__btn-primary button-animate">
-                Оформить
-            </a>
-        </div>
-        <div class="tariff-wrap__tariff-item item-accent">
-            <div class="tariff-item__icon-shield"></div>
-            <h3 class="tariff-item__tariff-header">
-                9.8% больше <strong>возможностей</strong>
-            </h3>
-            <div class="tariff-item__tariff-desc">
-                Кредитная программа с увеличенным сроком и суммой кредита для тех, кто хочет реализовать крупные планы и мечты
-            </div>
-            <div class="tariff-item__list-title">
-                Основные условия:
-            </div>
-            <ul class="tariff-item__desc-list">
-                <li class="desc-list__desc-item">
-                    Процентная ставка: 9,8% годовых
-                </li>
-                <li class="desc-list__desc-item">
-                    Срок кредита: до 25 лет
-                </li>
-                <li class="desc-list__desc-item">
-                    Необходимые документы: паспорт, справка о доходах, документы на квартиру, подтверждение целевого использования средств
-                </li>
-                <li class="desc-list__desc-item">
-                    Дополнительные требования: кредитная история без просрочек, возраст заемщика до 65 лет намомент погашения кредита
-                </li>
-            </ul>
-            <a href="#" class="tariff-item__btn-primary button-animate">
-                Оформить
-            </a>
-        </div>
-        <div class="tariff-wrap__tariff-item">
-            <div class="tariff-item__icon-shield"></div>
-            <h3 class="tariff-item__tariff-header">
-                <strong>6% доступное</strong> решение
-            </h3>
-            <div class="tariff-item__tariff-desc">
-                Выгодная кредитная программа с низкой процентной ставкой для реализации вашей мечты
-            </div>
-            <div class="tariff-item__list-title">
-                Основные условия:
-            </div>
-            <ul class="tariff-item__desc-list">
-                <li class="desc-list__desc-item">
-                    Процентная ставка: 6% годовых
-                </li>
-                <li class="desc-list__desc-item">
-                    Срок кредита: до 20 лет
-                </li>
-                <li class="desc-list__desc-item">
-                    Необходимые документы: паспорт, справка о доходах, документы на квартиру
-                </li>
-                <li class="desc-list__desc-item">
-                    Дополнительные требования: кредитная история без просрочек
-                </li>
-            </ul>
-            <a href="#" class="tariff-item__btn-primary button-animate">
-                Оформить
-            </a>
-        </div>
-    </div>
-    <a href="#" class="tariffs__btn-secondary">
-        Посмотреть все программы
-    </a>
 </section>
- -->
-
-
+<!-- shod-end -->
 
 <section class="roadmap">
     <h2 class="nzlg-title roadmap__rmp-title">
