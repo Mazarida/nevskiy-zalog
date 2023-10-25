@@ -2,35 +2,19 @@
 $filters = get_calc_filters();
 get_header(); ?>
 
-<?php while ( have_rows( 'page_content2') ) : the_row(); ?>
-    <?php if ( get_row_layout() == 'our_credit_programs' ) : ?>
-
-
     <section class="tariffs">
-        <h2 <?php live_edit('page_content2, flex-our_credit_programs--header', get_option('page_on_front')) ?> class="nzlg-title tariffs__trf-title">
-            <?php echo strip_tags( get_sub_field( 'header', get_option('page_on_front') ), ['strong'] ); ?>
+        <h2 <?php live_edit('flex-our_credit_programs--header', get_option('page_on_front')) ?> class="nzlg-title tariffs__trf-title">
+            <?php //echo strip_tags( get_sub_field( 'header', get_option('page_on_front') ), ['strong'] ); ?>
+			<?php the_field( 'header' ); ?>
         </h2>
-
-        <?php endif; ?>
-<?php endwhile; ?>
-
 <?php while ( have_rows( 'page_content2' ) ) : the_row(); ?>
 <?php if ( get_row_layout() == 'our_credit_programs' ) : ?>
-
-
     <div <?php live_edit('page_content2, flex-our_credit_programs--programm_car') ?> class="tariffs__tariff-wrap">
-
         <?php if (have_rows("programm_car")) : ?>
     	<?php while (have_rows("programm_car")) : the_row(); ?>
-
-
-
-               
-
                 <?php if (get_sub_field('color_card')) : ?>
                 <div class="<?php the_sub_field("color_card") ?> click-btn  btn-style1">
                     <?php endif; ?>
-
                     <div class="tariff-item__icon-shield"></div>
                     <h3 class="tariff-item__tariff-header">
                         <?php if (get_sub_field('programm_name')) : ?>
@@ -64,30 +48,15 @@ get_header(); ?>
                         <?php endif; ?>
                     </a>
                 </div>
-
-            
-
     <?php endwhile; ?>
     <?php endif; ?>
-
     </div>
-
 <?php endif; ?>
 <?php endwhile; ?>
-
-<?php while ( have_rows( 'page_content2' ) ) : the_row(); ?>
-    <?php if ( get_row_layout() == 'our_credit_programs' ) : ?>
-
-        <a <?php live_edit('page_content2, flex-our_credit_programs--имя_поля', get_option('page_on_front')) ?>href="#" class="tariffs__btn-secondary">
-            <?php echo strip_tags( get_sub_field( 'all_programm', get_option('page_on_front') ), ['strong'] ); ?>
+        <a <?php live_edit('flex-our_credit_programs--имя_поля', get_option('page_on_front')) ?>href="#" class="tariffs__btn-secondary">
+            <?php //echo strip_tags( get_sub_field( 'all_programm', get_option('page_on_front') ), ['strong'] ); ?>
+			<?php the_field( 'all_programm' ); ?>
         </a>
     </section>
-
-    <?php endif; ?>
-<?php endwhile; ?>
- 
-
-
-
 
 <?php get_footer(); ?>
