@@ -74,7 +74,7 @@
                 </svg>
             </a>
             <div class="desktop-only head-top__slogan">
-                <strong>Экспертная помощь</strong> <br>
+                <strong>Профессиональная помощь</strong> <br>
                 в получении кредита
             </div>
             <a href="tel:+79196088865" class="flex-row head-top__top-phone click-btn btn-style2">

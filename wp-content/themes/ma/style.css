@@ -773,3 +773,7 @@ article li {
   -webkit-transition-timing-function: linear !important;
           transition-timing-function: linear !important;
 }
+
+.slide-wrapper__crt-slide:hover {
+    opacity: .75;
+}

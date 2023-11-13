@@ -12,7 +12,8 @@ function blankslate_load_scripts()
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'jquery_ui', get_bloginfo('template_url').'/lib/jquery-ui.min.js', array('jquery'), '1.0', true );
     wp_enqueue_script( 'punch', get_bloginfo('template_url').'/lib/jquery.ui.touch-punch.min.js', array('jquery_ui'), '1.0', true );
-    wp_enqueue_script( 'mamain', get_bloginfo('template_url').'/main.js', array('punch'), '1.0', true );
+    wp_enqueue_script( 'fslightbox', get_bloginfo('template_url').'/lib/fslightbox.js', array('punch'), '1.0', true );
+    wp_enqueue_script( 'mamain', get_bloginfo('template_url').'/main.js', array('fslightbox'), '1.0', true );
 }
 add_action( 'comment_form_before', 'blankslate_enqueue_comment_reply_script' );
 function blankslate_enqueue_comment_reply_script()
@@ -121,7 +122,7 @@ function include_controller($template){
 function get_calc_title($title) {
     global $replace_title;
     $replace_title = get_calc_template();
-    return get_calc_template().' | '.get_bloginfo('name');
+    return strip_tags($replace_title).' | '.get_bloginfo('name');
 }
 
 if (function_exists('acf_add_options_page')) {
@@ -168,7 +169,7 @@ function get_calc_filters() {
 }
 
 function get_calc_template($url = '', $n = 4) {
-    $template = ['Кредит'];
+    $template = ['<strong>Кредит</strong>'];
     if (!$url) {
         $url = $_SERVER['REQUEST_URI'];
     }

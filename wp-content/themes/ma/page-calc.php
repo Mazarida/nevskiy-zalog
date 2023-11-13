@@ -137,10 +137,10 @@ if ($replace_img) {
             </div>
             <div class="calc-results__result-col">
                 <div class="result-col__result-title">
-                    Сумма кредита:
+                    Процентная ставка:
                 </div>
                 <div class="result-col__res-digits">
-                    <span class="js-percent">6 933 199</span> ₽
+                    <span class="js-percent">от 9,49</span> %
                 </div>
                 <a href="#" class="result-col__btn-secondary">
                     Рассчитать заново
@@ -1557,8 +1557,9 @@ wp_reset_postdata();
 				<?php while (have_rows("certificates")) : the_row(); ?>
                 <div class="slide-wrapper__crt-slide swiper-slide">
 						<?php if (get_sub_field('certificates_image')) : ?>
-							<img class="cert__slide-img" src="<?php the_sub_field("certificates_image") ?>" alt="">
-
+              <a data-fslightbox href="<?php the_sub_field("certificates_image") ?>">
+                <img class="cert__slide-img" src="<?php the_sub_field("certificates_image") ?>" alt="">
+              </a>
 						<?php endif; ?>
 
                 </div>
