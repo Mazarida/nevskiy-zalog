@@ -42,7 +42,7 @@ get_header(); ?>
                             <?php endwhile; ?>
                         <?php endif; ?>
                     </ul>
-                    <a href="#" class="tariff-item__btn-primary button-animate">
+                    <a style="cursor: pointer;" class="tariff-item__btn-primary button-animate modal-btn" data-path="three">
                         <?php if (get_sub_field('button_text')) : ?>
                             <?php the_sub_field("button_text") ?>
                         <?php endif; ?>
@@ -53,10 +53,10 @@ get_header(); ?>
     </div>
 <?php endif; ?>
 <?php endwhile; ?>
-        <a <?php live_edit('flex-our_credit_programs--имя_поля', get_option('page_on_front')) ?>href="#" class="tariffs__btn-secondary">
+<!--         <a <?php live_edit('flex-our_credit_programs--имя_поля', get_option('page_on_front')) ?>href="#" class="tariffs__btn-secondary">
             <?php //echo strip_tags( get_sub_field( 'all_programm', get_option('page_on_front') ), ['strong'] ); ?>
 			<?php the_field( 'all_programm' ); ?>
-        </a>
+        </a> -->
     </section>
 
 <?php get_footer(); ?>

@@ -2,6 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="yandex-verification" content="1115c34b7b034d8a" />
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,6 +12,28 @@
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/dist/style_mob_vw.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/dist/style_dsk_vw.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/dist/style_dsk_px.css">
+	<!-- Marquiz script start -->
+	<script>
+	(function(w, d, s, o){
+	  var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {
+		if (document.readyState !== 'loading') Marquiz.init(o);
+		else document.addEventListener("DOMContentLoaded", function() {
+		  Marquiz.init(o);
+		});
+	  };
+	  d.head.insertBefore(j, d.head.firstElementChild);
+	})(window, document, 'script', {
+		host: '//quiz.marquiz.ru',
+		region: 'eu',
+		id: '653916aa7ba92c002560eec2',
+		autoOpen: false,
+		autoOpenFreq: 'once',
+		openOnExit: false,
+		disableOnMobile: false
+	  }
+	);
+	</script>
+	<!-- Marquiz script end -->
 </head>
 <body <?php body_class(); ?>>
 <header class="header">

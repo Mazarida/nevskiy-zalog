@@ -1513,6 +1513,10 @@ strong {
 
 .slide-wrapper__crt-slide {
     width: 800px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slider-crt__slider-nav {

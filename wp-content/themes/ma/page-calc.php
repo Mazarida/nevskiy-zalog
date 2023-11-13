@@ -23,6 +23,7 @@ if ($replace_img) {
             ?>
         </h1>
         <ul class="head-offers__head-benefits">
+            
             <li data-bullet="0" data-default-content="<?=htmlentities('За <strong>1 день</strong>')?>" class="head-benefits__head-benefit">
                 <?php if (isset($replace_bullets[0])) {
                     echo $replace_bullets[0];
@@ -62,7 +63,8 @@ if ($replace_img) {
         <button class="head-offer__offer-link button-animate btn-5 modal-btn" data-path="two">
             Получить финансирование
         </button>
-        <div class="flex-row head-offer__bonus-banner">
+<a style="cursor: pointer;" class="modal-btn" data-path="one">
+	<div class="flex-row head-offer__bonus-banner">
             <div class="bonus-banner__banner-img"></div>
             <div class="bonus-banner__banner-text">
                 +получите бесплатный <strong>анализ
@@ -70,6 +72,8 @@ if ($replace_img) {
                 как получить финансирование
             </div>
         </div>
+</a>
+        
     </div>
 </section>
 <section class="credit-calc">
@@ -503,7 +507,7 @@ if ($replace_img) {
     </div>
 
 
-    <a <?php live_edit('page_content, flex-our_reviews--button_text', get_option('page_on_front')) ?>  href="#ques_us" class="testimonials__btn-primary button-animate btn-5">
+    <a <?php live_edit('page_content, flex-our_reviews--button_text', get_option('page_on_front')) ?>  class="testimonials__btn-primary button-animate btn-5 modal-btn" data-path="four">
 			<?php echo strip_tags( get_sub_field( 'button_text', get_option('page_on_front') ), ['strong'] ); ?>
 
     </a>
@@ -511,6 +515,7 @@ if ($replace_img) {
 
  <?php endif; ?>
 <?php endwhile; ?>
+
 
 
 
@@ -853,6 +858,7 @@ if ($replace_img) {
         </button>
 </section>
 
+
 <!-- shod-start -->
 <section class="tariffs">
     <?php
@@ -910,7 +916,7 @@ if ($query->have_posts()) {
                             <?php endwhile; ?>
                         <?php endif; ?>
                     </ul>
-                    <a href="#" class="tariff-item__btn-primary button-animate">
+                    <a style="cursor: pointer;" class="tariff-item__btn-primary button-animate modal-btn" data-path="three">
                         <?php if (get_sub_field('button_text')) : ?>
                             <?php the_sub_field("button_text") ?>
                         <?php endif; ?>
@@ -957,6 +963,8 @@ wp_reset_postdata();
 
 </section>
 <!-- shod-end -->
+
+
 
 <section class="roadmap">
     <h2 class="nzlg-title roadmap__rmp-title">
@@ -1106,7 +1114,7 @@ wp_reset_postdata();
 
                 </div>
 
-                <div class="partners__prt-logos">
+<!--                 <div class="partners__prt-logos">
                     <div class="flex-row prt-logos__logos-row">
                         <div class="logos-row__logo-item">
                             <img class="img-crop" src="<?php bloginfo('template_url'); ?>/assets/img/logo1.png" alt="">
@@ -1122,11 +1130,47 @@ wp_reset_postdata();
                         <div class="logos-row__logo-item">
                             <img src="<?php bloginfo('template_url'); ?>/assets/img/logo4.png" alt="">
                         </div>
-
                     </div>
-
-
+                </div> -->
+				<!-- shod-start -->
+<!-- 				<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script> -->
+<div class="swiper-container partners__prt-logos">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="flex-row prt-logos__logos-row">
+                <div class="logos-row__logo-item">
+                    <img class="img-crop" src="<?php bloginfo('template_url'); ?>/assets/img/logo1.png" alt="">
                 </div>
+                <div class="logos-row__logo-item">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/img/logo2.png" alt="">
+                </div>
+                <div class="logos-row__logo-item">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/img/logo3.png" alt="">
+                </div>
+                <div class="logos-row__logo-item">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/img/logo4.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- Добавьте дополнительные слайды, если необходимо -->
+    </div>
+</div>
+
+<script>
+    var swiper = new Swiper('.partners__prt-logos', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        loop: true,
+        speed: 2000,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false
+        },
+        direction: 'horizontal', // горизонтальное направление
+        grabCursor: true,
+    });
+</script>
+<!-- shod-end -->
 
             </div>
 
@@ -1176,17 +1220,79 @@ wp_reset_postdata();
 
     <?php endif; ?>
 <?php endwhile; ?>
+<!-- <div class="container">
+  <div class="row">
+    <div class="swiper-container" id="js-carousel">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="text-align: center">
+          <img src="https://via.placeholder.com/200x100?text=Img 1" alt="">
+        </div>
+        <div class="swiper-slide" style="text-align: center">
+          <img src="https://via.placeholder.com/200x100?text=Img 2" alt="">
+        </div>
+        <div class="swiper-slide" style="text-align: center">
+          <img src="https://via.placeholder.com/200x100?text=Img 3" alt="">
+        </div>
+        <div class="swiper-slide" style="text-align: center">
+          <img src="https://via.placeholder.com/200x100?text=Img 4" alt="">
+        </div>
+        <div class="swiper-slide" style="text-align: center">
+          <img src="https://via.placeholder.com/200x100?text=Img 5" alt="">
+        </div>
+        <div class="swiper-slide" style="text-align: center">
+          <img src="https://via.placeholder.com/200x100?text=Img 6" alt="">
+        </div>
+        <div class="swiper-slide" style="text-align: center">
+          <img src="https://via.placeholder.com/200x100?text=Img 7" alt="">
+        </div>
+        <div class="swiper-slide" style="text-align: center">
+          <img src="https://via.placeholder.com/200x100?text=Img 8" alt="">
+        </div>
+        <div class="swiper-slide" style="text-align: center">
+          <img src="https://via.placeholder.com/200x100?text=Img 9" alt="">
+        </div>
+        <div class="swiper-slide" style="text-align: center">
+          <img src="https://via.placeholder.com/200x100?text=Img 10" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+    .swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+          transition-timing-function: linear !important;
+}
 
+.swiper-slide img{
+  max-width: 100%;
+}
+</style>
+<script>
+    var swiper = new Swiper('#js-carousel', {  
+  slidesPerView: 3,
+  spaceBetween: 30,
+  speed: 2000,
+  loop: true,
+  //allowTouchMove: false, // можно ещё отключить свайп
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false // или сделать так, чтобы восстанавливался autoplay после взаимодействия
+  }
+});
+</script>
 
-
+ -->
 
 <section class="action">
     <h3 class="action__title">
         Подберем для вас индивидуальные условия
     </h3>
-    <button href="#" class="action__btn-primary button-animate btn-5 modal-btn" data-path="two">
+<a href="#popup:marquiz_653916aa7ba92c002560eec2">
+    <button class="action__btn-primary button-animate btn-5 modal-btn">
         Подобрать условия кредитования
     </button>
+</a>
 </section>
 
 <?php while ( have_rows( 'page_content', get_option('page_on_front') ) ) : the_row(); ?>
@@ -1426,7 +1532,7 @@ wp_reset_postdata();
 <!--             Не нашли ответа
             на свой вопрос? -->
         </div>
-        <a <?php live_edit('page_content, flex-our_faq_questions--button_text', get_option('page_on_front')) ?> href="#ques_us" class="faq__btn-primary button-animate btn-5">
+        <a <?php live_edit('page_content, flex-our_faq_questions--button_text', get_option('page_on_front')) ?>  class="faq__btn-primary button-animate btn-5 modal-btn" data-path="four">
 			<?php echo strip_tags( get_sub_field( 'button_text', get_option('page_on_front') ), ['strong'] ); ?>
 <!--             Напишите нам -->
         </a>
@@ -1514,79 +1620,7 @@ wp_reset_postdata();
     </div>
 </section> -->
 
-<!-- <section class="our-services">
-    <h2 class="nzlg-title our-services__os-title">
-        <strong>Наши услуги</strong>
-    </h2>
-    <ul class="flex-row our-services__our-svc-links">
-        <li class="our-svc-links__our-svc-item">
-            <a href="#" class="our-svc-item__our-svc-link">
-                Кредит под залог
-                квартиры
-            </a>
-        </li>
-        <li class="our-svc-links__our-svc-item">
-            <a href="#" class="our-svc-item__our-svc-link">
-                Кредит под залог
-                комнаты
-            </a>
-        </li>
-        <li class="our-svc-links__our-svc-item">
-            <a href="#" class="our-svc-item__our-svc-link">
-                Кредит под залог
-                гаражного бокса
-            </a>
-        </li>
-        <li class="our-svc-links__our-svc-item">
-            <a href="#" class="our-svc-item__our-svc-link">
-                Кредит под залог
-                земельного участка
-            </a>
-        </li>
-        <li class="our-svc-links__our-svc-item">
-            <a href="#" class="our-svc-item__our-svc-link">
-                Кредит под залог
-                частного дома
-            </a>
-        </li>
-        <li class="our-svc-links__our-svc-item">
-            <a href="#" class="our-svc-item__our-svc-link">
-                Кредит под залог
-                автомобиля
-            </a>
-        </li>
-        <li class="our-svc-links__our-svc-item">
-            <a href="#" class="our-svc-item__our-svc-link">
-                Кредит под залог
-                коммерческой недвижимость
-            </a>
-        </li>
-        <li class="our-svc-links__our-svc-item">
-            <a href="#" class="our-svc-item__our-svc-link">
-                Кредит под залог
-                грузовиков, экскаваторов
-            </a>
-        </li>
-        <li class="our-svc-links__our-svc-item">
-            <a href="#" class="our-svc-item__our-svc-link">
-                Кредит под залог
-                драгоценности
-            </a>
-        </li>
-        <li class="our-svc-links__our-svc-item">
-            <a href="#" class="our-svc-item__our-svc-link">
-                Кредит под залог
-                медицинской техники
-            </a>
-        </li>
-        <li class="our-svc-links__our-svc-item">
-            <a href="#" class="our-svc-item__our-svc-link">
-                Кредит под залог
-                промышленной техники
-            </a>
-        </li>
-    </ul>
-</section> -->
+<!-- shod-start -->
 <section class="our-services">
     <h2 class="nzlg-title our-services__os-title">
         <strong>Наши услуги</strong>
@@ -1619,6 +1653,7 @@ wp_reset_postdata();
 </section>
 
 <!-- shod-end -->
+
 <div class="modal modal-sm" id="chek-list">
     <div class="modal__modal-back"></div>
     <div class="modal__modal-front">
@@ -1676,13 +1711,13 @@ wp_reset_postdata();
             После отправки формы вы получите
             ссылку на файл с чек-листом
         </div>
-
+        
             <?php echo do_shortcode('[contact-form-7 id="6e04126" title="Получите чек лист"]'); ?>
             <div class="callback-form__modal-disclaimer">
                 Отправляя заявку Вы даете свое согласие
                 на обработку персональных данных
             </div>
-
+        
     </div>
 </div>
 
@@ -1698,7 +1733,7 @@ wp_reset_postdata();
             Наш сотрудник свяжется
             с Вами в ближайшее время
         </div>
-
+   
 
         <form action="" class=" wpcf7">
             <?php echo do_shortcode('[contact-form-7 id="d63a7de" title="Заполните заявку"]'); ?>
@@ -1722,15 +1757,15 @@ wp_reset_postdata();
             Наш сотрудник свяжется
             с Вами в ближайшее время
         </div>
+   
 
-
-
+       
             <?php echo do_shortcode('[contact-form-7 id="d63a7de" title="Заполните заявку"]'); ?>
             <div class="callback-form__modal-disclaimer">
                 Отправляя заявку Вы даете свое согласие
                 на обработку персональных данных
             </div>
-
+        
     </div>
 </div>
 
@@ -1770,13 +1805,13 @@ wp_reset_postdata();
             Наш сотрудник свяжется
             с Вами в ближайшее время
         </div>
-
+       
             <?php echo do_shortcode('[contact-form-7 id="c823372" title="Бесплатная консультация"]'); ?>
             <div class="callback-form__modal-disclaimer">
                 Отправляя заявку Вы даете свое согласие
                 на обработку персональных данных
             </div>
-
+       
     </div>
 </div>
 
@@ -1791,14 +1826,14 @@ wp_reset_postdata();
             Наш сотрудник свяжется
             с Вами в ближайшее время
         </div>
-
-
+        
+            
             <?php echo do_shortcode('[contact-form-7 id="e6bc70f" title="Ваш вопрос"]'); ?>
             <div class="callback-form__modal-disclaimer">
                 Отправляя заявку Вы даете свое согласие
                 на обработку персональных данных
             </div>
-
+       
     </div>
 </div>
 
@@ -1813,14 +1848,14 @@ wp_reset_postdata();
             Наш сотрудник свяжется
             с Вами в ближайшее время
         </div>
-
-
+        
+            
             <?php echo do_shortcode('[contact-form-7 id="fb3f485" title="Подобрать подробности"]'); ?>
             <div class="callback-form__modal-disclaimer">
                 Отправляя заявку Вы даете свое согласие
                 на обработку персональных данных
             </div>
-
+       
     </div>
 </div>
 

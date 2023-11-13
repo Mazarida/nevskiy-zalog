@@ -143,16 +143,17 @@ strong {
 
 .head-email__email-icon {
     background-image: url('img/head-email__email-icon.svg');
-    width: 5.41667vw;
-    height: 3.75vw;
+    width: 9.41667vw;
+    height: 5.75vw;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-right: 3.125vw;
+    margin-right: 18.125vw;
 }
 
 .head-email__email-text {
     font-size: 3.75vw;
     font-weight: 500;
+	display: none;
 }
 
 .head-bot__head-search-icon {

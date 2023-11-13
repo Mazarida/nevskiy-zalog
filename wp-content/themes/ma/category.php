@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="flex-row dsk-container hub-links-container">
-    <h1 class="hub-title">Все статьи:</h1>
-    <?php
+    <h1 class="hub-title">Перейти в раздел:</h1>
+<!--     <?php
     if (have_posts()) :
         while (have_posts()) : the_post();
     ?>
@@ -9,7 +9,30 @@
     <?php
         endwhile;
     endif;
-    ?>
+    ?> -->
+	 <?php
+        $args = array(
+            'cat' => 'bloki-seo', // Замените на ID рубрики "Блоки SEO"
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'posts_per_page' => -1, // Вывести все статьи из рубрики "Блоки SEO"
+        );
+
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) :
+            while ($query->have_posts()) : $query->the_post();
+        ?>
+            
+                <a href="<?php the_permalink(); ?>" class="hub-link">
+                    <?php the_title(); ?>
+                </a>
+            
+        <?php
+            endwhile;
+            wp_reset_postdata();
+        endif;
+        ?>
 </div>
 <style>
     .hub-title {
@@ -38,4 +61,5 @@
         }
     }
 </style>
+
 <?php get_footer(); ?>

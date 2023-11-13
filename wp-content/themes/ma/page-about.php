@@ -25,9 +25,7 @@ get_header(); ?>
         </p>
         <p class="about-offer__text-content about-text-bot">
             Рада Вас приветствовать на
-            нашем сайте! Наверняка вы искали информацию о нашей
-            компании, вы попали на
-            верную страницу!
+            нашем сайте! 
         </p>
         <a href="#" class="about-offer__icon-scrolldown"></a>
     </div>
@@ -46,7 +44,7 @@ get_header(); ?>
     <div class="flex-row expert-list__exp-list-item">
       <div class="exp-list-item__icon-friend"></div>
       <div class="exp-list-item__exp-text">
-        Если говорить простыми словами, то мы помогаем получить одобрение в банке таких видов кредитования как: кредит под залог недвижимости, ипотека, кредит наличными, рефинансирование кредитов и займов.
+        Простыми словами - мы помогаем получить одобрение в банке таких видов кредитования как: кредит под залог недвижимости, ипотека, кредит наличными, рефинансирование кредитов и займов.
       </div>
     </div>
     <div class="flex-row expert-list__exp-list-item">
@@ -107,7 +105,7 @@ get_header(); ?>
       <div class="flex-row counters__items-row">
         <div class="items-row__item-counter">
           <div class="item-counter__count">
-            5000+
+            3277
           </div>
           <div class="item-counter__legend">
             Количество выданных
@@ -116,7 +114,7 @@ get_header(); ?>
         </div>
         <div class="items-row__item-counter">
           <div class="item-counter__count">
-            500 <span class="count__text-sm">млн р.</span>
+            527 <span class="count__text-sm">млн р.</span>
           </div>
           <div class="item-counter__legend">
             Общая сумма выданных
@@ -139,18 +137,17 @@ get_header(); ?>
             98%
           </div>
           <div class="item-counter__legend">
-            Процент возврата
-            кредитов
+            Вероятность одобрения кредита
           </div>
         </div>
       </div>
     </div>
     <ul class="our-work__list-benefits">
       <li class="list-benefits__prt-benefit">
-        <strong>Компания “Невский залог”</strong> является официальным партнером множества банков по России.
+        <strong>Компания “Невский залог”</strong> является официальным партнером 87 банков по всей России.
       </li>
       <li class="list-benefits__prt-benefit">
-        <strong>Что это значит?</strong> Это означает, что мы имеем официальные договора более чем с 30 банками, на основании которых мы имеем право оказывать финансовые консультации нашим клиентам.
+        <strong>Что это значит?</strong> Это означает, что мы имеем официальные договоры с 87 банками, на основании которых мы имеем право оказывать финансовые консультации нашим клиентам.
       </li>
       <li class="list-benefits__prt-benefit">
         <strong>Помимо банков</strong> у нас огромное количество партнеров-инвесторов, которые дают займы под залог вашей недвижимости без отображения в кредитной истории!
@@ -190,7 +187,7 @@ get_header(); ?>
 </section>
 <section class="certificates">
     <h2 class="nzlg-title certificates__crt-title">
-        <strong>Сертификаты</strong>
+        Наши <strong>сертификаты</strong>
     </h2>
     <div class="certificates__slider-crt">
         <div class="swiper slider-crt__slide-wrapper js-slider-certificates">

@@ -129,13 +129,46 @@ jQuery(function($){
         spaceBetween: spaceTst,
     });
 
-    new Swiper(".js-slider-certificates", {
-        pagination: {
+//     new Swiper(".js-slider-certificates", {
+//         pagination: {
+//             el: ".swiper-pagination",
+//             clickable: true,
+//         },
+//         centeredSlides: $(window).outerWidth() >= 1020,
+//         slidesPerView:  $(window).outerWidth() >= 1020 ? 3 : undefined,
+//         initialSlide: $(window).outerWidth() >= 1020 ? 1 : undefined,
+//     });
+new Swiper(".js-slider-certificates", {
+pagination: {
             el: ".swiper-pagination",
             clickable: true,
-        },
-        centeredSlides: $(window).outerWidth() >= 1020,
-        slidesPerView:  $(window).outerWidth() >= 1020 ? 'auto' : undefined,
-        initialSlide: $(window).outerWidth() >= 1020 ? 1 : undefined,
-    });
+         },
+//   effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 2.5
+  },
+  keyboard: {
+    enabled: true
+  },
+  mousewheel: {
+    thresholdDelta: 70
+  },
+  spaceBetween: 30,
+  loop: false,
+  breakpoints: {
+    640: {
+      slidesPerView: 2
+    },
+    1024: {
+      slidesPerView: 3
+    }
+  }
+});
+
+swiper.slideTo(1, false, false);
 })

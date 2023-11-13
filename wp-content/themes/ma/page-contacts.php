@@ -19,7 +19,7 @@ get_header(); ?>
             Наши <strong>контакты</strong>
         </h1>
         <div class="contacts-info__conts-slogan">
-            Свяжитесь с нами и мы подберем Вам подходящую кредитную программу
+            Свяжитесь с нами и мы подберем Вам подходящую кредитную программу!
         </div>
         <a href="tel:+79196088865" class="flex-row contacts-info__conts-item">
             <span class="conts-item__icon-phone"></span>
@@ -66,7 +66,7 @@ get_header(); ?>
         </div>
         <div class="contacts-requisites__requisites-item">
     <span class="requisites-item__rq-title">
-      Юр. адрес организации
+      Юр. адрес организации:
     </span>
             <span class="requisites-item__rq-value">
       Российская Федерация, 453252, БАШКОРТОСТАН РЕСП,
@@ -75,7 +75,7 @@ get_header(); ?>
         </div>
         <div class="contacts-requisites__requisites-item">
     <span class="requisites-item__rq-title">
-      ИНН
+      ИНН:
     </span>
             <span class="requisites-item__rq-value">
       026615337002
@@ -83,7 +83,7 @@ get_header(); ?>
         </div>
         <div class="contacts-requisites__requisites-item">
     <span class="requisites-item__rq-title">
-      Расчетный счет
+      Расчетный счет:
     </span>
             <span class="requisites-item__rq-value">
       40802810100003100486
@@ -123,7 +123,7 @@ get_header(); ?>
         </div>
         <div class="contacts-requisites__requisites-item">
     <span class="requisites-item__rq-title">
-      Корр. счет банка:
+      Корр. счет:
     </span>
             <span class="requisites-item__rq-value">
       30101810145250000974
